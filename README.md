@@ -7,3 +7,7 @@ The Galaxies, AGN, Supernovae, Weak Lensing and Strong Lensing Science Collabora
 ### Contact
 
 * Harry Ferguson (STScI)
+
+### Accreditation
+
+This is work in progress; all content is Copyright 2014 by the authors. If you would like to cite the Extragalactic Science Roadmap in your work, please use "(LSST Science Collaborations, in prep.)".
