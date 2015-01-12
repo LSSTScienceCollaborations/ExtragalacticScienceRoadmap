@@ -19,10 +19,9 @@ ps: exgal_roadmap.pdf
 	pdf2ps exgal_roadmap.pdf
 
 TEXFILES = *.tex */*.tex */*/*.tex
-BIBFILES = references.bib
 #BIBFILES = general.bib */*.bib
 #BIBFILES = */*.bib
-#BIBFILES= */*/*.bib
+BIBFILES= */*/*.bib
 check:
 	./checkbook.csh
 

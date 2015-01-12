@@ -3,7 +3,7 @@
 % Chapter: task_lists 
 % First draft by 
 
-\chapter[task_lists]
+\chapter[Task Lists by Science Area]
 \label{ch:task_lists}
 
 \input{task_lists/chapterintro.tex} 

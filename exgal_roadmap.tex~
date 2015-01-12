@@ -126,12 +126,6 @@
 
 \bibliographystyle{SciBook}
 \bibliography{references.bib}
-%\bibliography{references.bib,introduction/references,simulations/cosim/cosim,analysis/weak-lensing/wl,supernovae/references,analysis/large-scale-structure/lss,analysis/large-scale-structure/extra_lss,analysis/strong-lensing/references,analysis/clusters/clusters,analysis/clusters/clusters_extra,analysis/photoz/photoz,analysis/theory/references,analysis/theory/references_extra,analysis/theory/references_extra_p2.bib,workplan/photoz/references}
-
-% More possible bib files:
-% analysis/supernovae/references,%
-% analysis/large-scale-structure/references,%
-% analysis/photoz/references%
 
 % ----------------------------------------------------------------------------
 
