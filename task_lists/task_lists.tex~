@@ -3,11 +3,10 @@
 % Chapter: task_lists 
 % First draft by 
 
-\chapter[Task Lists by Science Area]
+\chapter[Task Lists by Science Area]{Task Lists by Science Area}
 \label{ch:task_lists}
 
 \input{task_lists/chapterintro.tex} 
-
 
 \input{task_lists/black_holes/black_holes.tex}
 
