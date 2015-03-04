@@ -1,0 +1,253 @@
+This document is a draft road-map for Black Hole science with LSST.
+In composing it, I have followed the organization of the LSST Science
+Book, specifically Chapter 10 on AGNs.  That way the authors of the
+sub-sections can clearly identify any issues that we have (so far)
+failed to address herein.  
+
+Here we describe the broad ``to do'' list that defines the roadmap for
+all BH science, in addition to focusing on tasks needed for certain
+science cases and also areas where the needs of this group may overlap
+with roadmap plans from other groups.
+
+
+
+\section{AGN Selection and Census}
+
+Black Hole (BH) science will be a major theme for LSST covering
+science topics ranging from the BH-fueled evolution of galaxies, to
+lensed black holes as tools for cosmology, to small-scale physics of
+the BHs themselves using variability and tidal disruptions as probes.
+For all BH science with LSST the first step that must be taken is to
+find the BHs themselves, whether through short-lived transient events
+or longer-lived fueling in the context of active galactic nuclei
+(AGN).  In that sense the primary goal for this roadmap for AGN
+science is seemingly straightforward: identify efficient and complete
+ways to pinpoint the location of black holes on the sky, and, ideally,
+their distance/redshift from us.  In practice the devil is in the
+details and the optimal solution to this problem may be different for
+each of the LSST's BH science goals.
+
+In the past, BH science could afford low efficiency in candidate
+selection because of spectroscopy: even if the majority of targets
+were not BHs, at least that was known.  Today, while we can hope for a
+significant amount of spectroscopy from DESI and/or similar projects,
+it is clear that we will not obtain spectroscopy for tens of millions
+of candidate BHs.  Thus we need to concentrate on going it alone. In
+simplest terms this means identifying BHs with both high completeness
+and high efficiency.
+
+Unfortunately the optimal methods for doing do are not expected to be
+generic for all BH science.  Broadly speaking LSST BH science can be
+divided into the need to identify four types of BHs: unobscured
+quasars, obscured quasars, lower-luminosity AGNs, and transient BH
+fueling events.  This is further complicated by the fact that objects
+in each category may require somewhat different methods as a function
+of redshift and/or by (close) spatial separation.
+
+For example, selection of unobscured quasars can take full advantage
+of the LSST data set: multi-band, multi-epoch optical photometry and
+astrometry, whereas selection of obscured quasars necessarily relies
+on supporting data from outside LSST.  Lower-luminosity AGNs will
+further need to be weeded from (the far more abundant) inactive
+galaxies, and identification of transient-fueled BHs will be limited
+by the number of epochs of detection.  Each of these cases do have a
+similar task need: developing new tools and applying them to simulated
+data.
+
+For unobscured quasars we must optimize the identification of BHs using
+\begin{itemize}
+\item colors
+\item variability
+\item astrometry
+\end{itemize}
+---ideally all three simultaneously.  Moreover, we will have to
+consider the impact of star-galaxy separation (can we use the same
+algorithm(s) regardless of morphology?) and the evolution of these
+properties with redshift.
+
+For obscured quasars, we will necessarily be reliant upon information
+from other sources to confirm the ``active'' nature of what will
+otherwise appear as normal galaxies (or not appear at all) in LSST.
+
+Without a doubt one of the single most important to do items in terms
+of LSST AGN selection is to run simulations that use all 6 LSST bands,
+covering as much area and as many epoch as possible.  Such simulations
+should also include as much physics and empirical correlation as
+possible.  This includes: luminosity-dependence of emission features,
+magnitude-color correlations, variability physics, astrometric errors,
+differential chromatic refraction, nuclear vs. host galaxy luminosity
+correlation [and its relationship to morphology], star-galaxy
+separation, lensing probability, broad absorption lines and dust
+reddening (intrinsics, host galaxy, and intervening). 
+
+Test simulations against real data.
+
+A goal for LSST should be for every science working group to give a
+probability for {\em every} LSST object that it is an object under
+their umbrella.  This information can then be fed back into the
+classification schemes developed by each group.  E.g., an object that
+the AGN group gives a 30\% chance of being an AGN might be downgraded
+if the SNe group flags it as an SN at 99\%.
+
+\subsubsection{Color Selection}
+
+Color-selection by itself is certainly the most mature of the avenues
+for identifying AGNs.  Any application of modern statistical
+techniques such as described by [take REFS from Tina's paper] will be
+a major first step in the process.  
+
+Specific to do items in this regard are to establish an agreed-upon
+test bed of color data and have a ``bake off'' to determine which
+methods are the most effective.  This could include (or be completely
+based upon) simulated data.  
+
+Moreover, it is unlikely that any final method(s) adopted for LSST AGN
+selection will be completely color based, thus it will be important to
+extend such efforts to multi-parameter selection methods using the
+information from the next sections.
+
+Isolation of {\em nuclear} colors through difference imaging may be
+crucial for low-luminosity systems (which will provide the bulk of new
+LSST discoveries).
+
+\subsubsection{Lack of Proper Motion/Astrometry}
+
+While certain quasars and stars can have very similar colors, the fact
+that quasars do not have proper motions as do Galactic stars has long
+been used as a discriminant.  That will be no different for LSST.
+However, even with its precise astrometry, LSST will need to
+distinguish between objects that are apparently moving and those that
+are truly moving and do so as a function of apparent magnitude.
+Simulated data can be used to start this process.
+
+Another task that can begin now is to extend algorithms that use USNO
+data as a time baseline extension to new data from GAIA.  Stripe 82
+data can be used as an LSST-like testbed for this.
+
+A more recent approach has been to take advantage of differential
+chromatics refraction of AGNs (Kaczmarczik et al. 2009).  In short
+this procedure makes use of the astrometric offset of an emission line
+object from that expected (in the astrometric solution) for a
+power-law source.  Peters et al. (2015) have developed a formalism for
+including this information with color information, but more work is
+needed to fully leverage this resource.
+
+\subsubsection{Selection by Variability}
+
+In many ways variability will be the cornerstone of object
+classification for LSST.  However, variability by itself is unlikely
+to be a panacea.  Even for luminous quasars, it has been shown that
+variablity combined with colors works better for selection than
+variability alone (Peters et al. 2015).  
+
+Moreover, for low-luminosity AGNs which are expected to have the most
+variable nuclei, increasing contamination from the host galaxy will
+compromise variability-selection methods if insufficient care is
+taken.  Thus one clear to do item for variability selection is to team
+up with other groups with more expertise in difference imaging in
+order to isolate the variability properties of the {\em nuclear}
+emission.
+
+The next most crucial step for variability analysis may well be
+determining how to make use of {\em all} of the data.  Specifically,
+most current investigations looking at variability only use one
+photometric bandpass, whereas LSST will have 6.  For the $gri$ data,
+it may be sufficient to apply a median-color based offset and treat
+the (non-simultaneous) data as one (e.g., by kriging the data
+together) with better time resolution than would be available with
+just a single band.  The fact that quasars are systematically bluer
+when brighter will add a complication to such efforts, however.  For
+the $z$ and $y$ data, low S/N may make it difficult to treat these
+measurements equivalently to $gri$.  Moreover, the spatial (and thus
+time) separation of $g$ and $y$ could actually degrade the accuracy of
+a merged light curve.  For the $u$-band data, low S/N and sampling of
+the Ly-$\alpha$ forest rather than the quasar continuum at
+high-redshift will add complications.  These are issues that can be
+further investigated with existing (and ongoing) data sets such as
+Stripe 82, DES, and Pan-STARRS.
+
+Lastly, unlike magnitudes which are uniformly measured for all
+objects, light curves are difficult to analyze in a non-parametric
+fashion.  A functional form (or forms) must be agreed upon and it must
+be realized that without an accurate redshift, comparison of
+variability parameters often compares very different rest frames.
+$A$-$\gamma$ is certainly the simplest parameterization, but the
+damped random walk (DRW) is currently the most popular.  Further work
+is needed to determine if these are sufficiently accurate to use or if
+a different parameterization might be more effective.
+
+Work with SDSS Stripe 82 has allowed some early work in this
+direction.  More still needed, possibly taking advantage also of
+Kepler, SDSS-RM, and/or OzDES data.
+
+A/Gamma vs. DRW
+
+observed vs. rest
+
+ugrizy combination
+
+
+\subsubsection{Combination with Multiwavelength Data}
+
+This can be considered more generally as ``other facilities'' as some
+data (e.g., Euclid) may also be in the optical.
+
+
+\subsubsection{Photometric Redshifts}
+
+Photo-z.  Need to reconcile high-L and low-L methods.  Full PDFs.
+
+\subsubsection{Expected Number of AGNs}
+
+Need to update HRH07
+
+\subsection{Luminosity Function}
+
+
+Pre-write QLF and clustering papers based on sims to show expected
+gains if Universe model in sims is correct.
+
+Once found, need to know completeness, efficiency, volume searched.
+
+
+Needed for other things too, but clearly here:
+Precursor observations
+E.g., spectroscopy in DDFs and/or Stripe 82 to serve as truth tables
+for completeness and efficiency and allow for early RM science.
+
+
+\subsection{Clustering}
+
+Pre-write QLF and clustering papers based on sims to show expected
+gains if Universe model in sims is correct.
+
+
+\subsection{Multiwavelength Physics}
+
+Obscured
+
+Some invisible to optical alone but discoverable through combination
+with multi-wavelength data.  So, need to develop formalism for doing
+this.
+
+\subsection{Variability}
+
+Var -- might want different parameterization for physics than for
+selection.  
+
+time-domain science.  Parametrize variability
+
+
+
+
+\subsection{Transient Fueling Events}
+
+\subsection{Gravitational Lenses}
+
+
+
+
+
+
+
+
