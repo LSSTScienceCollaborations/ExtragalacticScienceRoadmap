@@ -189,60 +189,69 @@ ugrizy combination
 
 \subsubsection{Combination with Multiwavelength Data}
 
-This can be considered more generally as ``other facilities'' as some
-data (e.g., Euclid) may also be in the optical.
+The last way that LSST will identify BHs is by combining with multiwavelength data.  This can be considered more generally as ``other facilities'' as some data (e.g., Euclid) may also be in the optical.
 
+We will largely concentrate on the taks needed for obscured quasars and low-luminosity AGNs as multi-wavelength data will likely add only episilon to our efforts robust selection of luminous type 1 quasars.  This is particularly true at high reshift since combining with multiwavelength data generally means focusing on the brightest objects given how much deeper (for a given SED) LSST will reach than the typical IR and X-ray limits (though for small fields [e.g., ECDFS] this will be reversed).  In nearly all cases we will have tiered multiwavelength data to contend with: shallow over a large area to deep over a small area.
+
+For unobscured AGNs multiwavelength data can be used to modify the AGN probabilities for objects on the border; this will be most useful within the context of a probabilistic redshift distribution (see next subsection).  Objects detected in the X-ray or IR with sufficiently high predicted luminosity will have increased AGN probability.  Objects detected in the UV will have significantly decreased AGN probability.
+
+For obscured and low-luminosity AGNs, the optical data from LSST may not be sufficient to identify the object as an AGN.  Some low-luminosity AGNs may be identified as having nuclear variability, but for the faintest objects the errors on the variability will be insufficient for robust classification.  As such, for these classes of objects will we be completely dependent upon multiwavelenth SED fitting and X-ray and/or IR luminosity to identify as AGNs what LSST sees as a galaxy.
+
+Crucial for these endeavors will be the Deep Drilling Fields.  Here is where there exists the most multiwavelength coverage.  The DDFs will serve as a testbed for multiwavelength analysis in larger areas (by allowing us to understand what the brightest objects will look like).  They will also provide the greatest depth (for a given completeness and efficiency) for AGN selection.  Moreover they will have (outside of Stripe 82) the greatest density of spectral coverage and will essentially {\em define} the completeness and efficiency of AGN selection for the full survey area by providing small-area ``truth tables''.  Such work will be crucial for the science efforts discussed below but also for early ``reverberation mapping'' work.
+
+One of the biggest challenges will be conducting a sort of VO-like cataloging of the multiwavelength data that will be used for these efforts.  There may be no practical way to include {\em all} of the multiwavelength data and that task may fall on individual PIs of those programs.  However, LSST should, at the very least identify key deep and wide data sets that should be matched in the course of pre-planned LSST analysis.  Currently the greatest depth of the full sky is 2MASS in the near-IR, WISE in the mid-IR, ROSAT in the X-ray, and NVSS in the radio (soon to be replaced by EMU/Wodan).  Somewhat deeper, but with less coverage we have UKIDSS and VHS in the near-IR; SpIES, SSDF, SERVS, SDWFS, and SWIRE in the mid-IR; the XMM Slew Survey and ChAMP in the X-ray; and GALEX in the UV.   The key deep fields will be located within the DDFs.  [GTR: Add any crucial missing data sets.]
+
+It with the multiwavelength data that true bandmerging will be required.  That is the nearest positional match in another wavelength may not be the correct match to the LSST source.  We must perform an astrophysically based SED matching using a suite of templates to determine the best matches.  Such efforts have already received attention in the literature (e.g., Budavari \& Szalay 2008) and preliminary work can proceed in earnest in the coming years.
 
 \subsubsection{Photometric Redshifts}
 
-Photo-z.  Need to reconcile high-L and low-L methods.  Full PDFs.
+Photo-z methods for AGNs can generally be broken into two methodologies: template-fitting (e.g., Salvato) and empirical (e.g., Richards et al.\ 2001).  Template fitting is the method of choice for objects that exhibit a spectral break that can be used to broadly (perhaps even narrowly) isolate the redshift.   A number of algorithms are in existence: EAZY, LePhare, ZEBRA, to name a few.  Arguably more important that the algorithm is the suite of templates used.   There is no lack of data to test these algorithms and work to chose an optimal algorithm and templates can and should proceed in the next few years.  Indeed, this may not be a separate task from the broader galaxy photo-z efforts.
+
+However, it is know that template fitting algorithms break down for luminous quasars as such objects exhibit no strong spectral break in the LSST filters (with the exception of high-redshift quasars where template fitting can still be effective); see Assef et al.\ 2010.  In these cases empirical methods will be more effective.  Thus one of the short-term tasks for LSST should be an attempt to merge these algorithms or learn how to smoothly morph between them as a function of luminosity should it be found that a single algorithm (and set of templates) is not sufficient.
+
+Regardless of the algorithm LSST astronomers will need to become comfortable with working with photo-z probability distribution functions (PDFs).   That is photo-z's will not consist of single predicted redshifts with errors, but rather will be a vector of probabilities at {\em every} redshift.   Di Pompeo et al.\ 2015 provides an example of analysis performed with photo-z PDFs.
+
 
 \subsubsection{Expected Number of AGNs}
 
-Need to update HRH07
+Currently the prediction for the number of AGNs that LSST will observe is largely based on Hopkins, Richards, \& Hernquist (2007).  That work combined all of the best multiwavelength quasar luminosity functions (across all redshifts) that were available in 2007 and provided code to determine the expected number of {\em all} AGNs at any redshift and luminosity.  However, since that time new work has revealed significant changes in the best-fit luminosity function.  The most obvious is the slope of the bright-end of the QLF at high redshift, which for many years has been thought to be quite flat.  Jiang et al. 20??, McGreer et al.\ 2013, and Ross et al.\ 2013 have subsequently shown that what we thought was the bright end of the QLF at high-z was really the faint end and that the break luminosity is much brighter than expected.   Graphically this can be understood as Figure 10.8 in the LSST Science Book as showing a high-z decline of Lstar (the solid black line) that is too steep.  Practically this means that the number of high-redshift AGNs will change.   Further changes may come from modification of the type 2 to type 1 ratio as a function of luminosity.
+
+What is needed here is for someone to take on the (relatively) thankless task of updating HRH07.  As encouragement, the 500+ citations for HRH07 may mean that this task won't be quite so thankless!
+
 
 \subsection{Luminosity Function}
 
+Despite countless dedicated efforts, it remains true that our understanding of the luminosity function of AGNs is incomplete and a much-improved LF will be a major result from LSST.  Updating HRH07 as noted above is one task that is needed here in the short-term.  Largely this is to ensure that the LF that serves as an {\em input} to LSST simulations is as accurate as possible.
 
-Pre-write QLF and clustering papers based on sims to show expected
-gains if Universe model in sims is correct.
+We emphasize that this task is absolutely {\em not} something that needs to wait for data.  LSST should endeavor to publish a LF paper {\em before} any data are taking---using the simulated data.  Such a paper will serve as a template for data-based analysis in the future, but more importantly will serve as a guide for the expected errors as a function of redshift and magnitude.  Differences between the predicted and observed LFs will guide understanding of differences in BH physics from the predicted model.
 
-Once found, need to know completeness, efficiency, volume searched.
-
-
-Needed for other things too, but clearly here:
-Precursor observations
-E.g., spectroscopy in DDFs and/or Stripe 82 to serve as truth tables
-for completeness and efficiency and allow for early RM science.
-
+Such work will also serve as a guideline for how LSST will determine the completeness, efficiency and total volume searched for a necessarily probabilistic sample.  As already discussed above, precursor spectroscopy, especially in the DDFs and/or Stripe 82 will be needed to serve as truth tables in this analysis.
 
 \subsection{Clustering}
 
-Pre-write QLF and clustering papers based on sims to show expected
-gains if Universe model in sims is correct.
+Some of the greatest gains on BH physics will come from an array of clustering analyses that LSST will uniquely be able to perform.  In large part this comes about because high densities and accurate redshifts are needed to robust clustering analysis.  Currently high densities are not being achieved over sufficient area at high redshift (and interesting depth) and photometric redshift accuracy (largely due to catastrophic errors) is a limiting factor at lower redshifts.  
+
+Most needed here is preliminary work in Stripe 82 where the depth (both in the mid-IR and optical), areal coverage, and existing spectral density provide an excellent testbed.  Stripe 82 also serves as an excellent test for photometric redshift testing.
+
+As with the LF, a series of preliminary clustering papers can be produced in advance of LSST by taking advantage of simulated data.  Particularly interesting will clustering of faint sources at high-redshift, clustering of obscured vs. unobscured AGN, and clustering of hard- vs. soft-spectrum AGNs.  The latter is of interest as even bona-fide quasars are expected to exhibit a large range of masses and accretion rates.
 
 
 \subsection{Multiwavelength Physics}
 
-Obscured
-
-Some invisible to optical alone but discoverable through combination
-with multi-wavelength data.  So, need to develop formalism for doing
-this.
+Much of the work needed here has already been discussed above.  The most challenging will be the fact that some AGNs will be invisible in the optical alone but will be discoverable through combination with multi-wavelength data.  LSST needs to develop formalism for doing this.
 
 \subsection{Variability}
 
-Var -- might want different parameterization for physics than for
-selection.  
-
-time-domain science.  Parametrize variability
-
-
+Again, much of the work needed here has been described above.  However, we emphasize that variability analysis for AGN {\em selection} will necessarily be different from variability analysis for AGN {\em physics}.  The obvious different being the need to work in the rest frame vs.\ the observed frame.  Thus photometric redshifts will play a key role.  Similarly, work needs to be done to determine if the variabiltiy parameterization for selection and physics should be the same or different.
 
 
 \subsection{Transient Fueling Events}
 
+The above text has largely concentrated on identification of relatively long-lived BH fueling events.  Someone should fill in to do items for identification of transient fueling events and for doing BH physics with such events.
+
 \subsection{Gravitational Lenses}
+
+The strong lens working group will have their own road map task list, but beyond robust AGN identification and photometric redshift estimation, gravitational lensing work will also be concerned with morphology, deblending, and lensing galaxy identification.
 
 
 
