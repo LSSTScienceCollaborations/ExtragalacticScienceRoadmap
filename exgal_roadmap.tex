@@ -1,93 +1,110 @@
-% ======================================================================
-%+
-% NAME:
-%   desc_white_paper.tex
-%
-% PURPOSE:
-%   Master latex file for the LSST desc_white_paper
-%
-% COMMENTS:
-%   - Includes Title page, Preface and Introduction, then \includes 
-%     all technical material provided by science collaborations.
-%   - Use make to process, calls pdflatex
-%   - checkbook.csh can be used to check that all inputs are present
-%    
-% INPUTS:
-%   Many and varied, via the \include command for bibliographic reasons
-%     grep '\\include' desc_white_paper.tex
-%
-% OPTIONAL INPUTS:
-%   final           option to make final version
-%
-% OUTPUTS:
-%   desc_white_paper.pdf
-%
-% DEPENDENCIES:
-%   - whitepaper.sty, SciBook.bst
-%   - komascript package, providing the scrbook.cls
-%     http://www.ctan.org/tex-archive/macros/latex/contrib/koma-script/
-%
-% EXAMPLES:
-%   make            produces desc_white_paper.pdf
-%   
-%
-%-
-% ============================================================================
 
-%% LaTeX2e 
 
-\documentclass[11pt,headsepline,cleardoubleempty,twoside,openright]{scrbook}
-% 11pt font
-% Draw a line under the header
-% Don't draw a line or print page numbers when a page is empty
-% Pages are two-sided - so margins alternate
-% Chapters start on the righthand side of the page
+%---------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
 
-\usepackage{whitepaper}
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
 
-\hyphenation{zero-point zero-points}
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+% media9 is for embedding 3D objects, movies, and animations
+%\usepackage{media9}
 
-% ============================================================================
+\usepackage{booktabs}
+\usepackage{pdflscape}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\usepackage{float}
+
 
 \begin{document}
 
-\begin{titlepage}
-\begin{center}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
 
-\vspace*{20mm}
-
+\begingroup
+%\thispagestyle{empty}
+%\begin{tikzpicture}[remember picture,overlay]
+%\coordinate [below=11cm] (midpoint) at (current page.north);
+%\node at (current page.north west)
+%{\begin{tikzpicture}[remember picture,overlay]
+%\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[]{cover_page.pdf}}; % Background image
+%\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering\color{blue}{\fontsize{70}{80}\selectfont Galaxies}\\[15pt] % Book title
+%{\Huge a hands-on introduction}\\[60pt] % Subtitle
+%{\Huge Andrey Kravtsov}}}; % Author name
+%\end{tikzpicture}};
+%\end{tikzpicture}
 {\Huge\bfseries\scshape Large Synoptic Survey Telescope} 
 \linebreak 
 \linebreak 
 {\Huge\bfseries\scshape Galaxies, Dark Matter, and Black Holes: Extragalactic Roadmap} 
-
-\vspace*{20mm}
-
 \input{authorlist}
-
-%\vspace*{\stretch{2}}i
-
-%Version taken out for published draft
-%%% 2012/07/22 - Put in automatic Version Date LatEx for ease of editing
-%%%   Now the Version and Date of the SVN version used to compile will
-%%%   be on the front page of the document.
-%%% To generate a more formal version one may wish to change the following back to the hardcoded version right below the following line.
-\vspace*{5mm}
 \input{VersionDate}
+\vfill
+\endgroup
 
-\end{center}
-\end{titlepage}
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+\newpage
+\thispagestyle{empty}
+\noindent
+\noindent
+\noindent
+\\
+\noindent
+
+Inquiries about this report or its content can be addressed to Brant Robertson ({\tt brant@ucsc.edu}).
+%\newpage
+
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2016 Andrey Kravtsov\\ % Copyright notice
+
+%\noindent \textsc{KICP Press}\\ % Publisher
+
+%\noindent \textsc{http://a-kravtsov.github.io/a304s16/}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, April 2016} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	Table of Contents
+%----------------------------------------------------------------------------------------
+
+\usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\pagestyle{empty} % No headers
 
 \include{abstract}
 
-% ----------------------------------------------------------------------------
 
-\tableofcontents
 
-% ----------------------------------------------------------------------------
+%\chapterimage{simulation_background.png} % Table of contents heading image
 
-% NOTE FROM JAN: The extra white space after each section is due to 
-% using \Chapter for them all, following the Science Book.
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\nopagebreak[4]
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	Chapters
+%----------------------------------------------------------------------------------------
+
+
+% if it ever gets so big as to require Parts
+%\part{Part One}
 
 \include{introduction/introduction}
 
@@ -99,25 +116,54 @@
 
 %\include{matrix/matrix}
 
-% ----------------------------------------------------------------------------
 
-\bibliographystyle{SciBook}
-\bibliography{references.bib}
 
-% ----------------------------------------------------------------------------
+%\chapterimage{ch2_header.png} % Chapter heading image
+%\include{galaxy_formation}
 
-% \appendix
+%\appendix
+%\chapterimage{uvhudf.PNG} 
+%\include{cosmology_distances}
+%\chapterimage{suppl_header.jpg} 
+%\include{supplementary}
+%\chapterimage{python_xkcd2.PNG} 
+%\include{python}
+%\chapterimage{sdss_data_banner.png} 
+%\include{data_access}%\appendix{Practical info on accessing various data sets}
+%\chapterimage{banner_bookshelf.jpg} 
+%\printbibliography
 
-% \setboolean{appendix}{true}
-% \renewcommand\thechapter{\Alph{chapter}}
-% \renewcommand{\chaptermark}[1]{\markboth{Appendix \thechapter: #1}{}}
-% \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
 
-% Appendix content:
+%\cleardoublepage
+%\phantomsection
+%\setlength{\columnsep}{0.75cm}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+%\printindex
 
-%\include{stuff}
+%----------------------------------------------------------------------------------------
 
 \end{document}
 
-% ============================================================================
+%------------------------------------------------
 
+%\section{Figure}\index{Figure}
+
+%\begin{figure}[h]
+%\centering\includegraphics[scale=0.5]{blanton_moustakas_wordcloud.pdf}
+%\caption{Figure caption}
+%\end{figure}
+
+
+\begin{figure}[ht]
+\includemedia[
+label=LG,
+width=0.5\linewidth,height=0.5\linewidth,
+activate=pageopen,
+3Dtoolbar, 3Dmenu,
+3Dviews=dice.vws,
+]{}{fig/LG3d.u3d}
+\end{figure}
+\end{document}
