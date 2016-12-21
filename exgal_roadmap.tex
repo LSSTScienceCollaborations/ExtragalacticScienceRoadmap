@@ -27,7 +27,7 @@
 %----------------------------------------------------------------------------------------
 
 \begingroup
-%\thispagestyle{empty}
+\thispagestyle{empty}
 %\begin{tikzpicture}[remember picture,overlay]
 %\coordinate [below=11cm] (midpoint) at (current page.north);
 %\node at (current page.north west)
@@ -38,12 +38,18 @@
 %{\Huge Andrey Kravtsov}}}; % Author name
 %\end{tikzpicture}};
 %\end{tikzpicture}
-{\Huge\bfseries\scshape Large Synoptic Survey Telescope} 
+%{\Huge\bfseries\scshape Large Synoptic Survey Telescope} 
+{\Huge Large Synoptic Survey Telescope} 
 \linebreak 
 \linebreak 
-{\Huge\bfseries\scshape Galaxies, Dark Matter, and Black Holes: Extragalactic Roadmap} 
+{\Huge Galaxies, Dark Matter, and Black Holes: Extragalactic Roadmap}
+\linebreak
+\linebreak
+%{\paperwidth}{\centering\color{blue}{\fontsize{70}{80}\selectfont Galaxies}
+{\centering
 \input{authorlist}
 \input{VersionDate}
+}
 \vfill
 \endgroup
 
@@ -92,11 +98,12 @@ Inquiries about this report or its content can be addressed to Brant Robertson (
 
 \tableofcontents % Print the table of contents itself
 
-%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
 
 \nopagebreak[4]
 
-\pagestyle{fancy} % Print headers again
+%\pagestyle{fancy} % Print headers again
+\pagestyle{empty} % Print headers again
 
 %----------------------------------------------------------------------------------------
 %	Chapters
@@ -105,13 +112,13 @@ Inquiries about this report or its content can be addressed to Brant Robertson (
 
 % if it ever gets so big as to require Parts
 %\part{Part One}
-
+\pagestyle{empty}
 \include{introduction/introduction}
-
+\pagestyle{empty}
 \include{science_background/science_background}
-
+\pagestyle{empty}
 \include{roadmap/roadmap}
-
+\pagestyle{empty}
 \include{task_lists/task_lists}
 
 %\include{matrix/matrix}
