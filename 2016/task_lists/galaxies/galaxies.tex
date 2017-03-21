@@ -7,7 +7,7 @@
 
 The LSST design, and to a certain extent the design of the data-management
 system, is optimized to carry out the core science mission. For measurements
-of dark-energy, that generally means treating galaxies as "tracer particles" --
+of dark-energy, that generally means treating galaxies as ``tracer particles'' --
 using statistical measures of ellipticity and position provide statistical
 constraints on large-scale structure and cosmic geometry. While many of the
 DESC tasks are directly relevant to studying galaxy evolution, they are 
@@ -21,11 +21,27 @@ years. Of primary importance are tasks that might influence the detailed survey
 design or the algorithms used in the DM to construct catalogs. These are the most
 urgent. Also included are activities that can be reasonably independent of the
 LSST survey design and DM optimization, but which will ensure good support for
-LSST galaxy studies.  
+LSST galaxy studies.
 
-\subsection{Techniques, Algorithms, or Software Development} \label{sec:tasks:gal:precursor}
+\begin{tasklist}{G}
+\tasktitle{Example Task List}
+\begin{task}
+\label{task:label_for_this_task}
+\motivation{Put Science Motivation Here}
+\activities{Described Activities Here}
+\deliverables{
+	Deliverables over the next several years from the activities described above include the following:
+	\begin{enumerate}
+		\item a deliverable
+		\item another deliverable
+	\end{enumerate}
+}
+\end{task}
+\end{tasklist}  
 
-\begin{tasklist}{T}
+\subsection{Techniques, Algorithms, or Software Development} \label{sec:tasks:gal:techniques_and_algorithms}
+
+\begin{tasklist}{G-TAS}
 \tasktitle{Techniques for finding low-surface-brightness features or galaxies}
 % Tidal streams
 % Intracluster diffuse light
@@ -337,26 +353,18 @@ so that the interfaces can be worked out on realistic use cases.
 
 \subsection{Precursor Observations or Synergy with Other Facilities} \label{sec:tasks:gal:precursor}
 
-\begin{tasklist}{T}
+\begin{tasklist}{G-PO}
 \tasktitle{Redshift surveys in the Deep Drilling fields}
 \begin{task}
-\label{task:gal:XXX}
+\label{task:gal:redshift_surveys_dd_fields}
 \motivation{}
 \activities{}
 \deliverables{}
 \end{task}
 
-\tasktitle{Spitzer observations of Deep Drilling fields}
+\tasktitle{Ancillary Data in Deep Drilling fields}
 \begin{task}
-\label{task:gal:XXX}
-\motivation{}
-\activities{}
-\deliverables{}
-\end{task}
-
-\tasktitle{VLA observations of Deep Drilling fields}
-\begin{task}
-\label{task:gal:XXX}
+\label{task:gal:ancillary_data_dd_fields}
 \motivation{}
 \activities{}
 \deliverables{}
@@ -365,7 +373,7 @@ so that the interfaces can be worked out on realistic use cases.
 \tasktitle{Photometric redshift training and calibration}
 % Emphasize differences in requirements relative to DE
 \begin{task}
-\label{task:gal:XXX}
+\label{task:gal:photz_calibration}
 \motivation{}
 \activities{}
 \deliverables{}
@@ -373,7 +381,7 @@ so that the interfaces can be worked out on realistic use cases.
 
 \tasktitle{Joint use of spectroscopic and photometric redshifts}
 \begin{task}
-\label{task:gal:XXX}
+\label{task:gal:spec_plus_phot_redshifts}
 \motivation{}
 \activities{}
 \deliverables{}
@@ -383,14 +391,14 @@ so that the interfaces can be worked out on realistic use cases.
 
 \subsection{LSST-targeted theory or simulations} \label{sec:tasks:gal:simulations}
 
-\begin{tasklist}{T}
+\begin{tasklist}{G-TS}
 \tasktitle{Image simulations of galaxies with complex morphologies}
 % Mergers
 % Tidal features
 % Stellar halos
 % Vary the galaxy-evolution model
 \begin{task}
-\label{task:gal:XXX}
+\label{task:gal:image_simulations}
 \motivation{}
 \activities{}
 \deliverables{}
@@ -401,7 +409,7 @@ so that the interfaces can be worked out on realistic use cases.
 % massive early galaxies
 % extremely supermassive black holdes
 \begin{task}
-\label{task:gal:XXX}
+\label{task:gal:rare_objects}
 \motivation{}
 \activities{}
 \deliverables{}
@@ -410,7 +418,7 @@ so that the interfaces can be worked out on realistic use cases.
 \tasktitle{Cosmic Variance estimators}
 % Develop simple tools...encourage their use
 \begin{task}
-\label{task:gal:XXX}
+\label{task:gal:cv_estimators}
 \motivation{}
 \activities{}
 \deliverables{}
@@ -418,7 +426,7 @@ so that the interfaces can be worked out on realistic use cases.
 
 \tasktitle{Nearby dwarfs: surface brightness fluctuations}
 \begin{task}
-\label{task:gal:XXX}
+\label{task:gal:dwarf_sb_fluctuations}
 \motivation{}
 \activities{}
 \deliverables{}
@@ -426,7 +434,7 @@ so that the interfaces can be worked out on realistic use cases.
 
 \tasktitle{Testing group and void finders}
 \begin{task}
-\label{task:gal:XXX}
+\label{task:gal:group_finders}
 \motivation{}
 \activities{}
 \deliverables{}
@@ -436,22 +444,10 @@ so that the interfaces can be worked out on realistic use cases.
 
 \subsection{Databases and Data Services} \label{sec:tasks:gal:databases}
 
-\begin{tasklist}{T}
+\begin{tasklist}{G-DDS}
 \tasktitle{Data structures to characterize survey biases and completeness}
 \begin{task}
-\label{task:gal:XXX}
-\motivation{}
-\activities{}
-\deliverables{}
-\end{task}
-
-
-\subsection{Databases and Data Services} \label{sec:tasks:gal:databases}
-
-\begin{tasklist}{T}
-\tasktitle{Data structures to characterize survey biases and completeness}
-\begin{task}
-\label{task:gal:XXX}
+\label{task:gal:data_structures}
 \motivation{}
 \activities{}
 \deliverables{}
@@ -463,7 +459,7 @@ so that the interfaces can be worked out on realistic use cases.
 % nearby dwarf candidates
 % morphologically disturbed close pairs
 \begin{task}
-\label{task:gal:XXX}
+\label{task:gal:queries}
 \motivation{}
 \activities{}
 \deliverables{}
@@ -471,7 +467,7 @@ so that the interfaces can be worked out on realistic use cases.
 
 \tasktitle{Compact representations of likelihood functions}
 \begin{task}
-\label{task:gal:XXX}
+\label{task:gal:likelihoods}
 \motivation{}
 \activities{}
 \end{task}

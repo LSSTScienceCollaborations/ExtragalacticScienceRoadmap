@@ -1,0 +1,182 @@
+
+
+%---------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+% media9 is for embedding 3D objects, movies, and animations
+%\usepackage{media9}
+
+\usepackage{booktabs}
+\usepackage{pdflscape}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\usepackage{float}
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+%\begin{tikzpicture}[remember picture,overlay]
+%\coordinate [below=11cm] (midpoint) at (current page.north);
+%\node at (current page.north west)
+%{\begin{tikzpicture}[remember picture,overlay]
+%\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[]{cover_page.pdf}}; % Background image
+%\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering\color{blue}{\fontsize{70}{80}\selectfont Galaxies}\\[15pt] % Book title
+%{\Huge a hands-on introduction}\\[60pt] % Subtitle
+%{\Huge Andrey Kravtsov}}}; % Author name
+%\end{tikzpicture}};
+%\end{tikzpicture}
+%{\Huge\bfseries\scshape Large Synoptic Survey Telescope} 
+{\Huge Large Synoptic Survey Telescope} 
+\linebreak 
+\linebreak 
+{\Huge Galaxies, Dark Matter, and Black Holes: Extragalactic Roadmap}
+\linebreak
+\linebreak
+%{\paperwidth}{\centering\color{blue}{\fontsize{70}{80}\selectfont Galaxies}
+{\centering
+\input{authorlist}
+\input{VersionDate}
+}
+\vfill
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+\newpage
+\thispagestyle{empty}
+\noindent
+\noindent
+\noindent
+\\
+\noindent
+
+The LSST Extragalactic Roadmap represents the collective efforts of more than one hundred scientists to define the critical research activities to prepare our field to maximize
+the science return of the LSST dataset. We want to thank the LSST Corporation for their
+support in developing this Roadmap and for supporting LSST-related science more broadly.
+We also wish to thank the LSST Galaxies Science Collaboration members for their efforts
+over the years in developing the case for extragalactic science with LSST. Lastly, we
+wish to thank Harry Ferguson for his continued efforts to organize this document.\\\\
+Inquiries about this report or its content can be addressed to Brant Robertson ({\tt brant@ucsc.edu}).
+%\newpage
+
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2016 Andrey Kravtsov\\ % Copyright notice
+
+%\noindent \textsc{KICP Press}\\ % Publisher
+
+%\noindent \textsc{http://a-kravtsov.github.io/a304s16/}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, April 2016} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	Table of Contents
+%----------------------------------------------------------------------------------------
+
+\usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\pagestyle{empty} % No headers
+
+\include{abstract}
+
+
+
+%\chapterimage{simulation_background.png} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\nopagebreak[4]
+
+%\pagestyle{fancy} % Print headers again
+\pagestyle{empty} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	Chapters
+%----------------------------------------------------------------------------------------
+
+
+% if it ever gets so big as to require Parts
+%\part{Part One}
+\pagestyle{empty}
+\include{introduction/introduction}
+\pagestyle{empty}
+\include{science_background/science_background}
+\pagestyle{empty}
+\include{roadmap/roadmap}
+\pagestyle{empty}
+\include{task_lists/task_lists}
+
+%\include{matrix/matrix}
+
+
+
+%\chapterimage{ch2_header.png} % Chapter heading image
+%\include{galaxy_formation}
+
+%\appendix
+%\chapterimage{uvhudf.PNG} 
+%\include{cosmology_distances}
+%\chapterimage{suppl_header.jpg} 
+%\include{supplementary}
+%\chapterimage{python_xkcd2.PNG} 
+%\include{python}
+%\chapterimage{sdss_data_banner.png} 
+%\include{data_access}%\appendix{Practical info on accessing various data sets}
+%\chapterimage{banner_bookshelf.jpg} 
+%\printbibliography
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+%\cleardoublepage
+%\phantomsection
+%\setlength{\columnsep}{0.75cm}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+%\printindex
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
+
+%------------------------------------------------
+
+%\section{Figure}\index{Figure}
+
+%\begin{figure}[h]
+%\centering\includegraphics[scale=0.5]{blanton_moustakas_wordcloud.pdf}
+%\caption{Figure caption}
+%\end{figure}
+
+
+\begin{figure}[ht]
+\includemedia[
+label=LG,
+width=0.5\linewidth,height=0.5\linewidth,
+activate=pageopen,
+3Dtoolbar, 3Dmenu,
+3Dviews=dice.vws,
+]{}{fig/LG3d.u3d}
+\end{figure}
+\end{document}

@@ -1,19 +1,15 @@
 
+%% 1998/08/12  J Baker
+%% Tweaked by hand to get correct results for ApJ.  Added functions from
+%% astrobib.
+
 %% $Log: apj.bst,v $
-%% Revision 1.4  2002/06/18 16:37:48  alberto
-%% Add comma after first author in two-author reference
-%% Fix courtesy of Tim Robishaw <robishaw@astron.berkeley.edu>
-%%
 %% Revision 1.3  2000/04/20 22:17:50  jbaker
 %% Fixed INBOOK bug, now works essentially like BOOK.
 %%
 %% Revision 1.2  1998/08/30 22:35:45  jbaker
 %% Added RCS keywords.
 %%
-%% 1998/08/12  J Baker
-%% Tweaked by hand to get correct results for ApJ.  Added functions from
-%% astrobib.
-
 
 %%
 %% This is file `apj.bst',
@@ -391,26 +387,17 @@ FUNCTION {format.names}
 { 's :=
   #1 'nameptr :=
   s num.names$ 'numnames :=
-
   numnames 'namesleft :=
     { namesleft #0 > }
-    { 
-      s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=
+    { s nameptr
+      "{vv~}{ll}{, jj}{, f.}" format.name$
+    't :=
       nameptr #1 >
         {
-          #8 numnames <
-	    { #0 'namesleft := }
-            'skip$
-          if$
           namesleft #1 >
             { ", " * t * }
             {
-                numnames #1 >
-%% AA 6/18/2002
-%% This fix courtesy of Tim Robishaw <robishaw@astron.berkeley.edu>:
-%% Original version left comma out after initials of first author
-%% for two-author papers!!
-%%              numnames #2 >
+              numnames #2 >
                 { "," * }
                 'skip$
               if$
@@ -418,8 +405,7 @@ FUNCTION {format.names}
                 { 't := }
                 { pop$ }
               if$
-              %t "others" =
-              #8 numnames <
+              t "others" =
                 {
                   " {et~al.}" *
                 }
