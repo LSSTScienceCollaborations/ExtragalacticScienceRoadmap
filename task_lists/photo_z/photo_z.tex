@@ -1,7 +1,15 @@
 \section{Photometric Redshifts}\label{sec:tasks:photo_z}  
 
-Summary
-
+For a photometric survey like LSST, the ability to measure
+vast distances to galaxy samples, understand the time evolution
+and spatial clustering of galaxy populations, surmise the
+stellar mass, age, and metallicity of objects, and to identify
+unusual objects at various cosmic epochs relies heavily on
+methodologies for constructing photometric redshifts from the data.
+The following important preparatory science tasks address both the
+systematic uncertainties on photometric redshifts associated
+with the LSST observatory and with the requisite
+stellar population synthesis models.
 
 \begin{tasklist}{PZ}
 \subsection{Impact of Filter Variations on Galaxy photo-z Precision}
@@ -12,11 +20,11 @@ Summary
 For accurate photometric redshifts, well calibrated photometry is essential.  Variations in the telescope system, particularly the broad-band ugrizy filters, will need to be very well understood if we are to meet the stringent LSST calibration goals.  Photometry will be impacted by multiple factors that may vary as a function of position and/or time.  The position of the galaxy in the focal plane will change the effective throughput both due to the angle of the light passing through the filter, and potential variations in the filter transmission itself due to coating irregularities across the physical filter.  The spatially correlated nature of these effects can induce scale-dependent systematics that could be particularly insidious for measurements of local environment and clustering.  The nominal plan from LSST Data Management is to correct for variations across the focal plane.  Such corrections will be SED dependent, and may leave residuals, particularly for specific populations with unusual SEDs.  Tests of the amplitude of these residuals, and the impact on photo-z as a whole, and for particular object classes, is an important consideration.  Beyond this, if the variations turn out to be very well calibrated, they could potentially be used to further improve, rather than degrade, photo-z performance.  The variations in filter response can offer up additional a small amount of extra information on the object SED, given the slight variation in effective filter wavelength, particularly for objects with strong narrow features, i.e. emission lines.  Tests of how much information is gained can inform whether or not the extra computational effort used in computing photo-z’s from many slightly different filters as opposed to measurements corrected to the six fiducial filters of the survey.
 }
 \activities{
-XXX}
+Tests of the SED-dependent residuals in photometric redshifts induced by photometric calibration systematics.}
 \deliverables{Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item AAA
-\item BBB
+\item Improved photometric calibration for LSST across all pass bands.
+\item Identification of SED classes where photometric redshift failures are prominent.
 \end{enumerate}
 }
 \end{task}
@@ -29,12 +37,12 @@ XXX}
 The LSST Deep Drilling Fields present different challenges than the main survey, including more confusion between sources, and the ability to use the best subsets of the images due to their being many repeat observations. These properties allow investigations of galaxies of brightness close to the noise in the main survey at higher signal to noise.
 }
 \activities{
-Assessing robustness of photo-zs with spectroscopic surveys will be difficult at the faintest fluxes, relationship to clustering redshifts important. 
+Assessing robustness of photo-zs with spectroscopic surveys will be difficult at the faintest fluxes, but the relationship to clustering redshifts is critically important. 
 }
 \deliverables{Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item AAA
-\item BBB
+\item {\bf TBD}
+\item {\bf TBD}
 \end{enumerate}
 }
 \end{task}
@@ -70,8 +78,8 @@ Require deep spectroscopic redshift data in order to help train algorithms, impr
 } 
 \deliverables{Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item AAA
-\item BBB
+\item {\bf TBD}
+\item {\bf TBD}
 \end{enumerate}
 }
 \end{task}
