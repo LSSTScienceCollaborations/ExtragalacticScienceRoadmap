@@ -1,48 +1,54 @@
 \section{Photometric Redshifts}\label{sec:tasks:photo_z}  
-
-For a photometric survey like LSST, the ability to measure
-vast distances to galaxy samples, understand the time evolution
-and spatial clustering of galaxy populations, surmise the
-stellar mass, age, and metallicity of objects, and to identify
-unusual objects at various cosmic epochs relies heavily on
-methodologies for constructing photometric redshifts from the data.
-The following important preparatory science tasks address both the
-systematic uncertainties on photometric redshifts associated
-with the LSST observatory and with the requisite
+{\justify
+For a photometric survey like LSST, our abilities to accurately measure distances to huge samples of galaxies, to constrain the stellar masses, ages, and metallicities of objects as a function of time, to measure the spatial clustering of galaxy populations, and to identify unusual objects at various cosmic epochs will all rely heavily on
+photometric redshift measurements.
+The following important preparatory science tasks address both the systematic uncertainties on photometric redshifts associated with the LSST observatory and with the requisite
 stellar population synthesis models.
 
+It is important to note that a major effort within the LSST Dark Energy Science Collaboration (DESC) is focused on the development of photometric redshift algorithms for LSST, including the incorporation of joint probability distributions between redshift and astrophysical parameters of interest for the study of galaxy evolution.  Efforts within the Galaxies collaboration should be able to leverage work happening in DESC and build upon it to ensure that photometric redshifts optimized for galaxy science are available.
+
 \begin{tasklist}{PZ}
-\subsection{Impact of Filter Variations on Galaxy photo-z Precision}
-\tasktitle{Impact of Filter Variations on Galaxy photo-z Precision}
+\subsection{Impact of Filter Variations on Galaxy photo-$z$ Precision}
+\tasktitle{Impact of Filter Variations on Galaxy photo-$z$ Precision}\label{pzfiltervar}
 \begin{task}
 \label{task:photo_z:filter_variations}
 \motivation{
-For accurate photometric redshifts, well calibrated photometry is essential.  Variations in the telescope system, particularly the broad-band ugrizy filters, will need to be very well understood if we are to meet the stringent LSST calibration goals.  Photometry will be impacted by multiple factors that may vary as a function of position and/or time.  The position of the galaxy in the focal plane will change the effective throughput both due to the angle of the light passing through the filter, and potential variations in the filter transmission itself due to coating irregularities across the physical filter.  The spatially correlated nature of these effects can induce scale-dependent systematics that could be particularly insidious for measurements of local environment and clustering.  The nominal plan from LSST Data Management is to correct for variations across the focal plane.  Such corrections will be SED dependent, and may leave residuals, particularly for specific populations with unusual SEDs.  Tests of the amplitude of these residuals, and the impact on photo-z as a whole, and for particular object classes, is an important consideration.  Beyond this, if the variations turn out to be very well calibrated, they could potentially be used to further improve, rather than degrade, photo-z performance.  The variations in filter response can offer up additional a small amount of extra information on the object SED, given the slight variation in effective filter wavelength, particularly for objects with strong narrow features, i.e. emission lines.  Tests of how much information is gained can inform whether or not the extra computational effort used in computing photo-z’s from many slightly different filters as opposed to measurements corrected to the six fiducial filters of the survey.
+For accurate photometric redshifts, well-calibrated photometry is essential.  Variations in the telescope system, particularly the broad-band $ugrizy$ filters, will need to be very well understood if we are to meet the stringent LSST calibration goals.  Photometry will be impacted by multiple factors that may vary as a function of position and/or time.  The position of the galaxy in the focal plane will change the effective throughput both due to the angle of the light passing through the filter, and potential variations in the filter transmission itself due to coating irregularities across the physical filter.  Preliminary tests show that the filter variation may have a relatively small impact, but further tests are necessary to ensure that these variations will not dominate the photometric error budget.\\
+~\\
+In addition, the effective passbands of the LSST filters will depend significantly upon atmospheric conditions and airmass, particularly in the $y$ filter.  The spatially correlated nature of these effects can induce scale-dependent systematics that could be particularly insidious for measurements of large-scale environment and clustering.  The nominal plan from LSST Data Management is to correct for variations across the focal plane or between, incorporating approximate models for galaxy SEDs (which may be based upon photometric redshift estimates).  Such corrections may be imperfect and leave residuals, particularly for specific populations with unusual SEDs.~\\
+~\\
+Tests of the amplitude of these residuals and their impact on photo-$z$'s, especially for particular object classes of interest, will be important for determining to what degree DM data products can be used directly for galaxies work.If the variations can be calibrated well, they could potentially be used to further improve, rather than degrade, photo-$z$ performance.  The variations in filter response can offer up a small amount of extra information on the object SED given the slight variation in effective filter wavelength, particularly for objects with strong narrow features (i.e., emission lines).  Tests of how much information is gained can inform whether or not the extra computational effort required for computing photo-$z$’s that incorporate the effective passband from every individual LSST observation of an object will be superior to estimates incorporating DM measurements corrected to the six fiducial filters of the survey.  All topics discussed above are also being examined by the LSST Dark Energy Science Collaboration Photometric Calibration working group, and there are several related tasks described in the DESC Science Roadmap document\footnote{The DESC Science Roadmap is available at: \url{http://lsst-desc.org/sites/default/files/DESC_SRM_V1_0.pdf}}.  Communication and coordination with the Photometric Calibration group will be very important to maximize the impact of work on these areas of shared interest.
 }
+~\\
 \activities{
-Tests of the SED-dependent residuals in photometric redshifts induced by photometric calibration systematics.}
+Tests of the SED-dependent residuals in photometric redshifts induced by photometric calibration systematics at the expected level.}
+~\\
 \deliverables{Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item Improved photometric calibration for LSST across all pass bands.
-\item Identification of SED classes where photometric redshift failures are prominent.
+\item Quantification of the amplitude of photometric uncertainties in the LSST filters due to variation in filter throughputs and atmospheric transmission.
+\item Identification of SED classes where residuals in DM calibration of effective passbands will be prominent.
 \end{enumerate}
 }
 \end{task}
 
-\subsection{Photometric Reshifts in the LSST Deep Drilling Fields}
-\tasktitle{Photometric Reshifts in the LSST Deep Drilling Fields}
+\subsection{Photometric Redshifts in the LSST Deep Drilling Fields}
+\tasktitle{Photometric Redshifts in the LSST Deep Drilling Fields}
 \begin{task}
 \label{task:photo_z:ddf}
 \motivation{
-The LSST Deep Drilling Fields present different challenges than the main survey, including more confusion between sources, and the ability to use the best subsets of the images due to their being many repeat observations. These properties allow investigations of galaxies of brightness close to the noise in the main survey at higher signal to noise.
+The LSST Deep Drilling Fields present different challenges than the main survey, including increasing rates of confusion between sources, but they also provide the ability to use subsets of the data to construct higher resolution images due to the large number of repeat observations. These properties allow investigations of galaxies of brightness which are close to the noise floor in the main survey.  Having an accurate error model is essential for optimal photo-z performance; the larger number of repeat observations in the Deep Drilling Fields enables empirical checks on the magnitude and flux uncertainties generated by the LSST pipeline, through both higher signal-to-noise stacks and using subsets of the data to model the uncertainties.  As LSST imaging data will not be available for several more years, such studies of subset stacks to examine seeing and error properties would have to use pre-existing data sets, e.~g.~Hyper Suprime Camera data, when testing such algorithms and putting needed infrastructure in place so that it can be used once LSST data is flowing.\\~\\
+In addition to providing useful information about main-survey photometric redshift quality, the Deep Drilling Fields will pose particular challenges for photometric redshift determination, as spectroscopy for complete samples down to the DDF depth for photo-$z$ training and calibration will be completely infeasible, and the DDF area is likely too small for high-precision calibration by cross-correlation techniques.  
 }
+~\\
 \activities{
-Assessing robustness of photo-zs with spectroscopic surveys will be difficult at the faintest fluxes, but the relationship to clustering redshifts is critically important. 
+Tests of confusion limits in deeper coadds than available in the main survey, as well as improvements enabled by ''best seeing" subsamples on precursor data sets.  Tests of the flux error model using subsets and higher signal-to-noise coadds. 
 }
+~\\
 \deliverables{Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item {\bf TBD}
-\item {\bf TBD}
+\item Studies of confusion and deblending in deep stacks and ``best seeing" conditions using precursor data sets.
+\item Estimates of gains in studying faint galaxy populations at higher signal-to-noise than available in the main survey.
+\item A check on LSST flux error models using both higher signal-to-noise coadds and subsets of the data to main survey depth using precursor data sets. 
 \end{enumerate}
 }
 \end{task}
@@ -52,17 +58,25 @@ Assessing robustness of photo-zs with spectroscopic surveys will be difficult at
 \begin{task}
 \label{task:photo_z:physical_properties}
 \motivation{
-The knowledge of the derived physical properties underlies much of the work involving galaxies and their evolution. Derived physical properties include, among others: star formation rate (SFR), stellar mass ($M_\star$), specific SFR (sSFR), dust attenuation, and stellar metallicity. When it comes to scientific analysis, in recent years the derived physical properties have largely supplanted fluxes and luminosities in the UV, optical and near-IR bands. This is because derived properties require no redshift (K) corrections, are dust-corrected, and are therefore easier to relate across surveys and studies and to compare with the models. Stellar mass has emerged as a parameter of choice for selecting galaxy types and making apple-to-apple comparisons of galaxies at different redshifts. The sSFR (current SFR normalized by stellar mass) provides a rough estimate of galaxy’s SF history. Dust attenuation and stellar metallicity are also indicative of various processes important for understanding galaxy evolution.
+Measurements of key derived physical properties are critical for much work on galaxies and their evolution. The properties measurable from SEDs include star formation rate (SFR), stellar mass ($M_\star$), specific SFR (sSFR), dust attenuation, and stellar metallicity.\\ 
+~\\
+Many recent science analyses have relied upon derived physical properties rather than fluxes and luminosities in the UV, optical and near-IR bands. This is largely a matter of convenience: utilizing tables of derived properties require no redshift (K) corrections or extra dust corrected, as those are effectively applied in the measurement process; they are also closer to the quantities best determined in simulations.  However, derived quantities have the disadvantage of the potential for significant systematic errors in measurement, as well as non-uniformity in their definition (e.g., differences in adopted IMF can change stellar masses by $\sim 0.5$ dex).  \\~\\ 
+Stellar mass has emerged as a parameter of choice for selecting galaxy samples and attempting to make apples-to-apples comparisons of galaxies at different redshifts. The sSFR (current SFR normalized by stellar mass) provides a measure of a galaxy’s star formation history. Dust attenuation and stellar metallicity can help to probe processes important for understanding galaxy evolution.\\
+~\\
+This Task shares some goals with the Dark Energy Science Collaboration Photometric Redshifts working group, as laid out in their Science Roadmap (see ~\ref{pzfiltervar} footnote for document link), who are also interested in multidimensional probability density functions joint in redshift and stellar mass, star formation rate, and dust content of the galaxies.  Coordination on this area with the DESC Photo-z working group will benefit both groups.
 }
+~\\
 \activities{
-Deriving physical properties, usually accomplished by spectral energy distribution (SED) fitting, is an involved process and the results depend on the number of factors, including: underlying population models, assumed dust attenuation law, assumed star formation histories, choice of model priors, choice of IMF, emission line corrections, choice of input fluxes, type of flux measurements, treatment of flux errors, SED fitting methodology, interpretation of the resulting probability distribution functions (PDF) (e.g., Salim et al. 2016). In the case of LSST, the additional challenge is that the redshifts are for the most part photometric, and carry a PDF (a measure of uncertainty) of their own. In principle, the redshifts could be determined as part of the SED fitting (and vice versa, physical parameters can be obtained from some photo-z codes), but it is not clear whether this joint approach is the best. Alternatives are to use empirical training sets to obtain the photo-z (some “best” estimate or a PDF) and then feed it into the SED fitting code.
-\\
-Activities will consist of testing whether the determination of physical parameters and photo-z should be performed jointly or not, based on training sets with spectroscopic redshifts, at a range of redshifts. Furthermore, testing should be performed on mock galaxies to understand which choices of methods and assumptions (specifically related to LSST data) produces the best results in the sense of retrieving the “known” properties.
+Deriving physical properties, usually accomplished by spectral energy distribution (SED) fitting, is an involved process and the results depend on a number of factors, including the underlying population models, assumed dust attenuation law, assumed star formation histories, choice of model priors, choice of IMF, emission line corrections, choice of input fluxes, type of flux measurements, treatment of flux errors, SED fitting methodology, and interpretation of the resulting probability distribution functions \citep[PDFs; e.g.,][]{salim2016a}.\\ 
+~\\
+In the case of LSST, an additional challenge is that the redshifts available will generally be photometric, and carry a PDF (a measure of uncertainty) of their own. In principle, the redshift and SED (or specific physical parameter) should be determined simultaneously, as the inferred galaxy properties such as luminosity and stellar mass are correlated with redshift.  One alternative approach is to estimate the redshift PDF using empirical training sets, then estimate best fitting SEDs at each redshift to determine physical parameters.  This approximation enables the use of potentially more accurate machine learning based methods to estimate the redshift PDF, at the possible expense of adding biases and degeneracies due to the assumptions inherent in treating the redshift and physical properties separately.  Further study is necessary to determine whether the benefits of this approximation outweigh the drawbacks.
+Activities will consist of testing whether the determination of physical parameters and photo-$z$ should be performed jointly or not, based on training sets with spectroscopic redshifts at a range of redshifts.
 }
+~\\
 \deliverables{Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item Pre-LSST: A set of guidelines as to optimal practices regarding the derivation of both the photo-z and properties, together with the software to be used.
-\item  With LSST data: the production of catalogs of properties to be used by the collaboration.
+\item Pre-LSST: A set of guidelines as to optimal practices regarding the derivation of both the photo-$z$ and properties, together with the software to be used.
+\item  With LSST data: in consultation with the DESC Photo-z working group, the production of catalogs of properties to be used by the collaboration.
 \end{enumerate}
 }
 \end{task}
@@ -72,42 +86,16 @@ Activities will consist of testing whether the determination of physical paramet
 \begin{task}
 \label{task:photo_z:specz_training_sets}
 \motivation{
-Require deep spectroscopic redshift data in order to help train algorithms, improve algorithms with clustering etc, and also provide a basis for determining accuracy of photo-z algorithms. 
+Accurate photometric redshift estimates require deep spectroscopic redshift data in order to help train algorithms, either directly in the case of machine learning based algorithms, or to train Bayesian priors and adjust zero points, transmission curves, or error models for template-based methods.  Representative spectroscopic samples can be used to investigate the accuracy of photo-$z$ algorithms. Obtaining representative training sets is a problem across multiple science tasks, and in fact, across many current and upcoming large surveys.  As the telescope resources necessary will be quite extensive, coordination with the other large surveys is essential.  A detailed study of spectroscopic training needs and potential spectroscopic instruments that will be available in the coming years was undertaken by \citet[]{newman2015a}.  We must now begin our attempts to obtain the necessary samples.  We must also identify any needs that are unique to galaxy science that may not be prioritized in the cosmology-focused efforts to date, e.~g.~are faint galaxy populations sampled adequately in the planned spectroscopic samples?
 }
-\activities{Collate existing spectroscopic redshift data over both DDF and wider fields, along with selection biases for each spectroscopic data set. Assess robustness of existing data, determine colour space where existing surveys lack statistics. Apply for additional spectroscopy to fill in parameter space not already covered by existing surveys.
+~\\
+\activities{In coordination with other large surveys, collate existing spectroscopic redshift data over both DDF and wider fields, and assess the biases due to selection and redshift incompleteness for each spectroscopic data set. Assess the robustness of existing data, and determine color spaces where existing surveys lack statistics. Apply for additional spectroscopy to fill in parameter space not already covered by existing surveys.  This work should become much more efficient once PFS and MOONS become available.  
 } 
+~\\
 \deliverables{Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item {\bf TBD}
-\item {\bf TBD}
-\end{enumerate}
-}
-\end{task}
-
-\subsection{Develop Techniques to Identify Specific Sub-Populations of Galaxies}
-\tasktitle{Develop Techniques to Identify Specific Sub-Populations of Galaxies}
-\begin{task}
-\label{task:photo_z:subpops}
-\motivation{ Studying properties related with the star formation activity of galaxies, such as color and specific star formation rate (sSFR), as a function of mass, environment and redshift is relevant for understanding the different physical processes in galaxy formation and evolution. The aim is to develop techniques in order to identify specific sub-populations with the aforementioned properties (e.g. blue/star-forming and red/quenched galaxies) based on photometric data. Another interesting sub-population is galaxies which contain an active nucleus. The identification of AGN candidates will also be explored. 
-\\
-This task is potentially cross-cutting with the theory/mock catalogs, machine learning, clusters, lss, AGN, and DESC working groups and collaborations.
-}
-\activities{
-We can use simulations and mock catalogs to obtain prior estimates of the calibrations used to identify specific galaxy sub-populations. These calibrations will depend on mass and redshift (z). One technique to explore is fitting two Gaussians to the corresponding color and sSFR distributions in different mass and redshift bins to identify populations of red and blue galaxies.  It is important that the mass definition assumed in the mocks be comparable to that estimated for observations. Note that the stellar mass would be used as the alpha parameter in the joint probability distribution functions, p(z,alpha). 
-\\
-Furthermore, we will make efforts to identify AGNs to obtain a sample of AGN candidates and, also, isolate them from “normal” galaxy samples without AGNs. The information of color and star formation described above can be used for this aim.
-\\
-The techniques can be probed as a function of environment, which can be defined using different approaches at both small and large scales (e.g. number of neighbor galaxies, location in large-scale structures such as filaments, voids, knots, or Voronoi tessellation techniques). This would enable the characterization of galaxy sub-populations according to the environment.  The resulting galaxy sub-populations can be used as training sets to be implemented on machine learning models.
-}
-\deliverables{Deliverables over the next several years from the activities described above include the following:
-\begin{enumerate}
-\item Obtaining mass from mock catalogs compatible with the mass used in p(z,mass).
-\item Developing techniques that depend on this mass and redshift using mock catalogs for selecting samples with red/blue colors.
-\item Developing multiple techniques that depend on this mass and redshift using mock catalogs for selecting star-forming/quenched samples. 
-\item Developing techniques that may depend on star formation, color and redshift for selecting AGN samples.
-\item Defining several environment estimators in simulated datasets.
-\item Probing techniques in b), c) and d) as a function of the environments defined in e).
-\item Obtaining training sets to be implemented on machine learning models.
+\item A list of existing {\it robust} spectroscopic objects, and identified gaps in the currently available training samples.
+\item Telescope proposals for spectroscopic campaigns to fill in the sample gaps.
 \end{enumerate}
 }
 \end{task}
@@ -117,41 +105,58 @@ The techniques can be probed as a function of environment, which can be defined 
 \begin{task}
 \label{task:photo_z:color_simulations}
 \motivation{
-As representative samples of spectroscopic redshifts will be very difficult to compile for LSST, simulations will play a key role in calibrating estimates of physical properties such as galaxy stellar mass, star formation rate, and other properties.  This is particularly problematic for photometric surveys, where photometric redshift and physical property estimates must be calculated jointly.  In addition, we must include prominent effects that will influence the expected photometric performance, for example the presence of an active galactic nucleus can significantly impact the color of a galaxy and the inferred values for the physical parameters, so models of AGN components of varying strength must be included in the simulations.  Many current generation simulations cannot or do not simultaneously match observed color distributions and physical property characteristics for the galaxy population at high redshift.  As photo-z algorithms are highly dependent on accurate photometry, realistic color distributions are required to test the bivariate redshift-physical property estimates.  Working with the galaxy simulations and high redshift galaxy working groups to develop new simulations with more accurate high redshift colors is a priority.  These photo-z needs are not unique, and the improved simulations will benefit the wider Collaboration as a whole.
+As representative samples of spectroscopic redshifts will be very difficult to compile for LSST, simulations will play a key role in calibrating estimates of physical properties such as galaxy stellar mass, star formation rate, and other properties.  This is particularly problematic for photometric surveys, where photometric redshift and physical property estimates must be calculated jointly.  In addition, we must include prominent effects that will influence the expected photometric performance; for example, the presence of an active galactic nucleus can significantly impact the color of a galaxy and the inferred values for the physical parameters, so models of AGN components of varying strength must also be included in simulations.  \\
+~\\ 
+  Many current-generation simulations cannot or do not simultaneously match observed color distributions and physical property characteristics for the galaxy population at high redshift.  As photo-$z$ algorithms are highly dependent on accurate photometry, realistic color distributions are required to test the bivariate redshift-physical property estimates.  Working with the galaxy simulations and high redshift galaxy working groups to develop new simulations with more accurate high redshift colors is a priority.  These photo-$z$ needs are not unique, and the improved simulations will benefit both the Galaxies Collaboration and other science collaborations.  Indeed, one fruitful way to proceed with this work may be to incorporate new tests into the DESCQA framework being used by the LSST Dark Energy Science Collaboration to improve mock catalogs for DESC work (Mao et al. 2017, in prep.).
 }
+~\\
 \activities{
-The main activity for this task is to bring together the knowledge gained from observational studies of high redshift galaxies to act as input for improved simulation metrics.  This will require expertise from the photo-z group, the high redshift galaxies group, the AGN group, and the simulations group. In order to test whether mock high-z populations agree with the real Universe, we must have some real data to compare against, even if it is a luminous subsample or only complete in certain redshift intervals.  Once such comparison datasets are established, metrics can be developed to determine which simulations and simulation parameters most accurately reproduce the observed galaxy distributions.  Assuming that the simulations are valid beyond the test intervals, we can then test bivariate photo-z/physical process determinations to develop improved algorithms.  
+The main activity for this task is to develop improved simulation metrics based upon observational studies of both low- and high-redshift galaxies.  This will require expertise from the photo-$z$  high-redshift galaxies, AGN, and simulations working groups. In order to test whether mock galaxy populations agree with the real Universe, we must have some real data to compare against, even if it is a luminous subsample or only complete in certain redshift intervals.  Once such comparison datasets are established, metrics can be developed to determine which simulations and simulation parameters most accurately reproduce the observed galaxy distributions.\\   
+~\\
+If we then assume that the simulations are valid beyond the test intervals, we can use them as a testbed to develop improved algorithms for a wide variety of applications, e.~g.~selecting specific sub-populations of galaxies.  
+One key aspect of this work is that spectral energy distributions in simulations cannot be generated from discrete templates, but instead must span a continuous range of properties. If only a finite set of restframe SEDs are used in the simulation, the photo-$z$ problem would be unnaturally simplified and  falsely strong photometric redshift predictions would result. Thus a method is required that simultaneously reproduces galaxy colors without resorting to a restricted set of SEDs. For example, this could be done by creating complete SEDs based  on an extended set of principal components (e.g., extending the $kcorrect$ or EAZY basis set), though in general additional constraints are required with PCA-like techniques to ensure that unphysical spectra are not generated.\\
+~\\
+With sufficiently realistic simulations that reproduce the ensemble of galaxy star formation histories and the mapping between those histories and spectral energy distributions, we can use simulated catalogs to test techniques for identifying specific galaxy sub-populations.  For some studies, we may wish to examine the relationship between galaxies in specific sub-populations and their large-scale structure environment.  Thus, realistic density and clustering properties are also important in the simulation.  There are a wide variety of techniques that may be used for environmental measures, operating on a variety of scales. As small-scale measurements can be noisy and/or washed out by photometric redshift errors, it may be more effective to measure the average overdensity/environment as a function of galaxy properties, rather than the reverse.\\
+~\\
 }
+~\\
 \deliverables{Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
 \item Determination of a list of which physical parameters are important for galaxy science.
 \item Compiling observable datasets that can be used as comparators for simulated datasets.
-\item Developing a set of metrics to compare simulations to the observational data.
+\item Developing a set of metrics to compare simulations to the observational data.  These may be implemented in the DESCQA framework.  
 \item Use the metrics in deliverable B to create updated simulations with more realistic parameter distributions.
 \item Development of improved joint estimators for redshift and physical properties (M*, SFR, etc.).
+\item Development of improved spectral extended basis sets to create galaxy colors which match observations, including emission lines, etc.
+\item Using mock catalogs, developing techniques that for selecting specific galaxy sub-samples.
+\item Developing environment estimators for simulated datasets and algorithms able to measure the strength of environmental dependence on galaxy properties.
 \end{enumerate}
 }
 \end{task}
 
-\subsection{Using Galaxy Size and Surface Brightness distributions as Photo-z Priors}
-\tasktitle{Using Galaxy Size and Surface Brightness distributions as Photo-z Priors}
+\subsection{Incorporating Galaxy Size and Surface Brightness into Photometric Redshift Estimates}
+\tasktitle{Incorporating Galaxy Size and Surface Brightness into Photometric Redshift Estimates}
 \begin{task}
 \label{task:photo_z:size_and_sb_priors}
 \motivation{
-Photometric redshift algorithms traditionally use galaxy fluxes and/or colors alone to estimate redshifts.  However, morphological information in the form of the galaxy’s size/shape/surface brightness (SB) profile adds additional information that can aid in constraining both the redshift and type of the galaxy, breaking potential degeneracies that using colors alone would miss.  Adding type information beyond just the rest frame SED may help to constrain bivariate galaxy properties that correlate with morphological type as well.  If sufficient training samples are available, a Bayesian prior on colors and SB profile, p(z|C,SB), can be constructed that should lead to improved photometric redshifts.
+Photometric redshift algorithms most commonly have used galaxy fluxes and/or colors alone to estimate redshifts.  However, morphological information on a galaxy’s size, shape, overall surface brightness (SB), or detailed surface brightness (SB) profile can provide additional information that can aid in constraining the redshift and/or type of a galaxy, breaking potential degeneracies that using colors alone would miss.  Gains can be particularly substantial at low redshift where LSST will at least partially resolve galaxies.  Incorporating morphological information may help to improve joint predictions for galaxy properties and redshift as well, at the cost of imposing assumptions about links between morphology and color/SED that may not apply to all galaxies. 
+If sufficient training samples are available, priors for redshift and SED parameters given morphological parameters, $p(z, SED | P)$, can be constructed that can be incorporated into Bayesian analyses of photometric redshifts and potentially lead to improved constraints on the redshift PDF (i.e., $p(z | P, C )$ , where $P$ represents observed morphological parameters, $C$ represents observed flux/color measurements, and $SED$ represents one or more parameters representing the restframe SED of a galaxy).
 }
+~\\
 \activities{
-The primary activity in this task is to develop an algorithm to compute a parameterized SB profile fit (e.g. Sersic index, though other measures may be appropriate) for a large number of galaxies.  The algorithm must be fast enough to compute SB profiles for large numbers of galaxies.  Simulated datasets may be necessary to calibrate this code in the limits of galaxy sizes approaching the size of the PSF, and in the limit of low signal-to-noise ratios.  With SB measurements in hand, the computation of a Bayesian prior on redshift given galaxy photometry and SB.  This can be done with either simulated datasets, or real observations with spectroscopic redshifts.  Tests will then show the performance of such a prior relative to using galaxy photometry alone. 
+The first activity for this task will be to assess whether LSST Data Management algorithms for multiple-Sersic model fits to galaxy photometry are sufficient for the needs of this working group. Evaluation of DM pipeline-processed precursor datasets in regions with HST imaging may be particularly valuable.
+With measures of morphological parameters in hand, a useful next step would be to evaluate whether photometric redshift estimates in fact improve with the incorporation of morphological information (in the domain where training is perfect, i.e., with training sets and test sets with matching properties); this may be done using machine learning-based codes, which can make maximal use of all information available in the parameter set provided without requiring the development of a detailed model (such methods extrapolate poorly, but that is not a problem for this test).
+If incorporating morphological information does in fact yield improvements, the next step would be the development of Bayesian priors for redshift given galaxy photometry and morphology measurements for incorporation into template-based methods.  This may be done using either pipeline-processed simulated datasets (if they are sufficiently realistic) or real observations with spectroscopic redshifts.  Tests will then show the performance of photometric redshifts incorporating morphological priors relative to performance using galaxy photometry alone. 
 }
+~\\
 \deliverables{Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item A fast, scalable algorithm for measuring the surface brightness profile of galaxies.
-\item A cross matched catalog with objects at known redshifts and measured surface brightness profiles.
-\item A Bayesian prior $p(z|C,SB)$ that can be used to improve photo-z measurements.
+\item Tests of LSST DM algorithms for measuring morphological parameters for galaxies. 
+\item A cross-matched catalog containing objects with known redshifts and DM pipeline-measured morphology measurements.
+\item Tests of whether incorporating morphological information improves photometric redshift measurements using machine learning-based algorithms, as well as examination of what parameters are most informative
+\item Bayesian priors $p(z, SED | P)$ that can be incorporate into template-based algorithms and used to improve photo-$z$ measurements.
 \end{enumerate}
 }
 \end{task}
 \end{tasklist}
-
-
-
+}

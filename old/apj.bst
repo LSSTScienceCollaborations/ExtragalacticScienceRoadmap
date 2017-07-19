@@ -1,3 +1,4 @@
+
 %% $Log: apj.bst,v $
 %% Revision 1.4  2002/06/18 16:37:48  alberto
 %% Add comma after first author in two-author reference
