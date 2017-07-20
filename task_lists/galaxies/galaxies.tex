@@ -62,6 +62,7 @@ using the simulations to optimize detection and measurement, (3) informing LSST
 Level 2 processing and observing strategies about the needs of LSB science, 
 and (4) developing a strategy for finding and measuring LSB features through
 some combination of Level 2 measurements, database queries, and Level 3 processing.\\
+~\\
 The insertion of realistic LSB features into LSST simulated images will provide
 ``data challenges'' to test methods for their extraction and measurement, allowing
 for the exploration of different techniques or algorithms for performing LSB
@@ -83,6 +84,7 @@ help inform LSST development. Including Galactic cirrus in the simulations is im
 for very large-scale LSB features. Including a cirrus model as part of the LSST background
 estimation is worth considering, but the science benefit gained from the
 additional effort remains unclear.\\
+~\\
 Because the LSST source extraction is primarily
 optimized for finding faint, barely-resolved galaxies,
 simultaneously finding large LSB structures and cataloging them as 
@@ -96,6 +98,7 @@ foreground and scattered light from the astrophysically interesting signal owing
 LSB structures.
 Then, we need strategies for measuring these background maps, characterizing
 structures, and developing value-added catalogs to supplement the Level 2 database.\\
+~\\
 For smaller structures, the database likely will contain pieces 
 of the structure, either as portions of a hierarchical
 family of deblended objects or as separate catalog entries. Therefore, we need to 
@@ -139,7 +142,7 @@ performing this task still remain under active development by the LSST Project, 
 engagement with the science community will prove essential. While each
 data release will provide unique object IDs, if the first few
 generations of catalogs limit the science performed through data base
-queries the consequences may impede early LSST science.
+queries the consequences may impede early LSST science.\\
 ~\\
 For galaxies science, the issue of deblending holds critical importance. 
 For example, searches for high-redshift galaxies via color selection 
@@ -153,7 +156,7 @@ and derivation of redshift and other parameters.  These issues critically
 affect not just galaxy evolution science, but also lensing and large-scale
 structure studies. Another example involves the evolution
 of galaxy morphologies, where the effects of blending and confusion 
-may dominate measurement uncertainties.
+may dominate measurement uncertainties.\\
 ~\\
 For the Level 2 catalogs, the planned approach involves using the
 Software Stack to deblend sources hierarchically and then
@@ -174,6 +177,7 @@ with realistic morphologies are needed, especially for the Deep Drilling Fields.
 Inputs should come from hydrodynamical simulations,
 {\it Hubble} images, and images from precursor surveys such as CFHTLS, DES and HyperSuprimeCam.
 The Science Collaborations should help provide and vet inputs. \\
+~\\
 More challenging activities involve developing techniques and algorithms to improve the
 deblending. When two galaxies at different redshifts overlap, using observations
 from all the LSST filters and perhaps even EUCLID and WFIRST might 
@@ -206,13 +210,13 @@ Morphology encodes key signatures of the formation histories of galaxies, and me
 provide an important tool for constraining models of galaxy evolution. 
 While simple measures of galaxy ellipticity and position
 angles may be sufficient for the dark energy science goals, more sophisticated measurements of morphology are needed for galaxy-evolution science. While the ``multifit'' approach of fitting simple parametric models to galaxy profiles is useful to zeroth order, this approach may be insufficient for the detailed morphological information
-required for much of the galaxy science that is planned using LSST. 
-\\
+required for much of the galaxy science that is planned using LSST.\\
+~\\
 For well-resolved galaxies the baseline requirement is to have separate measures of bulge and disk, spiral arm structure, measures of concentration, asymmetry, and clumpiness. These 
 properties ought to be measured as part of the Level 2 processing, to enable database queries to extract subclasses of galaxies. Both parametric and non-parametric measures are desirable. While Level 3 processing methods will be
 developed to further optimize galaxy measurements,
-the Level 2 products should supply enough information to select reasonable subsets of galaxies.
-\\
+the Level 2 products should supply enough information to select reasonable subsets of galaxies.\\
+~\\
 More importantly, while the traditional parameterizations of morphology described above will be useful, it is essential that new, more powerful methods of measuring galaxy morphology are developed and implemented, in order to leverage the exquisite volume and depth of LSST data. In this regard fast, 
 machine-learning techniques \citep[e.g.][; Hausen \& Robertson, in prep]{hocking2015a} that can efficiently separate LSST galaxy populations into different morphological classes are particularly relevant and powerful.
 }
