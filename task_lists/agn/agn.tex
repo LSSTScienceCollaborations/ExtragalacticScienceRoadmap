@@ -1,7 +1,9 @@
 \section{Active Galactic Nuclei}\label{sec:tasks:agn:intro} {\justify
 
 
-Active Galactic Nuclei (AGN) phenomena enable us to understand the growth of supermassive black holes (BHs), understand aspects of galaxy evolution, probe the high redshift universe, and study other physical activity including accretion physics, jets, and magnetic fields.  
+Active Galactic Nuclei (AGN) phenomena enable an understanding of
+the growth of supermassive black holes (BHs), aspects of galaxy evolution, the high redshift universe, 
+and other physical activity including accretion physics, jets, and magnetic fields.  
 While AGN represent a distinct topic within the LSST Science Collaborations, the LSST
 dataset will reveal some aspects of AGN science via their role as an
 evolutionary stage of galaxies in addition to their ability to probe accretion physics around BHs.
@@ -23,7 +25,7 @@ LSST will also open up, in a more practical way, the identification of AGN based
 These LSST photometric, multiwavelength, and variability-selected samples may probe
 unique aspects of AGN phenomena.
 A better understanding of the AGN role in galaxy evolution requires 
-that we understand how and why these selection methods include or exclude particular sources
+an understanding of how and why these selection methods include or exclude particular sources
 or phases of AGN-galaxy co-evolution.
 }
 ~\\
@@ -38,11 +40,9 @@ themselves through the additional parameters of morphology, variability, and/or 
 near-infrared data that LSST will provide.
 }
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
 \item Creation of a cross-matched catalog of known AGN selected and verified using different methods.
-\item Development of morphological parameters beyond star/galaxy separation and an understanding of the efficacy of LSST Level 2 data products for morphological selection of AGN.
-\item Development of color selection criteria that accounts for morphology.
 \item Understanding of AGN variability sensitivity given the nominal LSST cadence. 
 \item Development of algorithms for color selection account for AGN variability.
 \end{enumerate}
@@ -58,7 +58,8 @@ near-infrared data that LSST will provide.
 \label{task:agn:host_galaxies}
 \motivation{
 Morphological characterizations from parameterized models, such as multiple-component 
-\cite{sersic1968a} profiles, or non-parametric measures like CAS and Gini-M20 \cite{abraham1994a,conselice2000a,lotz2004a} can help identify mergining galaxies in the LSST data.
+\cite{sersic1968a} profiles, or non-parametric measures like CAS and Gini-M20 
+\citep{abraham1994a,conselice2000a,lotz2004a} can help identify mergining galaxies in the LSST data.
 The ability of these techniques to characterize efficiently and accurately the
 morphology of AGN host galaxies identified via their variability remains unproven.
 }
@@ -74,11 +75,13 @@ variability frequency and amplitude, and how these AGN properties may affect the
 recovery of morphological properties in AGN host galaxies. 
 }
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
 \item Characterization of the accuracy and precision afforded by the LSST dataset for the
 recovery of basic morphology properties as a function of AGN brightness and wavelength.
-\item Understaing of the effects of AGN brightness and variability on host-galaxy classification diagrams.
+\item Understanding of the effects of AGN brightness and variability on host-galaxy classification diagrams.
+\item Development of morphological parameters beyond star/galaxy separation and an understanding of the efficacy of LSST Level 2 data products for morphological selection of AGN.
+\item Development of color selection criteria that accounts for morphology.
 \end{enumerate}
 }
 \end{task}
@@ -90,11 +93,10 @@ recovery of basic morphology properties as a function of AGN brightness and wave
 \label{task:agn:feedback_in_clusters}
 \motivation{
 Brightest Cluster/Group Galaxies (hereafter BCGs) represent the most massive galaxies in the local 
-universe, residing at/near the centers of galaxy clusters/groups. 
+universe, residing at or near the centers of galaxy clusters and groups. 
 BCGs contain the largest known supermassive BHs that can influence the host galaxy properties,
 cluster gas, and other cluster members via the mechanical energy produced by their $>100$kpc 
 scale jets (``AGN feedback'').
-\\
 The relative proximity of low-redshift galaxy clusters enable detailed studies of 
 stars, gas, and AGN jets that may reveal the ramifications of AGN feedback. 
 LSST will provide a large sample of moderate- to high-redshift clusters 
@@ -102,8 +104,8 @@ in which we can measure AGN feedback statistically. By combining X-ray, radio, a
 }
 ~\\
 \activities{
-By assembling a multi-wavelength dataset (optical, X-ray, and radio) we can obtain the BCG mass, cluster mass, ICM temperature, and the mechanical power injected into the ICM. 
-We can use this to study the interplay between the BCG, its black hole, and the cluster gas, 
+By assembling a multi-wavelength dataset (optical, X-ray, and radio), the BCG mass, cluster mass, ICM temperature, and mechanical power injected into the ICM by supermassive BHs can be constrained. 
+The interplay between the BCG, its black hole, and the cluster gas can then be studied, 
 providing an assessment of the balance of energies involved and a direct comparison with theoretical models of AGN feedback. 
 SDSS has enabled this multi-wavelength analysis for a few hundred clusters at $z<0.3$,
 but LSST cluster datasets to reach $z>1$.
@@ -112,10 +114,10 @@ X-ray gas properties strongly influenced by AGN in addition to the
 cluster mass.
 }
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
 \item Investigation of the number of BCGs and the mass range of their clusters with redshift that LSST will likely observe.
-\item Assessment of radio and X-ray data available for AGN Feedback studies (XCS, eROSITA, SKA-pathfinders, SUMSS, etc.).
+\item Compilation of existing and forthcoming radio and X-ray data available for AGN feedback studies (XCS, eROSITA, SKA-pathfinders, SUMSS, etc.).
 \item Assessment of theoretical predictions expected for the multi-wavelength properties of
 AGN host galaxies in clusters or groups (e.g., cosmological simulations such as EAGLE or more detailed single cluster studies).
 \end{enumerate}
@@ -138,10 +140,10 @@ of possible biases and uncertainties introduced into AGN variability science as 
 \activities{
 Study existing AGN variability datasets (SDSS Stripe 82, OGLE, PanSTARRS, CRTS, PTF + iPTF, Kepler, \& K2) to constrain a comprehensive set of AGN variability models. Generate and study simulations using parameters selected from these models using observational constraints, and determine the appropriateness of simulations for carrying out various types of AGN variability science including power spectrum models, quasi-periodic oscillation searches, and binary AGN models.}
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
 \item Observational constraints on AGN variability models.
-\item MAF metrics quantifying the goodness of different survey strategies for AGN variability science.
+\item Metrics for quantifying the efficacy of different survey strategies for AGN variability science.
 \end{enumerate}
 }
 \end{task}
@@ -166,7 +168,7 @@ A comparison of model and/or observed AGN host SEDs with a matched set of
 non-host galaxies at a variety of redshifts will help engineer color selection criteria for identifying AGN hosts, and whether variability can break photo-$z$ degeneracies. 
 }
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
 \item Development of AGN host color selection criteria, and an identification of objects for which color selection might prove ambiguous or degenerate.
 \item Exploration of multiwavelength, morphological, or variability information that might break photo-$z$ degeneracies.
@@ -192,14 +194,14 @@ Preliminary work needs to be done to understand how to identify mergers from the
 Create simulated or identify real images that contain known galaxy mergers, including
 systems with and without visible AGN.
 Run the LSST software stack on these images, and
-engineer metrics that describe/quantify 
+engineer metrics that quantify 
 the accurate detection of galaxy mergers with and without AGN.
 }
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item Improve the ability of the LSST Level 2 data to enable the detection of galaxy mergers with AGN.
-\item Identify merging galaxy properties or categories that will prove challenging to measure using the LSST datasets.
+\item Characterization and optimization of the ability of the LSST Level 2 data to enable the detection of galaxy mergers with AGN.
+\item Identification of merging galaxy properties or categories that will prove challenging to measure using the LSST datasets.
 \end{enumerate}
 }
 \end{task}
