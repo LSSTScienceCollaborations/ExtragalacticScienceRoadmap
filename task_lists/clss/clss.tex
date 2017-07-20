@@ -1,58 +1,52 @@
 \section{Clusters and Large Scale Structure}\label{sec:tasks:clss}  
 {\justify
 The cosmological process of galaxy formation inextricably links
-the together, environment and large scale structure with the detailed
+together environment and large scale structure with the detailed
 properties of galaxy populations. The extent of this connection
 ranges from the scales of superclusters down to small groups. The
 following preparatory science tasks focus on this critical connection
-between galaxy formation, clusters, and large scale structure.
+between galaxy formation, clusters, and large scale structure (LSS).
 
 \begin{tasklist}{CLSS}
-\subsection{Cluster/LSS Sample Emulator}
-\tasktitle{Cluster/LSS Sample Emulator}
+\subsection{Cluster and Large Scale Structure Sample Emulator}
+\tasktitle{Cluster and Large Scale Structure Sample Emulator}
 \begin{task}
 \label{task:clss:emulator}
 \motivation{
-To prepare for galaxies and galaxy group/cluster science with LSST, we
-need to know how many galaxies will be detected in a given range of
-redshift, brightness, color, etc., and likewise how many groups and
-clusters will be detected in given ranges of redshift, richness, mass,
+To prepare for galaxy group/cluster and LSS science with LSST,
+the samples of cluster/group galaxies detected in a given range of
+redshift, brightness, color, need to be estimated, along with the
+group and
+cluster populations identified in given ranges of redshift, richness, mass,
 and other physical parameters.
 }
 ~\\
 \activities{
 LSST has advanced simulations of its 10-year Wide Fast Deep survey
 available from the Operations Simulator. The output databases can be
-analyzed to determine the depth LSST is expected to reach in its final
-detection image at each sky location, and \citet{awan2016a} turns these depths
+analyzed to determine the expected time-dependent depth of LSST
+detection images at each sky location. These depths can be converted
 into predicted numbers of galaxies as a function of redshift and
-brightness.
+brightness \citep[e.g.,][]{awan2016a}.
 \\
 To predict galaxy sample sizes as a function of physical parameters,
-the ``raw'' predicted galaxy numbers from \citet{awan2016a} will be
+the ``raw'' predicted galaxy numbers can be
 interfaced with semi-analytical models painted on large N-body
-simulations by Risa Wechsler and collaborators. This will extend the
-predictions to include observed properties of color, size, morphology
-and physical properties of halo mass, stellar mass, and star formation
-rate.
-\\
-To predict group/cluster sample sizes as a function of physical
-parameters, the properties such as temperature, richness, etc., will
-be painted on to dark matter halos drawn from a numerical simulation.
-The properties will be based on simple scaling laws, with the user
-allowed freedom to choose the parameters of the scaling laws,
-including how they evolve. This will then be interfaced with the
-``raw'' predicted galaxy numbers from \citet{awan2016a}, to determine
-which of the groups and clusters should be detectable in the LSST
-data.}
+simulations. This approach can extend the
+predictions for cluster/LSS samples
+to include the observed properties of color, size, morphology,
+and the physical properties of halo mass, stellar mass, and star formation
+rate. The combination of these models will produce an LSST Cluster/LSS
+Sample Emulator for understanding the detailed science return of
+LSST for cluster and group science.}
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item Create a public LSST Extragalactic Sample Emulator with a
-simple GUI. Enable user input of a range of redshift, and
+\item Creation of a public LSST Extragalactic Sample Emulator with a
+simple user interface, allowing for the estimation of sample sizes
+detected by LSST as a function of redshift and 
 physical parameters (e.g.~galaxy magnitudes, colors, size, morphology,
-cluster richness, mass, temperature, etc.) to estimate the size of a
-given sample detected by LSST.
+cluster richness, mass, temperature, etc.).
 \end{enumerate}
 }
 \end{task}
@@ -65,18 +59,18 @@ given sample detected by LSST.
 \motivation{
 LSST photometry will make it possible to
 search for and study the galaxy populations of distant clusters and
-proto-clusters over huge volumes of the high-$z$ Universe. These
-clusters are testbeds for cosmology, hierarchical structure formation,
-intergalactic medium heating and metal enrichment, as well as
-laboratories for studying galaxy evolution.
+proto-clusters over cosmological volumes. These
+clusters are testbeds for theories of
+hierarchical structure formation,
+intergalactic medium heating, metal enrichment, and galaxy evolution.
 However, standard approaches for identifying clusters, such as the red
 sequence method, will be hampered by the limited wavelength coverage
 of LSST. 
 For example, at $z \gtrsim 1.5$, near-IR photometry is required to 
 identify systems with Balmer/$4000$\AA\ breaks. 
-To maximize cluster science with LSST, we must devise new techniques
-for cluster identification as well as incorporate complementary data
-from projects such as \emph{Euclid}, \emph{eROSITA}, etc.
+To maximize cluster science with LSST, new techniques
+for cluster identification and the incorporate complementary data
+from projects such as \emph{Euclid} or \emph{eROSITA} must be devised.
 }
 ~\\
 \activities{
@@ -86,9 +80,9 @@ and high redshift within the LSST footprint.
 Specifically, this work should characterize the selection
 function, completeness, and contamination rate for different cluster
 identification algorithms. 
-This requires realistic light-cone simulations spanning extremely
+Such characerizations require realistic light-cone simulations spanning extremely
 large volumes, so as to capture significant numbers ($\gg10,000$) of
-simulated galaxy clusters at high $z$.
+simulated galaxy clusters at high redshift.
 Potential algorithms to be tested include adaptations of RedMaPPer
 \citep{rykoff2014a} as well as methods that search for galaxy
 overdensities over a range of scales \citep[e.g.,][]{chiang2014a,wang2016a}.
@@ -97,12 +91,12 @@ In parallel, a comprehensive search for multiwavelength data
 high-$z$ clusters and in the confirmation and characterization of
 systems at all redshifts.}
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item The primary product of this analysis will be improved cluster
+\item Improved cluster
 identification algorithms that can be applied to LSST data once
 science operations commence.
-\item In addition, this work will produce a compilation of ancillary data
+\item Compilation of ancillary data
 that will be helpful in cluster identification and characterization,
 such as X-ray (e.g.~XCS, eROSITA, etc.), SZ (Planck, SPT, ACT) and
 radio (SKA and its pathfinders, SUMSS), within the LSST footprint.
@@ -124,13 +118,14 @@ to isolated (or ``field'') systems of equivalent stellar mass
 \citep{baldry2006a,cooper2010a,pasquali2010a}.
 Unlike spectroscopic surveys, LSST will lack the precise line-of-sight
 velocity measurements to robustly identify satellite galaxies in
-lower-mass groups, where the expected photo-$z$ precision will greatly
-exceed the velocity dispersion of the host halo.
+lower-mass groups, where the expected photo-$z$ precision will be much
+coarser than the corresponding
+the velocity dispersion of typical host halos.
 Instead, LSST will likely be better suited to measuring environment by
-tracing the local galaxy density (and identifying filaments). However,
+tracing the local galaxy density and identifying filaments. However,
 LSST is unlike any previous photometric survey and may require new
 approaches to measuring environment.
-The challenge remains to find the measure(s) of local galaxy density
+The challenge remains to find measures of local galaxy density
 with the greatest sensitivity to the true underlying density field (or
 to host halo mass, etc.), so as to enable analyses of environment's
 role in galaxy evolution with LSST.
@@ -138,23 +133,23 @@ role in galaxy evolution with LSST.
 ~\\
 \activities{
 Using mock galaxy catalogs created via
-semi-analytic techniques, we will compare different tracers of local
+semi-analytic techniques, tracers of local
 galaxy density (i.e.~''environment'') measured on mock LSST
-photometric samples to the underlying real-space density of galaxies
-(or to host halo mass). In addition to testing existing density
+photometric samples will be compared to the underlying real-space density of galaxies
+or host halo mass. In addition to testing existing density
 measures, such as $N^{\rm th}$-nearest-neighbor distance and counts in
-a fixed aperture, we will explore new measures that may be better
-suited to LSST. For each measure, we will examine the impact of
+a fixed aperture, new measures will be explored that may be better
+suited to LSST. For each measure, the impact of
 increasing survey depth and photo-$z$ precision over the course of the
-survey.}
+survey will be examined.}
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
 \item With an improved understanding of the
 strengths and weaknesses of different environment measures as applied
 to LSST, this effort will yield code to measure local galaxy density
 (likely in multiple ways) within the LSST dataset.
-\item Create a Level 3 data product for use by the entire project. 
+\item Creation of methods to generate galaxy environmental measures as Level 3 data products for use by the entire project. 
 \end{enumerate}
 }
 \end{task}
@@ -167,33 +162,32 @@ to LSST, this effort will yield code to measure local galaxy density
 Contemporary galaxy surveys have
 transformed the study of large-scale structure, enabling high
 precision measurements of clustering statistics. The correlation
-function provides the most fundamental way to characterize the galaxy
+function provides a fundamental way to characterize the galaxy
 distribution. The dependence of clustering on galaxy properties and
 the evolution of clustering provide fundamental constraints on
 theories of galaxy formation and evolution. Interpreting these
 measurements provides crucial insight into the relation between
 galaxies and dark matter halos. Understanding how galaxies relate to
-the underlying dark matter is also essential for optimally utilizing
+the underlying dark matter is essential for optimally utilizing
 the large-scale distribution of galaxies as a cosmological probe.
 }
 ~\\
 \activities{
-Preparatory work will be along two main
-tracks. The first one will be support work to define and characterize
+Support work to define and characterize
 the upcoming galaxy samples from LSST to enable clustering
-measurements from them. Several distinct sets of information need to
+measurements. Several distinct sets of information need to
 be made available or be calculable from pipeline data. Such
 requirements include a detailed understanding of any selection effects
 impacting the observed galaxies, the angular and radial completeness
 of the samples, and the detailed geometry of the survey (typically
 provided in terms of random catalogs that cover the full survey area).
-\\
-The second track will be the development, testing, and optimization of
+Further efforts will concern the development, testing, and optimization of
 algorithms for measuring galaxy clustering using LSST data. One aspect
 to address is how best to handle the large data sets involved
-(e.g.~the ``gold'' galaxy sample will include about $4$~billion
-galaxies over $20$,$000$~square degrees). Another is to develop the
-methodology to optimally incorporate the LSST photo-$z$ estimates with
+(e.g.~the LSST ``gold'' galaxy sample will include about $4$~billion
+galaxies over $18$,$000$~square degrees). Another issue is the development
+of a
+methodology to incorporate optimally the LSST photo-$z$ estimates with
 the angular data to obtain ``2.5-dimensions'' for pristine clustering
 measurements.
 \\
@@ -204,12 +198,12 @@ This endeavor overlaps with DESC-LSS working group efforts, and
 requires cooperation of the DESC-PhotoZ working group and the Galaxies
 Theory and Mock Catalogs working group.}
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item Ensuring LSST galaxy pipelines include all the necessary
+\item Guidance for LSST galaxy pipelines to include all the necessary
 information for measurements of the correlation function and related
-statistics to take place once data is available
-\item Developing and refining techniques for measuring galaxy clustering of
+statistics to take place once LSST data is available.
+\item Development and refinement of techniques for measuring galaxy clustering of
 large LSST galaxy samples. Together these will enable realizing the
 full potential of LSST data for large-scale structure studies and
 galaxy formation inferences thereof.
@@ -218,18 +212,18 @@ galaxy formation inferences thereof.
 \end{task}
 
 
-\subsection{Disentangling Complicated Lines of Sight}
-\tasktitle{Disentangling Complicated Lines of Sight}
+\subsection{Disentangling Complicated Lines-of-Sight}
+\tasktitle{Disentangling Complicated Lines-of-Sight}
 \begin{task}
 \label{task:clss:los}
 \motivation{
-Lines of sight through galaxy clusters and groups are the most
-challenging lines of sight along which to measure reliable photometric
-redshifts because crowding of galaxies complicates the basic process
+Lines-of-sight through galaxy clusters and groups rank among the most
+challenging lines-of-sight along which to measure reliable photometric
+redshifts as crowding of galaxies complicates the basic process
 of galaxy photometry, and the presence of significant correlated
-large-scale structure (LSS) complicates interpretation of the P(z) of
-the galaxies that has been computed by an algorithm that ignores the
-presence of the LSS.  Numerous science goals require the most robust
+LSS complicates interpretation of any galaxy redshift distribution
+computed by algorithms that ignore the
+presence of LSS.  Numerous science goals require the most robust
 probabilistic statements possible as to the location of galaxies along
 lines of sight through clusters, for example, identification of
 background galaxies for weak-lensing, identification of faint cluster
@@ -239,36 +233,37 @@ regions to probe the physics of quenching of star formation.
 }
 ~\\
 \activities{
-The LSST will deliver the most information rich dataset ever in
+LSST will deliver the most information rich dataset ever in
 relation to the masses and internal structures of clusters and their
 infall regions. Moreover, the dataset can be enhanced significantly
 via the addition of data at other wavelengths, including X-ray,
 millimeter, and near-infrared.
-\\
-A tool is therefore envisaged, that can take an input catalogue of
-cluster centres that has been obtained from LSST or any other dataset
-(e.g.~\emph{Planck}, \emph{eROSITA}).  The tool will pull out the
-basic L2 LSST photometry of objects within a cone centred on the
-cluster centre, and compute the $p(z)$ of each galaxy based on a
-cluster-specific algorithm. This algorithm will take account of the
-following where they are available: brightness and extent of X-ray
-emission, over-density of galaxies as a function of magnitude and
-colour, any available spectroscopic redshifts, amplitude and extent of
-any SZ decrement/increment. The algorithm will likely adopt a Bayesian
-hierarchical modelling approach to forward model the problem.  The
-algorithm can be tested on existing datasets from surveys such as the
-Local Cluster Substructure Survey (LoCuSS), XXL, HSC data processed by
-DM Stack within LSST, and any others that would like to join in.
-\\
-This work has links with the work on deblending/ICL, forward modelling
-of cluster and groups, environmental measures, cluster detection,
-complementary data, and also work in the DESC Clusters WG via $p(z)$
-of background galaxies.}
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+A tool is therefore envisaged that can take an input catalogue of
+cluster centers that has been obtained from LSST or any other dataset
+(e.g.~\emph{Planck}, \emph{eROSITA}), extract the
+basic L2 LSST photometry of objects within a cone centred on the
+cluster center, and compute the redshift probability distribution
+$p(z)$ of each galaxy based on a
+cluster-specific algorithm. When available, t
+his algorithm will take account of the brightness and extent of X-ray
+emission, over-density of galaxies as a function of magnitude and
+colour, any available spectroscopic redshifts, and the amplitude and extent of
+any SZ decrement/increment. The algorithm will likely adopt a Bayesian
+hierarchical modeling approach to forward model the problem,
+and can be tested on existing datasets from surveys such as the
+Local Cluster Substructure Survey (LoCuSS), XXL, and HSC data processed by
+DM Stack within LSST.
+\\
+This work links with efforts on deblending/ICL, forward modeling
+of cluster and groups, environmental measures, cluster detection,
+complementary data, and work in the DESC Clusters Working Group via 
+the determination of $p(z)$ for background galaxies.}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
 \item A new cluster-specific photometric redshift algorithm that can be
-applied to a list of cluster detections that is itself based on LSST
+applied to a list of cluster detections based on LSST
 or external data.
 \end{enumerate}
 }
@@ -283,54 +278,46 @@ or external data.
 \motivation{
 Most of the interesting cluster and group physics from LSST and its
 union with complementary surveys will be derived from studies that
-explore the full range of halo mass relevant to groups and clusters:
-$M_{200}\simeq10^{13}-10^{15}M_\odot$.  This is a wider range than
-cluster cosmologists (e.g. colleagues in DESC, with whom we
-collaborate) aim to incorporate into their cosmological inference --
-they restrict attention to $M_{200}>10^{14}M_\odot$.
-\\
-Another important difference between the cluster/group physics
-explored here, and the dark energy-motivated DESC work, is that the
-requirement on controlling systematic biases is roughly an order of
-magnitude less stringent here than in DESC.  Arguably, $\sim10\%$
+explore the full range of halo mass relevant to groups and clusters
+$M_{200}\simeq10^{13}-10^{15}M_\odot$.  This mass range extends
+beyond that used by cluster cosmologists (e.g. colleagues in DESC), 
+who typically restrict attention to objects with masses 
+$M_{200}>10^{14}M_\odot$.
+However, the
+requirement on controlling systematic biases for cluster/group physics
+is roughly an order of
+magnitude less stringent than for dark energy science.  Arguably, $\sim10\%$
 control of systematic biases in weak-lensing measurements of low
 redshift clusters ($\gtrsim2\times10^{14}M_\odot$) has already been
 achieved \citep{okabe2013a,applegate2014a,hoekstra2015a,okabe2016a}.
-Therefore in this Science
-Collaboration we have the challenge of maintaining that level of
+This science task focuses on the challenge of maintaining that level of
 control down to smaller masses and out to higher redshifts.
-\\
-A growing number of studies are adopting an approach of forward
-modeling the cluster population simultaneously with the cosmological
-model to obtain constraints on scaling relations and cosmological
-parameters.  Here, the idea is to borrow this same approach, but adopt
-a fixed cosmological model, broaden the mass range of systems
-considered, and expand the forward modeling to include additional
-relationships of interest.  For example, simultaneously fitting
-density profile models to the shear profiles, the mass-concentration
-relation, and the star-formation rates of clusters and groups.
-Overall, this will provide a robust Bayesian inference code with which
-to constrain the physics of galaxies and hot gas in groups and
-clusters, tied directly to the halo mass function via weak-lensing.
 }
 ~\\
 \activities{
-Key activities include:
-%
-\begin{itemize}
-\item Select the elements of the cluster population to include in the model
-\item Write the first version of the code, and test on simulated (toy model and n-body) data
-\item Improve code and consider extending range of physics explored by adding more relations
-\item Test code on existing datasets from pointed surveys (e.g. LoCuSS, others) and wide area surveys (e.g. LoCuSS, DES, others)
-\item Combine this development work other work packages within Galaxies and DESC
-\end{itemize}
+A growing number of studies are adopting an approach of forward
+modeling the cluster population simultaneously with the cosmological
+model to obtain constraints on scaling relations and cosmological
+parameters. Here, the idea is to borrow this same approach, but adopt
+a fixed cosmological model, broaden the mass range of systems
+considered, and expand the forward modeling to include additional
+relationships of interest.  For example, one could simultaneously fit
+density profile models to the shear profiles, the mass-concentration
+relation, and the star-formation rates of clusters and groups.
+Overall, this effort will provide a robust Bayesian inference code with which
+to constrain the physics of galaxies and hot gas in groups and
+clusters, tied directly to the halo mass function via weak-lensing.
+Related activities include the selection of elements of the cluster population to include in the model,
+and the development and testing of the code on simulated data.
+Once developed, the code can be improved by extending the range of physics 
+explored by adding more physical relations, and by testing the code on existing 
+datasets from pointed surveys (e.g. LoCuSS, others) and wide area surveys (e.g. LoCuSS, DES, others).
 }
 ~\\
-\deliverables{Deliverables over the next several years from the activities described above include the following:
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
 \begin{enumerate}
-\item Bayesian inference code to simultaneously model cluster shear
-profiles, scaling relations (including and beyond cosmological scaling
-relations, across the full range of halo mass of groups and clusters,
+\item A Bayesian inference code to simultaneously model cluster shear
+profiles and scaling relations across the full range of halo mass of groups and clusters,
 to $\sim10\%$ control on systematics.
 \end{enumerate}
 }
