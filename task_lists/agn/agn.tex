@@ -18,7 +18,7 @@ phase in galaxy evolution.
 \label{task:agn:selection}
 \motivation{
 LSST multiband photometry may select Active Galactic Nuclei using a variety of different methods.  At optical and near infrared wavelengths, the distinctive colors of AGN
-at particular redshifts enables their photometric selection.
+at particular redshifts enables their photometric selection \citep[e.g.,][]{richards2006a}.
 The LSST data will therefore augment methods that rely on X-ray or radio activity, or the
 identification of emission lines in spectroscopic data.
 LSST will also open up, in a more practical way, the identification of AGN based on their variability.   
@@ -45,7 +45,7 @@ near-infrared data that LSST will provide.
 \begin{enumerate}
 \item Creation of a cross-matched catalog of known AGN selected and verified using different methods.
 \item Understanding of AGN variability sensitivity given the nominal LSST cadence. 
-\item Development of algorithms for color selection account for AGN variability.
+\item Development of algorithms that probe how color selection accounts for AGN variability.
 \end{enumerate}
 }
 \end{task}
@@ -176,7 +176,8 @@ non-host galaxies at a variety of redshifts will help engineer color selection c
 ~
 \begin{enumerate}
 \item Development of AGN host color selection criteria, and an identification of objects for which color selection might prove ambiguous or degenerate.
-\item Exploration of multiwavelength, morphological, or variability information that might break photo-$z$ degeneracies.
+\item Analysis of multiwavelength, morphological, or variability information that might break photo-$z$ degeneracies.  This task complements work described in Section \ref{task:photo_z:color_simulations}
+(Photometric Redshifts) and should be coordinated with those efforts.
 \end{enumerate}
 }
 \end{task}
@@ -201,13 +202,15 @@ systems with and without visible AGN.
 Run the LSST software stack on these images, and
 engineer metrics that quantify 
 the accurate detection of galaxy mergers with and without AGN.
+Activities for detecting some of these low surface brightness (LSB) features will parallel work described in Section \ref{task:gal:lsb}
+(Galaxy Evolution) and should be coordinated with those efforts.
 }
 ~\\
 \deliverables{%Deliverables over the next several years from the activities described above include the following:
 ~
 \begin{enumerate}
-\item Characterization and optimization of the ability of the LSST Level 2 data to enable the detection of galaxy mergers with AGN.
-\item Identification of merging galaxy properties or categories that will prove challenging to measure using the LSST datasets.
+\item Characterization and optimization of the ability of the LSST Level 2 data to enable the detection of galaxy mergers that host AGN.
+\item Identification of catalog parameters or merging galaxy images with properties that will prove challenging to recognize (semi-)automatically in the LSST dataset.
 \end{enumerate}
 }
 \end{task}
