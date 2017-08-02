@@ -19,10 +19,10 @@ Prior to LSST, typical studies of the LSB universe have  focused on small  galax
 Several activities are of critical importance and need to be completed before LSST commissioning and the survey proper:
 \begin{enumerate}
 \item Simulating  realistic  LSST images and LSB features (using e.g. new high-resolution hydrodynamical simulations in cosmological volumes, such as Horizon-AGN, EAGLE, Illustris and others).
-\item Identifying precursor datasets (e.g. the HyperSuprimeCam Survey or the Dark Energy Camera Legacy Survey (DECaLS)) that can be used as testbeds for developing LSB tools for use on LSST data.
+\item Identifying precursor datasets (e.g. the Hyper Suprime-Cam Survey or the Dark Energy Camera Legacy Survey (DECaLS)) that can be used as testbeds for developing LSB tools for use on LSST data.
 \item Using  such  simulations   to  develop algorithms for auto-detection, measurement and characterisation of LSB features (e.g. using the properties of LSB tidal features to back-engineer the properties of the mergers which created them).
 \item Applying these algorithms to the precursor datasets to test their suitability.
-\item Ensuring  that LSST  level-2 processing  strategies and  observing  strategies are  aligned with the needs of LSB tidal-feature science.
+\item Ensuring  that LSST Level 2 processing  and observing  strategies are  aligned with the needs of LSB tidal-feature science.
 \end{enumerate}
 }
 ~\\
@@ -112,7 +112,7 @@ The problem is typically encountered on scales large compared with the PSF where
 ~\\~\\
 The discovery space is large: LSB features can exist on scales of arcseconds to many arcminutes -- spanning the majority of faint galaxies at redshift $z\sim 1$ to more nearby LSB galaxies. In the past it has been assumed that galaxies at all redshifts fit the profiles of low-z galaxies, and that the surface brightness level beyond $\sim$10 half light radii represents the sky background, as opposed to some extended LSB halo. In the era of LSST, we can afford to let the data speak for themselves.
 ~\\~\\
-The correct sky estimation on any angular scale is actually an ill-posed problem.  The proper sky for barely resolved galaxies at high redshift is in principle quite different from the correct sky level for large angular scale LSB features. Indeed, the flux from barely resolved galaxies sits on top of the fainter larger angular scale flux associated with arcminute scale LSB extragalactic features, which in turn sits on top of the starlight reflected by Galactic cirrus, night sky surface brightness caused by atmosphere emission and scattered light from bright objects in the camera and the atmosphere. Thus for LSST, there will be a separate sky estimate appropriate for each of the different morphological classes of LSB objects.   To make the problem tractable, a multi-component sky model must be built.  
+The correct sky estimation on any angular scale is actually an ill-posed problem.  The proper sky for barely resolved galaxies at high-redshift is in principle quite different from the correct sky level for large angular scale LSB features. Indeed, the flux from barely resolved galaxies sits on top of the fainter larger angular scale flux associated with arcminute scale LSB extragalactic features, which in turn sits on top of the starlight reflected by Galactic cirrus, night sky surface brightness caused by atmosphere emission and scattered light from bright objects in the camera and the atmosphere. Thus for LSST, there will be a separate sky estimate appropriate for each of the different morphological classes of LSB objects.   To make the problem tractable, a multi-component sky model must be built.  
 }
 ~\\
 \activities{
@@ -157,7 +157,7 @@ The preparatory work for the ICL component of the LSB case involves investigatin
 The LSST specific issues fall into three categories: telescope; observation strategy; and pipeline. The faint, large radii wings of the PSF and any low-level scattered light or reflections from the telescope optics or structure will produce LSB signals, which could easily mimic the ICL. The dither pattern of the observations, if smaller than the typical extent of a cluster, could mean that the ICL is treated as a variation in the background during the reduction and/or image combination process, rather than as a real object. This leads onto the pipeline itself which, regardless of the dither pattern, could remove the ICL if an aggressive background subtraction is used on either single frames or when combining images. It is therefore crucial to liaise with the LSST Project's strategy, telescope, instrument and data reduction teams.\\
 ~\\
 The ICL specific issues are mainly the feasibility of observing the ICL given its known properties, which can be simulated from existing data. Using deep observations of the ICL in low redshift clusters one can model whether it is expected to see ICL at higher redshifts (up to $z=1$) given dimming, stellar population evolution, and the surface brightness limits of LSST. This consideration is crucial for determining possible evolution in ICL properties. For
-studies of low mass groups or high redshift systems, it may be required to stack populations to obtain a detection of the ICL.
+studies of low mass groups or high-redshift systems, it may be required to stack populations to obtain a detection of the ICL.
 An assessment of whether a genuine stacked ICL detection could be achieved by a comprehensive masking of galaxy cluster members is important, as is a determination of whether faint galaxies just below the detection threshold end up combining to give a false or boosted ICL signal.
 }
 ~\\
