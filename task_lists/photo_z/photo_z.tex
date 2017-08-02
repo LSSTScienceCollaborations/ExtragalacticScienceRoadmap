@@ -6,6 +6,7 @@ The following important preparatory science tasks address both the systematic un
 stellar population synthesis models.
 
 A major effort within the LSST Dark Energy Science Collaboration (DESC) is focused on the development of photometric redshift algorithms for LSST, including the incorporation of joint probability distributions between redshift and astrophysical parameters of interest for the study of galaxy evolution.  Efforts within the Galaxies collaboration should be able to leverage work happening in DESC and build upon it to ensure that photometric redshifts optimized for galaxy science are available.
+The related question of determining photometric redshifts for Active Galactic Nuclei is discussed in Section \ref{task:agn:photoz}.
 
 \begin{tasklist}{PZ}
 \subsection{Impact of Filter Variations on Galaxy Photometric Redshift Precision}
@@ -120,7 +121,7 @@ As representative samples of spectroscopic redshifts will be very difficult to c
 }
 ~\\
 \activities{
-The main activity for this task is to develop improved simulation metrics based upon observational studies of both low- and high-redshift galaxies.  This will require expertise from the photo-$z$  high-redshift galaxies, AGN, and simulations working groups. In order to test whether mock galaxy populations agree with the real Universe, we must have some real data to compare against, even if it is a luminous subsample or only complete in certain redshift intervals.  Once such comparison datasets are established, metrics can be developed to determine which simulations and simulation parameters most accurately reproduce the observed galaxy distributions.\\   
+The main activity for this task is to develop improved simulation metrics based upon observational studies of both low- and high-redshift galaxies.  This will require expertise from the photo-$z$,  high-redshift galaxies, AGN, and simulations working groups. In order to test whether mock galaxy populations agree with the real Universe, we must have some real data to compare against, even if it is a luminous subsample or only complete in certain redshift intervals.  Once such comparison datasets are established, metrics can be developed to determine which simulations and simulation parameters most accurately reproduce the observed galaxy distributions.\\   
 ~\\
 If we then assume that the simulations are valid beyond the test intervals, we can use them as a testbed to develop improved algorithms for a wide variety of applications, e.~g.~selecting specific sub-populations of galaxies.  
 One key aspect of this work is that spectral energy distributions in simulations cannot be generated from discrete templates, but instead must span a continuous range of properties. If only a finite set of restframe SEDs are used in the simulation, the photo-$z$ problem would be unnaturally simplified and  falsely strong photometric redshift predictions would result. Thus a method is required that simultaneously reproduces galaxy colors without resorting to a restricted set of SEDs. For example, this could be done by creating complete SEDs based  on an extended set of principal components (e.g., extending the $kcorrect$ or EAZY basis set), though in general additional constraints are required with PCA-like techniques to ensure that unphysical spectra are not generated.\\
