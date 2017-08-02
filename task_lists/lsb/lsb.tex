@@ -100,6 +100,37 @@ Commissioning data will need to be used to study the temporal and positional var
 \end{task}
 
 
+\subsection{Sky Estimation}
+\tasktitle{Sky Estimation}
+\begin{task}
+\label{task:lsb:task_label}
+\motivation{
+LSST is likely to reveal new aspects of galaxies as low surface brightness objects.  A relatively unexplored area is ultra-low surface brightness morphology and tails over a wide range of angular scales at levels of 31-32 mag/sq.~arcsec.  Accurate sky estimation is key. There is a wide literature on failed attempts at unbiased sky estimation, from SDSS Photo, to SExtractor, to GalFit and PyMorph. The problem is typically encountered on scales large compared with the PSF where the counts from the object become indistinguishable from the ``sky'' counts.  For example, fits of Sersic profiles [after PSF convolution] suffer from bias at large Sersic index due to sky mis-estimation (usually over-subtraction of sky due to systematic non-detection of fainter objects).
+~\\~\\
+The discovery space is large: LSB features can exist on scales of arcseconds to many arcminutes -- spanning the majority of faint galaxies at redshift $z\sim 1$ to more nearby LSB galaxies. In the past it has been assumed that galaxies at all redshifts fit the profiles of low-z galaxies, and that the surface brightness level beyond $\sim$10 half light radii represents the sky background, as opposed to some extended LSB halo. In the era of LSST, we can afford to let the data speak for themselves.
+~\\~\\
+The correct sky estimation on any angular scale is actually an ill-posed problem.  The proper sky for barely resolved galaxies at high redshift is in principle quite different from the correct sky level for large angular scale LSB features. Indeed, the flux from barely resolved galaxies sits on top of the fainter larger angular scale flux associated with arcminute scale LSB extragalactic features, which in turn sits on top of the starlight reflected by Galactic cirrus, night sky surface brightness caused by atmosphere emission and scattered light from bright objects in the camera and the atmosphere. Thus for LSST, there will be a separate sky estimate appropriate for each of the different morphological classes of LSB objects.   To make the problem tractable, a multi-component sky model must be built.  
+}
+~\\
+\activities{
+The research program starts with the current best methods, improving sky estimates on all angular scales via new algorithms, and then validation via simulations. The sky model in principle can be built using knowledge of the LSST system, locations of bright objects, the observational data, and statistical summaries of faint galaxy counts from HST.   The first step is to detect all objects above a position-variable local sky estimate, masking them, and then growing the masks.  The remaining pixels contain undetected galaxies, giving an over-estimate of the sky level around compact objects if left uncorrected.   Statistical faint galaxy counts can help in making these corrections. When corrected, the Poisson noise from the remaining sky may be fit with a Gaussian. Even then, 3-$\sigma$ clipping and/or one-sided fitting may be required. This entire process is recursive on every angular scale where there are important sky components. 
+~\\~\\
+LSST data management are planning novel algorithms of this general sort, and close coordination will be necessary and beneficial.  The Dark Energy Science Collaboration (DESC) Science Roadmap\footnote{The DESC Science Roadmap is available at: \url{http://lsst-desc.org/sites/default/files/DESC_SRM_V1_0.pdf}} includes plans for realistic image-based simulations of the LSST sky.  In coordination with DESC, the inclusion of faint, large-scale LSB objects in future Data Challenge catalogs and images would benefit all groups involved in testing algorithms and characterizing LSB objects.  Improvements we make may be ingested by LSST DM as a Level-3 contribution.  LSB ghosts due to reflected bright star light in the camera should also be included.    
+}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item In coordination with the Dark Energy Science Collaboration, generate realistic image simulations. Faint, large-scale LSB objects should be included in Data Challenge image based simulations.  The level of realism in the simulations can be extended to what is physically possible, rather than limited to conventional morphological models.  
+\item Recursive sky model building algorithms applied to these simulations, with statistical galaxy count corrections.
+\item Development of metrics for successful detection and characterization of each extragalactic component.
+\item Tests of degeneracies among models, and sensitivity to priors.  Validation on simulations, on various types of objects.  
+\item Tests on LSST precursor deep survey data, for performance estimates. 
+\item Tests on deep LSST commissioning data. 
+\end{enumerate}
+}
+\end{task}
+
 
 \subsection{Intracluster Light}
 \tasktitle{Intracluster Light}
