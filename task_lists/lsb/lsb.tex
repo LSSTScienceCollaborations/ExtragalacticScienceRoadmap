@@ -106,7 +106,7 @@ Commissioning data will need to be used to study the temporal and positional var
 \label{task:lsb:task_label}
 \motivation{
 LSST is likely to reveal new aspects of galaxies as low surface brightness objects.  A relatively unexplored area is ultra-low surface brightness morphology and tails over a wide range of angular scales at levels of 31-32 mag/sq.~arcsec.  Accurate sky estimation is key.
-The current state of the art algorithms, including SDSS Photo, SExtractor, GalFit, and PyMorph, experience challenges when
+Current state-of-the-art algorithms, including SDSS Photo, SExtractor, GalFit, and PyMorph, experience challenges when
 attempting unbiased sky estimation with deep data.
 The problem is typically encountered on scales large compared with the PSF where the counts from the object become indistinguishable from the ``sky'' counts.  For example, fits of Sersic profiles [after PSF convolution] suffer from bias at large Sersic index due to sky mis-estimation (usually over-subtraction of sky due to systematic non-detection of fainter objects).
 ~\\~\\
@@ -119,7 +119,7 @@ The correct sky estimation on any angular scale is actually an ill-posed problem
 The research program starts with the current best methods, improving sky estimates on all angular scales via new algorithms, and then validation via simulations. The sky model in principle can be built using knowledge of the LSST system, locations of bright objects, the observational data, and statistical summaries of faint galaxy counts from HST.   The first step is to detect all objects above a position-variable local sky estimate, masking them, and then growing the masks.  The remaining pixels contain undetected galaxies, giving an over-estimate of the sky level around compact objects if left uncorrected.   Statistical faint galaxy counts can help in making these corrections. When corrected, the Poisson noise from the remaining sky may be fit with a Gaussian. Even then, 3-$\sigma$ clipping and/or one-sided fitting may be required. This entire process is recursive on every angular scale where there are important sky components. 
 ~\\~\\
 LSST data management are planning novel algorithms of this general sort, and close coordination will be necessary and beneficial.  The Dark Energy Science Collaboration (DESC) Science Roadmap \citep{LSSTDESC}
-includes plans for realistic image-based simulations of the LSST sky.  In coordination with DESC, the inclusion of faint, large-scale LSB objects in future Data Challenge catalogs and images would benefit all groups involved in testing algorithms and characterizing LSB objects.  Improvements we make may be ingested by LSST DM as a Level-3 contribution.  LSB ghosts due to reflected bright star light in the camera should also be included.    
+includes plans for realistic image-based simulations of the LSST sky.  In coordination with DESC, the inclusion of faint, large-scale LSB objects in future Data Challenge catalogs and images would benefit all groups involved in testing algorithms and characterizing LSB objects.  Improvements we make may be ingested by LSST DM as a Level 3 contribution.  LSB ghosts due to reflected bright star light in the camera should also be included.    
 }
 ~\\
 \deliverables{%Deliverables over the next several years from the activities described above include the following:
