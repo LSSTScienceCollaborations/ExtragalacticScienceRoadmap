@@ -1,0 +1,63 @@
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=3cm,bottom=3cm,left=0.8in,right=0.8in,headsep=10pt]{geometry} % Page margins
+\usepackage{graphicx} % Required for including pictures
+
+
+
+\usepackage{verbatim}
+\usepackage{enumitem} % Customize lists
+\setlist{nolistsep} % Reduce spacing between bullet points and numbered lists
+\usepackage{booktabs} % Required for nicer horizontal rules in tables
+\usepackage{xcolor} % Required for specifying colors by name
+\usepackage{listings}
+\usepackage{color}
+
+%FONTS
+\usepackage{anyfontsize}
+\usepackage{avant} % Use the Avantgarde font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+
+
+\usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
+\usepackage{makeidx} % Required to make an index
+\makeindex % Tells LaTeX to create the files required for indexing
+
+
+
+\bibliographystyle{apj}
+\usepackage{natbib}
+
+%\usepackage{titletoc} % Required for manipulating the table of contents
+
+
+
+\setlist{nolistsep} % Reduce spacing between bullet points and numbered lists
+
+\def\motivation#1{\item[Motivation:] #1}
+\def\activities#1{\item[Activities:] #1}
+\def\deliverables#1{\item[Deliverables:] #1}
+
+\newenvironment{task}%
+{\renewcommand\descriptionlabel[1]{\hspace{\labelsep}\textit{##1}}
+     \begin{description}\setlength{\itemsep}{0.15\baselineskip}}
+{\end{description}}
+ 
+% Example usage:
+% 
+%    \begin{task}
+%    \motivation{Currently things are bad}. 
+%    \activities{We will work to make them better}.
+%    \deliverables{Code to solve all problems}.
+%    \end{task}
+
+% PJM: here's a tasklist environment to take care of Michael's enumeration:
+
+%\def\tasktitle#1{\item{\bf #1}}
+\def\tasktitle#1{\item{}}
+
+\newenvironment{tasklist}[1]%
+{\begin{enumerate}[label=#1-\arabic{*}.,ref=\thesubsection:#1-\arabic{*},font=\bf]}
+{\end{enumerate}}

@@ -1,0 +1,428 @@
+% LSST Extragalactic Roadmap
+% Chapter: task_lists 
+% Section: galaxies
+
+\section{Galaxy Evolution Task Lists}\label{sec:tasks:gal:intro}  
+{\justify
+The LSST Project optimized the observatory and data management design
+to execute successfully and efficiently the core LSST science mission. 
+For measurements
+of dark energy, that optimization generally means treating galaxies as ``tracer particles'' --
+ using statistical measures of ellipticity and position to provide statistical
+constraints on large-scale structure and cosmic geometry. While many of the
+DESC tasks relate directly to studying galaxy evolution, they remain 
+incomplete. In particular, studies of galaxy evolution require more attention to 
+optimizing multi-wavelength supporting data, obtaining different kinds of spectroscopy, 
+performing different
+kinds of simulations and other theoretical support, and a greater attention to 
+the detection
+and characterization of low surface brightness features or unusual morphologies.
+
+The task list presented here highlights the preparatory research needed 
+before LSST first light.
+Tasks of primary importance and particular urgency include those that might influence the detailed survey
+design or the algorithms used in the LSST Software Stack to construct catalogs. 
+Other critical tasks remain reasonably independent of the
+LSST survey design and data pipeline optimization, but will help ensure good support for
+LSST galaxy studies.
+
+\begin{tasklist}{G}
+
+\subsection{Techniques for Finding Low Surface Brightness Features or Galaxies}
+\tasktitle{Techniques for Finding Low Surface Brightness Features or Galaxies}
+% Tidal streams
+% Intracluster diffuse light
+\begin{task}
+\label{task:gal:lsb}
+\motivation{
+Important scientific benefits of the LSST dataset
+relative to prior large-area surveys include its ability to detect 
+low surface brightness (LSB) features associated with galaxies. 
+This ability includes the identification of tidal streams and
+other features associated with past and ongoing mergers, intra-cluster and
+intra-group light, and relatively nearby, extended LSB galaxies. 
+Prior to LSST, typical studies of the LSB universe focused
+on relatively small samples, often selected by criteria that prove difficult to quantify
+or reproduce in theoretical models. Measurements of the LSB features themselves
+can challenge pipelines and subsequent analysis, 
+and often require both hand-tuning and interactive scientific judgment. This manual
+attention serves to help quantify accurately what we observe, but such
+interacting tuning of the measurements does not scale to the LSST dataset and
+can prove difficult to apply to theoretical models.
+For LSST, we must automate the detection and characterization of LSB features,
+at least to the point where we can select samples
+for further study via database queries and quantify the completeness or
+other statistical properties of
+those retrieved samples.
+}
+~\\
+\activities{
+Several crucial activities include: (1) simulating realistic LSB features, (2) 
+using the simulations to optimize detection and measurement, (3) informing LSST
+Level 2 processing and observing strategies about the needs of LSB science, 
+and (4) developing a strategy for finding and measuring LSB features through
+some combination of Level 2 measurements, database queries, and Level 3 processing.\\
+~\\
+The insertion of realistic LSB features into LSST simulated images will provide
+``data challenges'' to test methods for their extraction and measurement, allowing
+for the exploration of different techniques or algorithms for performing LSB
+feature detection and characterization.
+Because the LSB objects sparsely populate the sky,
+making realistic LSST sky images will probably prove inefficient.
+More targeted simulations with a higher density of LSB object will better
+enable the efficient exploration of LSB feature detection and analysis.
+Simulated observations must realistically treat scattered light, particularly
+scattering from bright stars that may or may not fall in the actual field of
+view of the telescope. Scattering from bright stars will likely contribute the
+primary source of contamination when searching for extended LSB features.
+Ideally, the LSST scattered-light model,
+tuned by repeated observations, will perform sufficiently well and enable the removal
+or flagging of these contaminants at Level 2.  
+Defining the associated performance metrics for
+based on analysis of simulation represents an important activity that needs early work to 
+help inform LSST development. Including Galactic cirrus in the simulations is important
+for very large-scale LSB features. Including a cirrus model as part of the LSST background
+estimation is worth considering, but the science benefit gained from the
+additional effort remains unclear.\\
+~\\
+Because the LSST source extraction is primarily
+optimized for finding faint, barely-resolved galaxies,
+simultaneously finding large LSB structures and cataloging them as 
+one entity in the LSST database may pose challenges. 
+For very large structures, analysis of the LSST ``sky background''
+map might constitute the most productive approach. 
+We need to work with the LSST Project
+to make sure the Software Stack stores the background map in a useful form, and that background
+measurements from repeated observations can be combined to separate the fluctuating
+foreground and scattered light from the astrophysically interesting signal owing to extended
+LSB structures.
+Then, we need strategies for measuring these background maps, characterizing
+structures, and developing value-added catalogs to supplement the Level 2 database.\\
+~\\
+For smaller structures, the database likely will contain pieces 
+of the structure, either as portions of a hierarchical
+family of deblended objects or as separate catalog entries. Therefore, we need to 
+develop strategies for querying the database to find such structures and either extract
+the appropriate data for customized processing, or develop ways to put back together
+the separate entries in the database. A possible value-added catalog, for example, from
+the Galaxies Science Collaboration might include an extra set of fields for the database to indicate 
+which separate objects likely probably originate from the same physical entity. These additional fields would
+remain sparsely populated in the first year or two of LSST, but by the end of the survey 
+the relational connections between deblended objects may prove a 
+useful resource for a wide variety of investigations.
+}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item Creations of realistic inputs of LSB galaxies or LSB features for the LSST image simulations.
+\item Development of algorithms for finding and measuring LSB features.
+\item Input to the Project on scattered-light mitigation and modeling strategies.
+\item Input to the Project on photometric and morphological parameters to measure/store at Level 2.
+\item Identification of query strategies and sample queries for finding LSB structures.
+\item Engineering of a baseline concept for a value-added database of LSB structures.
+\end{enumerate}
+}
+\end{task}
+
+\subsection{Techniques for Identifying and Deblending Overlapping Galaxies}
+\tasktitle{Techniques for Identifying and Deblending Overlapping Galaxies}
+\begin{task}
+\label{task:gal:deblending}
+\motivation{
+Level 2 data products will provide the starting point
+for galaxy evolution science with LSST. In the LSST nomenclature, objects
+represent astrophysical entities (stars, galaxies, quasars, etc.), while
+sources represent their single-epoch observations. 
+The LSST Software Stack will generate the master list of objects in Level 2
+by associating
+and deblending the list of single-epoch source detections and the
+lists of sources detected on co-adds. The exact strategies for 
+performing this task still remain under active development by the LSST Project, and 
+engagement with the science community will prove essential. While each
+data release will provide unique object IDs, if the first few
+generations of catalogs limit the science performed through data base
+queries the consequences may impede early LSST science.\\
+~\\
+For galaxies science, the issue of deblending holds critical importance. 
+For example, searches for high-redshift galaxies via color selection 
+or photometric redshifts involve model or template spectra that make
+the prior assumption that each analyzed object does not consist of a
+blend of two objects at two different redshifts.
+Therefore, to get a reliable estimate of the evolution of classes of galaxies
+over redshift we need to (a) create reasonably clean initial catalogs
+and (b) model the effects of blending on the sample selection
+and derivation of redshift and other parameters.  These issues critically
+affect not just galaxy evolution science, but also lensing and large-scale
+structure studies. Another example involves the measurement 
+of galaxy morphologies, where the effects of blending and confusion 
+may dominate measurement uncertainties.\\
+~\\
+For the Level 2 catalogs, the planned approach involves using the
+Software Stack to deblend sources hierarchically and then
+maintain this hierarchy in the catalog.
+Scientifically important decisions still remain about whether
+and how to use color information in the deblending, and how to divide
+the flux between overlapping components. Even if the Project performs
+the development work, engagement with the community can generate important
+tests and figures of merit to optimize the science return.
+}
+~\\
+\activities{
+Preparations for LSST in this area involve working both with simulations
+and real data. The current LSST image simulations already utilize realistic source densities,
+redshift distributions, sizes, and color distributions. However, the
+input galaxies do not display realistic morphologies. At least some simulations
+with realistic morphologies are needed, especially for the Deep Drilling Fields. 
+Inputs should come from hydrodynamical simulations,
+{\it Hubble} images, and images from precursor surveys such as CFHTLS, DES, and Hyper Suprime-Cam.
+The Science Collaborations should help provide and vet inputs. \\
+~\\
+More challenging activities involve developing techniques and algorithms to improve the
+deblending. When two galaxies at different redshifts overlap, using observations
+from all the LSST filters and perhaps even EUCLID and WFIRST might 
+help to disentangle them. Some attempts over the past few years have
+incorporated color gradient information into the deblending algorithm, but this approach needs
+much more attention for developing and testing algorithms, and for
+deciding on figures-of-merit for their performance.
+}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item Production of realistic galaxy image inputs to the LSST ImSim team. 
+\item Development of tests and figures of merit to quantify the effects on several science objectives;
+\item Assessment of the current baseline plan for Level 2 deblending and for parameter estimation for blended objects. 
+\item Development of prototype implementations of deblending algorithms that take advantage of the LSST color information.
+\end{enumerate}
+}
+\end{task}
+
+\subsection{Optimizing Galaxy Morphology Measurements}
+\tasktitle{Optimizing Galaxy Morphology Measurements}
+% techniques for identifying mergers
+% Bayesian techniques for inference from large data sets
+% Merging human classification and machine learning
+\begin{task}
+\label{task:gal:morphology}
+\motivation{
+Morphology encodes key signatures of the formation histories of galaxies, and measurements of galaxy morphology
+provide an important tool for constraining models of galaxy evolution. 
+While simple measures of galaxy ellipticity and position
+angles may be sufficient for the dark energy science goals, more sophisticated measurements of morphology are needed for galaxy-evolution science. While the ``multifit'' approach of fitting simple parametric models to galaxy profiles is useful to zeroth order, this approach may be insufficient for the detailed morphological information
+required for much of the galaxy science that is planned using LSST.\\
+~\\
+For well-resolved galaxies the baseline requirement is to have separate measures of bulge and disk, spiral arm structure, measures of concentration, asymmetry, and clumpiness. These 
+properties ought to be measured as part of the Level 2 processing, to enable database queries to extract subclasses of galaxies. Both parametric and non-parametric measures are desirable. While Level 3 processing methods will be
+developed to further optimize galaxy measurements,
+the Level 2 products should supply enough information to select reasonable subsets of galaxies.\\
+~\\
+More importantly, while the traditional parameterizations of morphology described above will be useful, it is essential that new, more powerful methods of measuring galaxy morphology are developed and implemented, in order to leverage the exquisite volume and depth of LSST data. In this regard fast, 
+machine-learning techniques \citep[e.g.,][Hausen \& Robertson, in prep]{hocking2015a} that can efficiently separate LSST galaxy populations into different morphological classes are particularly relevant and powerful.
+}
+~\\
+\activities{The preparation work will focus on defining morphological parameters and developing machine-learning algorithms to enable users to easily query galaxy morphologies from the LSST database.
+Two aspects of LSST data make this a significant research project: the fact that LSST provides multi-band data with a high degree of uniformity, and the fact that the individual observations will have varying point-spread functions. The former offers the opportunity to use much more information than has been generally possible. The latter means that it will take some effort to optimize and calibrate the traditional non-parametric measures of morphology (e.g. the CAS, GINI and M20 parameters), develop new LSST-optimized parameters, and tune machine-learning algorithms to operate on this type of data. 
+\\
+Given the very large data set expected from LSST, which will change on short timescales in terms of depth, morphological parameters (e.g. CAS) will likely need to be calibrated on realistic data from hydrodynamical simulations in cosmological volumes, possibly augmented by training sets classified by humans. Similarly, machine-learning algorithms will have to be developed and implemented using a mixture of realistic simulations and precursor datasets, such as the Hyper Suprime-Cam Survey. A series of ``classification challenges'' prior to the LSST survey could help to refine these techniques. 
+}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item Realistic galaxy image inputs from hydrodynamical simulations and precursor datasets for classification tests.
+\item Human classification of image subsets for calibration of morphological parameters.
+\item Machine-learning algorithms that will provide fast morphological classification of LSST datasets, developed using and implemented on precursor datasets such as the Hyper Suprime-Cam Survey or the Dark Energy Survey.
+\end{enumerate}
+}
+\end{task}
+
+
+\subsection{Galaxy Structural Parameters}
+\tasktitle{Galaxy Structural Parameters}
+
+\begin{task}
+\label{task:gal:struc_param}
+\motivation{
+The image quality provided by the LSST camera (0.2"/pixel) and the wide field coverage (9.6deg$^2$) over 18,000 deg$^2$ in optical and NIR bands promise to provide unique data for studying the evolution of the internal galaxy structure.
+The full depth of the Wide Fast Deep survey (r $\sim$27.5 coadded) 
+will allow for the identification dwarf galaxies at $z\sim0.5$, and up to $M_*+2$ galaxies in clusters and field at $z\sim1.5$, and reach deep enough to study the structural parameters (size, Sersic index, ellipticity etc.) of $M_*$ galaxies at $z\sim1.2$ (for seeing$<0.5$"). The LSST data will allow for size, Sersic index, and bulge-to-disk ratio for over a billion galaxies to be correlated with mass, color, and other intrinsic properties at different epochs and thereby clarify the mechanisms that drive the galaxy assembly and transformation. 
+}
+~\\
+\activities{Preparatory work will consist of testing parametric methods for seeing-convolved 2D fitting of the galaxy light distribution on precursor surveys (e.g., HSC or KiDS) and on simulated LSST images, with the aim of providing viable tools for automatic image masking, catalogue extraction, source classification, and 2D galaxy fitting
+in Level 3 datasets. 
+This task will involve optimizing tool performance to guarantee meet time metrics (e.g., processing 100 million LSST galaxies in all bands on a single week). The surface brightness profile of galaxies in different bands will finally generate a catalog of all relevant structural parameters via Level 3 products.
+}
+~\\
+\deliverables{%From the activities described above we expect to provide the following deliverables:
+~
+\begin{enumerate}
+\item Benchmarks for existing and newly developed tools for galaxy surface photometry.
+\item Automatic masks for star halos, spikes, and reflections, and related procedures for Level 3 analyses.
+\item Tools to catalog structural parameters in different bands.
+\item Machine learning algorithms for the identification of faint substructures in model subtracted images (e.g. streams, merging, rings, strong lensing arcs, etc.). 
+\end{enumerate}
+}
+\end{task}
+
+\bigskip
+\subsection{Optimizing Galaxy Mass Profile Measurements}
+\tasktitle{Optimizing Galaxy Mass Profile Measurements}
+% foreground lens galaxy sample selection
+% completeness
+% shear simulations
+% galaxy-mass correlation function
+% sample cuts: type, environment, color, redshift
+% correlations of mass profile with optical properties  
+\begin{task}
+\label{task:gal:mass}
+\motivation{Galaxies form and evolve dynamically via the gravitational influence
+of the underlying dark matter structure.  This non-baryonic dark mass is intimately 
+involved in the evolution of the baryonic component that ultimately generates the 
+stellar component visible in the optical.  LSST can uniquely probe both of these
+tracers for hundreds of millions of galaxies over a range of look-back time.
+This sample provides an opportunity to probe the detailed relation between baryonic and dark 
+matter structure 
+evolution. Such studies have been attempted before in a limited way using LSST
+precursor surveys. Using 300,000 lens galaxies in the Deep Lens Survey, \citep{choi2012a} 
+studied the mass profile of galaxies in three luminosity bins out to several Mpc. Using 
+a similar number of lens galaxies in the COSMOS ACS data, \citet{leauthaud2012a} derived
+constraints on the evolution of the stellar-to-dark matter connection in the context of halo models.
+LSST will provide a billion lens galaxies with accurate photometric redshifts, revolutionizing
+this measurement.
+}
+~\\
+\activities{
+An important issue to address is how far down the galaxy mass function can one detect
+the mass profile in selected large samples of galaxies. One must start
+with a model of the mass distribution in galaxies, which will
+involve use of existing galaxy formation simulations and resulting analytic models. 
+Foreground lens galaxy sample selection must be explored,
+weak lens shear simulations of LSST observing over 
+a large area (1000 deg$^2$) containing a large sample of lens galaxies performed,
+stacked simulations of 
+the galaxy-mass correlation function out to significant radii for mass environment tests (3-10 Mpc)
+computed, 
+sample cuts on morphological surface brightness type vs. redshift engineered, and an assessment of 
+signal-to-noise (SNR) for
+dwarf galaxy samples and sample completeness determined.  
+The LSST main survey will 
+have hundreds of thousands of dwarf galaxies in a range of redshift $z = 0.2 - 0.6$ which act as lenses.  
+The shear SNR is high -- a simulation of just 20 LSST visits to a single $z=0.5$ galaxy
+with total $10^{11} M_\odot$ virial mass yields a shear SNR$\approx10$ out to several Mpc in projected radius. 
+Stacking a million dwarf galaxies should thus yield high precision mass profiles, even when cut on
+parameters such as mass environment, surface brightness type, stellar mass, and redshift.
+}
+~\\
+\deliverables{%Deliverables over the next several years from the activities 
+%described above include the following:
+~
+\begin{enumerate}
+\item A selection for a set of template galaxies for use as lenses in ray-trace simulation,
+using a set of simulated models of galaxies at various stages in development. 
+\item Galaxy - mass shear simulations over at least 1000 square degrees, using the 
+latest LSST OpSim run and full end-to-end weak lens ray tracing, including PSF 
+and detector effects, and incorporating a representative set of galaxies over a range of masses.
+\item Computation of galaxy-mass correlation functions using these stacked LSST shear 
+simulations, for sets of populations of galaxies over a wide mass range.
+\item Assessment SNR vs galaxy mass, and the ability to correlate mass profile with 
+optical surface brightness and type over a range of redshift.  
+\end{enumerate}
+}
+\end{task}
+
+\subsection{Optimizing Galaxy Photometry} 
+\tasktitle{Optimizing Galaxy Photometry} 
+% background subtraction
+% optimal co-adds
+% best flux estimator
+% image quality metrics 
+% forced photometry with separate central point source (important for AGN)
+% Using high-resolution priors where available
+\begin{task}
+\label{task:gal:photometry}
+\motivation{
+Systematic uncertainties will dominate over random uncertainties for many
+research questions addressed with LSST. The most basic measurement
+of a galaxy is its flux in each band, but flux is a remarkably subtle measurement
+for a variety of reasons as galaxies do not have well-defined edges, their shapes
+vary, they have close neighbors, they cluster together, and lensing affects both
+their brightness and clustering. These factors all affect photometry in systematic
+ways, potentially creating spurious correlations that can obscure or masquerade as
+astrophysical effects. For example, efforts to measure the effect of neighbors
+on galaxy star formation rates can be erroneous if the presence of a neighbor
+affects the basic photometry. Measurements of galaxy magnification or measurements
+of intergalactic dust can be similarly affected by systematic photometric biases.
+It is thus important to hone the photometry techniques prior to the survey to 
+minimize and characterize the biases. Furthermore, there are science topics that
+require not just photometry for the entire galaxy, but well-characterized photometry
+for sub-components, such as a central point-source or a central bulge. 
+}
+~\\
+\activities{
+The core photometry algorithms will end up being applied in Level 2 processing, 
+so it is important that photometry be vetted for a large number of potential
+science projects before finalizing the software. Issues include the following.
+(1) Background estimation, which, for example, can greatly affect the photometry
+for galaxies in clusters or dwarfs around giant galaxies. (2) Quantifying the
+biases of different flux estimators vs. (for example) distances to and fluxes
+of their neighbors. (3) Defining optimal strategies to deal with the varying
+image quality. (4) Defining a strategy for forced photometry of a central point
+source. For time-varying point-sources, the image subtractions will give a
+precise center, but will only measure the AC component of the flux. Additional
+measurements will be needed to give the static component. (5) Making use
+of high-resolution priors from either Euclid or WFIRST, when available. 
+Because photometry is so central to much of LSST science, there will need to
+be close collaboration between the LSST Project and the community. 
+}
+~\\
+\deliverables{
+%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item Development of metrics for various science cases to help evaluate the Level 2 photometry.
+\item Realistic inputs for difficult photometry cases (e.g. close neighbors, clusters of galaxies, AGN in galaxies of various morphologies).
+\item Deliverables over the longer term include developing optimal techniques for forced photometry using priors from space-based missions.
+\end{enumerate}
+}
+\end{task}
+
+\subsection{Optimizing Measurements of Stellar Population Parameters} 
+\tasktitle{Optimizing Measurements of Stellar Population Parameters} 
+% Strategies for dealing with strong covariance of parameter estmates
+\begin{task}
+\label{task:gal:stellarpops}
+\motivation{
+The colors of galaxies carry information about their star formation histories, 
+each interval of redshift being a snapshot of star formation up until that time.
+Unfortunately, estimates of star formation rates and histories 
+for a single galaxy based on only the LSST bands will be highly uncertain, 
+owing largely to degeneracies between age, dust extinction, and metallicity. 
+Strategies for overcoming the degeneracies include hierarchical modeling -- using
+ensembles of galaxies to constrain the hyper-parameters that govern 
+the star formation histories of sets of galaxies rather than individuals, 
+and using ancillary data from other wavelengths. 
+}
+~\\
+\activities{
+Activities in this area include developing scalable techniques for 
+hierarchical Bayesian inference on very large data sets. These can be
+tested on semi-analytical or hydrodynamical models, where the answer is known
+even if they do not correctly represent galaxy evolution. The models should
+also be analyzed to find simple analytical expressions for star formation
+histories, chemical evolution, and the evolution and behavior of dust to
+make the Bayesian inference practical.
+}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item Development and refinement of techniques for constraining star formation histories of large ensembles of galaxies.
+\item Model inputs to guide in developing these techniques.
+\item Refinement of the science requirements for ancillary multi-wavelength data to support LSST.
+\end{enumerate}
+}
+\end{task}
+
+\end{tasklist}
+}
