@@ -1,8 +1,14 @@
 % LSST Galaxies Science Roadmap
 % Chapter: science_background
 
+\makeatletter
+\let\savedchap\@makechapterhead
+\def\@makechapterhead{\vspace*{-3cm}\savedchap}
 \chapter[Galaxy Evolution Studies with LSST]{Galaxy Evolution Studies with LSST}
 \label{ch:science_background}
+\let\@makechapterhead\savedchap
+\makeatletter
+
 {\justify
 
 

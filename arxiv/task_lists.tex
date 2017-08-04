@@ -2,8 +2,13 @@
 % Chapter: task_lists 
 % First draft by 
 
+\makeatletter
+\let\savedchap\@makechapterhead
+\def\@makechapterhead{\vspace*{-3cm}\savedchap}
 \chapter[Task Lists by Science Area]{Task Lists by Science Area}
 \label{ch:task_lists}
+\let\@makechapterhead\savedchap
+\makeatletter
 \input{agn.tex}
 \newpage
 \input{clss.tex}

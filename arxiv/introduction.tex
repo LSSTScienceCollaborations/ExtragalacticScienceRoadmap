@@ -2,8 +2,13 @@
 % Chapter: Introduction
 % First draft by 
 
+\makeatletter
+\let\savedchap\@makechapterhead
+\def\@makechapterhead{\vspace*{-3cm}\savedchap}
 \chapter[Introduction]{Introduction}
 \label{ch:intro}
+\let\@makechapterhead\savedchap
+\makeatletter
 
 {\justify
 The Large Synoptic Survey Telescope (LSST) is a wide-field, ground-based
