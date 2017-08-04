@@ -1,6 +1,6 @@
 \section{Auxiliary Data}\label{sec:tasks:aux}  
 {\justify
-While LSST will produce outstanding quality optical imaging with temporal spacing, a significant amount of additional science will be enabled through the combination of these data with existing, future, and proposed external datasets; both spectroscopic ($i.e.$, redshift and/or spectral line measurements) and panchromatic ($i.e.$, x-ray, UV, IR, radio photometry). However, bringing together these external datasets into a useable, coherent, and quality controlled format is non-trivial and requires significant effort. In particular, the number, size and complexity of both {\it spectroscopic} and {\it panchromatic} datasets is likely to dramatically increase with the advent of a number of new ground and space based facilities. Both in preparation for and during LSST operations it is therefore prudent to ensure appropriate access, usability, and quality control of external datasets are in place via the establishment of an auxiliary LSST database.
+While LSST will produce outstanding quality optical imaging with temporal spacing, a significant amount of additional science will be enabled through the combination of these data with existing, future, and proposed external datasets; both spectroscopic ($i.e.$, redshift and/or spectral line measurements) and panchromatic ($i.e.$, X-ray, UV, IR, radio photometry). However, bringing together these external datasets into a useable, coherent, and quality controlled format is non-trivial and requires significant effort. In particular, the number, size and complexity of both {\it spectroscopic} and {\it panchromatic} datasets is likely to dramatically increase with the advent of a number of new ground and space based facilities. Both in preparation for and during LSST operations it is therefore prudent to ensure appropriate access, usability, and quality control of external datasets are in place via the establishment of an auxiliary LSST database.
 
 
 
@@ -46,9 +46,9 @@ While this task sounds intimidating, this is exactly what has been achieved with
 \begin{task}
 \label{task:aux:panchromatic}
 \motivation{
-LSST will only cover a small portion of the electromagnetic spectrum emanating from stars and accretion disks around supermassive black holes. In understanding the galaxy life cycle we inevitably require observations of the full gas-stars-dust cycle along with additional processes from AGN and dust attenuation. As such, many LSST science goals will require access to the best available x-ray, UV, IR, and radio data.
+LSST will only cover a small portion of the electromagnetic spectrum emanating from stars and accretion disks around supermassive black holes. In understanding the galaxy life cycle we inevitably require observations of the full gas-stars-dust cycle along with additional processes from AGN and dust attenuation. As such, many LSST science goals will require access to the best available X-ray, UV, IR, and radio data.
 While archives of these data exist independently, there is a dire need to establish a Universe database which federates these data in a coherent manner. One of the major concerns of such a database is the accurate multi-wavelength source identification and de-convolution in disparate data with wildly differing resolutions. For example, two closely separated sources in the LSST data may appear as a single source in lower resolution data. As such, significant errors will be made when simply table matching these photometric catalogues.
-The unavoidable solution to this problem is to bring the data into a single repository and allow sophisticated codes ($e.g.$, TFIT/TPHOT; LAMBDAR etc.) to determine appropriate flux measurements with associated errors based on apertures defined in high-resolution (LSST or other) bands. This will be particularly important as we extend to x-ray and radio wavelengths where the radiation fundamentally arises from spatial locations which are aligned with, but not identically co-incident to, the optical radiation ($e.g.$, diffuse HI envelopes, diffuse x-ray halos, discrete x-ray sources and extended radio lobes).
+The unavoidable solution to this problem is to bring the data into a single repository and allow sophisticated codes ($e.g.$, TFIT/TPHOT; LAMBDAR etc.) to determine appropriate flux measurements with associated errors based on apertures defined in high-resolution (LSST or other) bands. This will be particularly important as we extend to X-ray and radio wavelengths where the radiation fundamentally arises from spatial locations which are aligned with, but not identically co-incident to, the optical radiation ($e.g.$, diffuse HI envelopes, diffuse X-ray halos, discrete X-ray sources and extended radio lobes).
 }
 ~\\
 \activities{
@@ -61,7 +61,7 @@ Several activities are required:
 \end{enumerate}
 ~\\~\\
 As galaxies emit radiation across the entire electromagnetic spectrum it is important to be able to trace this breadth of emission deriving from different astrophysical processes. This is particularly important in the LSST optical wavebands where anywhere from 0-90 per cent of the radiation might be attenuated by dust and re-radiated in the far-IR. 
-The robustness of photometric redshifts also relies on folding in non-optical (i.e, UV, near-IR and mid-IR) priors to minimize ambiguities between, for example, the Lyman- and 4000\AA~breaks. Moreover robust photometric redshifts also require consistent and accurate error estimates which cannot be guaranteed when using table matched data produced by different groups using different methodologies.
+The robustness of photometric redshifts also relies on folding in non-optical (i.e, UV, near-IR and mid-IR) priors to minimize ambiguities between, for example, the Lyman and 4000\AA~breaks. Moreover robust photometric redshifts also require consistent and accurate error estimates which cannot be guaranteed when using table matched data produced by different groups using different methodologies.
 Finally, X-ray and radio facilities that have traditionally focused on the AGN population. However, other processes are now becoming increasingly relevant as they extend to deeper observations (such as those with SKA-precursors and eROSITA) and become sensitive to both extended emission and/or emission related to star formation. Unification across the wavelength range requires federation of these very disparate datasets, and may be worth centralizing prior to LSST operations.
 Note a similar task has recently been achieved by the Galaxy And Mass Assembly team for a 200 square degree region \citep[see][and http://www/gama-survey.org/]{driver2016a} and can be extended to the full LSST footprint using similar techniques.
 }
@@ -97,14 +97,14 @@ The potential evolution of the T-F relation, including possible evolution in the
 ~\\~\\
 A few major drawbacks for these studies into the evolution of the T-F are 
 (a) the kinematic information comes from H$\alpha$ optical data (sometimes redshifted into the infra-red, 
-which does not trace the full rotation curve,
-(b) adaptive optics for these observations filters out the lower surface brightness features such as the rotating 
+which does not trace the full rotation curve),
+(b) adaptive optics for these observations filter out the lower surface brightness features such as the rotating 
 disk \citep[see for a review ][]{glazebrook2013a}, and 
 (c) these measurements are made for intrinsically bright samples of galaxies.
 However, some progress can be made by stacking low signal-to-noise H\,{\sc{i}} spectra using an optical prior \citep{meyer2016a}.\\
 ~\\
-The $z=0$ calibration however is very solid with large samples \citep[e.g.][]{ponomareva2016a,tiley2016b}, 
-detailed kinematics \citep{trachternach2008a}, extending down to low mass galaxies \citep{mcgaugh2000a,oh2015a}.
+The $z=0$ calibration however is very solid with large samples \citep[e.g.][]{ponomareva2016a,tiley2016b} and
+detailed kinematics \citep{trachternach2008a} extending down to low mass galaxies \citep{mcgaugh2000a,oh2015a}.
 The first deep, higher redshift observations have been made but are still limited in scope and samples sizes \citep{verheijen2010a,fernandez2013a,fernandez2016a}.\\
 ~\\
 For a Tully-Fisher measurement, one needs a kinematic measurement (preferably through H\,{\sc{i}} measurement), 
