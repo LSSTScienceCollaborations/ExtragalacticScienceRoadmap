@@ -1,0 +1,83 @@
+%---------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn,oneside,openany]{book} 
+\input{structure}
+\usepackage{booktabs}
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[document]{ragged2e}
+\begin{document}
+\input{journal_macros}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\thispagestyle{empty}
+{\Huge Large Synoptic Survey Telescope} 
+\linebreak 
+\linebreak 
+{\Huge Galaxies Science Roadmap}
+\linebreak
+\linebreak
+{\centering
+\input{authorlist}
+}
+\vfill
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+\newpage
+\thispagestyle{empty}
+
+\noindent
+{\justify
+The {\it Large Synoptic Survey Telescope Galaxies Science Roadmap} represents the collective efforts of more than one hundred scientists to define the critical research activities to prepare our field to maximize
+the science return of the LSST dataset. We want to thank the LSST Corporation for their
+support in developing this Roadmap and for supporting LSST-related science more broadly.
+We also wish to thank the LSST Galaxies Science Collaboration members for their efforts
+over the years in developing the case for extragalactic science with LSST. 
+}
+\vspace{1in}
+
+Inquiries about this report or its content can be addressed to Brant Robertson ({\tt brant@ucsc.edu}) and the LSST Galaxies Science Collaboration ({\tt lsst-galaxies@lsstcorp.org}).
+\vspace{1in}
+\input{VersionDate}
+
+
+%----------------------------------------------------------------------------------------
+% Abstract
+%----------------------------------------------------------------------------------------
+
+\include{abstract}
+
+%----------------------------------------------------------------------------------------
+% Table of Contents
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Print the table of contents 
+
+
+%----------------------------------------------------------------------------------------
+%	Chapters
+%----------------------------------------------------------------------------------------
+
+\include{introduction/introduction}
+\include{science_background/science_background}
+\include{task_lists/task_lists}
+
+%---------------------------------------------------------------------------------------
+% References
+%---------------------------------------------------------------------------------------
+\bibliography{references}
+
+
+%---END---
+\end{document}
+
+

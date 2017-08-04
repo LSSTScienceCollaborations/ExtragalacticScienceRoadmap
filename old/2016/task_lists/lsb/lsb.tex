@@ -1,0 +1,167 @@
+\section{Low-Surface Brightness Science}\label{sec:tasks:lsb}  
+
+Summary
+
+\begin{tasklist}{LSB}
+\tasktitle{Techniques for Finding Low-Surface Brightness Tidal Features}
+\begin{task}
+\label{task:lsb:tidal_features}
+\motivation{
+A key advantage of LSST over previous  large-area  surveys  (e.g. the SDSS) is its ability to detect  low-surface-brightness (LSB) features associated with galaxies.  This includes tidal streams and other features associated with past and ongoing interactions,  intra-cluster and  intra-group light,  and  nearby,   extended  low- surface-brightness galaxies. 
+\\
+Prior to LSST, typical studies of the LSB universe have  focused on small  galaxy samples (e.g. in the SDSS Stripe 82),  often  selected  by  criteria that are difficult to quantify  (e.g. visual inspection that can somewhat subjective) or reproduce  in theoretical models.  Automated (algorithmic) measurements of the LSB features themselves can be challenging and many past studies have relied on visual inspection for the identification and characterization of features (which may not easily applied on the LSST scale). For LSST it is highly desirable that we automate the detection and  characterization of LSB features,  at  least to the point where samples for further  study  can be selected via database queries, and where the completeness  of samples returned from such queries can be quantified.
+}
+\activities{
+Several activities are of crucial importance:
+\begin{enumerate}
+\item Simulating  realistic  LSST images and LSB features (using, e.g., high-resolution hydro simulations)
+\item Identifying precursor datasets that can be used as proxies for developing LSB tools for use on  LSST data
+\item Using  the  simulations   to  develop algorithms for detection   and  measurement of LSB features
+\item Applying these algorithms to the precursor datasets to test their suitability
+\item Ensuring  that LSST  level-2 processing  strategies and  observing  strategies are  aligned with the needs of LSB science
+\item Developing a strategy for finding and measuring  LSB features  through  a combination of level 2 measurements, database queries, and level 3 processing
+\end{enumerate}
+It is important to produce realistic LSST images from e.g. the current generation of hydro-dynamical cosmological simulations (which faithfully incorporate both the evolution of large-scale structure and the interplay between baryons and dark matter during interactions). Scattering from bright stars (which may or may not be in the actual field of view of the  telescope) is likely to be the  primary source of contamination when searching  for extended  LSB features. Ideally,  the  LSST scattered-light model, tuned  by  repeated   observations, will be  sufficiently  good that these contaminants can be removed  or at  least flagged at  level 2.  Defining the metrics for “sufficiently good,” based on analysis of simulated images, is an important activity that needs early  work to  help inform  LSST development.
+\\
+Including  Galactic  cirrus  in the simulations will be important when developing strategies for detecting for large-scale  LSB features.   Including  a cirrus  model as part  of the  LSST background  estimation is worth  considering,  but  it is unclear  yet whether  the science benefit can justify the extra  effort.
+\\
+Because  the  LSST  source  extraction is primarily  optimized  for finding  faint,  barely-resolved  galaxies,  it  will  be challenging  to  optimize  simultaneously for finding large LSB structures and cataloging  them  as one entity  in the database. For very large structures, analysis of the LSST “sky background” map, might be the most productive approach. We need to work with the LSST project to make sure the background  map is stored in a useful form, and that background  measurements from repeated  observations can  be combined  to separate  the  fluctuating foreground  and  scattered light from the astrophysically interesting signal from extended  LSB structures. Then, we need strategies for measuring these background  maps,  characterizing structures,  and  developing value-added  catalogs  to supplement the level 2 database.
+\\
+For smaller structures, it is likely that the database will contain pieces of the structure, either as portions  of a hierarchical  family of deblended objects, or catalogued  as separate objects.  Therefore, we need to develop strategies for querying the database to identify galaxies which are likely to have such structures. E.g. in galaxies that have LSB tidal features around them, the main body of the galaxy is likely to be disturbed and therefore asymmetric. Measures of asymmetry will therefore be useful for flagging such systems. We then need to have a strategy for either extracting the appropriate data for customized  processing, or develop ways to put back together  the separate  entries  in the database. A possible value-added catalog, for example, from the galaxies collaboration might be an extra flag in the database to indicate that a galaxy is likely to have LSB tidal features and an extra  set of fields for the database to indicate  which separate objects are probably part of the same physical entity.
+\\
+This would be relatively sparsely  populated in the  initial stages of LSST. Estimates from the Stripe 82, indicate that 15\% of galaxies carry LSB tidal features (LSST will reach Stripe 82 in a single shot) but by the end of the survey will become a key resource for a wide variety of investigations.
+}
+\deliverables{Deliverables over the next several years from the activities described above include the following:
+\begin{enumerate}
+\item Realistic mock LSST images from hydro cosmological simulations (including re-simulations of individual objects were necessary) with spatial resolutions of tens of parsecs.
+\item Algorithms for finding galaxies with LSB features and for measuring the properties of these features.
+\item Input to the Project on scattered-light mitigation and modeling strategies from the simulations.
+\item Input to the Project on photometric and morphological parameters (e.g. asymmetry, residual flux fractions etc) to measure and store in the level 2 database.
+\item Query strategies and sample queries for finding LSB structures.
+\item A baseline concept  for a value-added  database of LSB structures.
+\end{enumerate}
+}
+\end{task}
+
+
+
+
+\tasktitle{Low-Surface Brightness Galaxies}
+\begin{task}
+\label{task:lsb:galaxies}
+\motivation{
+Our objective is to investigate the most relevant and challenging aspects of the Low Surface Brightness (LSB) Universe. This has a direct baring on the range of galaxies initially formed, the properties that they have during and after their assembly, their connection to the cosmic web and ultimately to the nature of dark matter, which plays a large part in all of these processes.
+\\
+By LSB we mean objects that have surface brightnesses much less than that of the background night sky and that which is typical of the Milky Way galaxy we live within. Many authors have previously shown how difficult it is to detect objects of LSB and, more importantly, that our current observations may be severely biased towards detecting objects that have surface brightnesses very similar to the spiral galaxy that we live within. Thus the Universe we perceive may have more to do with the position we are observing it from than its true nature - what would we see if we were able to move our telescopes away from the Sun and out to the very outer edges of the Galaxy?
+\\
+The problem is that astronomical observations always include a signal from a background, a level we need to detect our sources above. For ground based observations the background arises locally from the atmosphere and our proximity to the Sun, scattered light from the solar system, diffuse star light from the Galaxy and a small contribution from other galaxies in the Universe. For an astronomical object to be detected it must stand out above the noise level in this background. If this noise was purely due to photon statistics then very simply all we would need to do is collect as many photons as possible and the signal would gradually appear out of the noise. However, we currently know that it is nowhere near this simple because of scattered light across the field of view (FOV), instrumental calibration uncertainties and real fluctuations in the cosmic background. For these reasons there has previously been little progress in making a definitive study of the extent and brightness limits of the LSB Universe.
+\\
+Additionally, this LSB universe include a large percentage of galaxies representing the low-mass end of the galaxy mass function, which in turn has been a major source of tension for the LCDM cosmological model. The galaxy mass function at masses less than Mh  ~ 1010 Msun systematically departs from the halo mass function in ways that are difficult to reconcile with current models of baryonic feedback. On the observational side, a crucial step towards understanding the discrepancy is to derive a much more complete census of low-mass galaxies in the local universe. For gas-poor galaxies, which includes most dwarfs within the halos of Milky-Way like galaxies, detection via HI surveys or emission-line surveys is nearly impossible. Dwarf galaxies in the Local Group can be found by searching for overdensities of individual stars. At much larger distances, this becomes impossible. However, these galaxies are still quite easy to detect in LSST images.
+\\
+The challenge is to identify them as nearby dwarfs and estimate their distances and hence luminosities. The dwarfs in question are low-surface-brightness galaxies, so many of the source-detection issues are common to the more general problem of detecting LSB features. LSST data allow us to focus on different issues. For certain distances and luminosities, typical dwarf spheroidal galaxies will be distinct from the vast majority of background galaxies in the radius vs apparent magnitude plane. However, there will often be overlapping background galaxies, so it is important that the de-blending and cataloging steps try to remove the overlaps and allow one to query for galaxies in the right portion of the color-size-brightness manifold. Once candidates are identified, it should be possible to tease out approximate distances for many dwarf galaxies via surface-brightness fluctuations (SBF). Once again this requires careful treatment of the background galaxies, but this step is now Level 3 processing, so can be customized much more than the detection step. More ambitiously, it is conceivable that machine-learning techniques could be trained to identify semi-resolved nearby dwarf galaxies given a suitable training set from LSST-precursor observations.
+\\
+On the other extreme of LSB objects, the largest spiral galaxy known since 1987 (called Malin 1), has an extremely LSB disc of stars and an impressive system of spiral arms only revealed in 2015. The central bulge of the galaxy is prominent, but the stellar disc and spiral arms only revealed itself after sophisticated image processing. Malin 1 was discovered by accident and has for almost thirty years been unique. How many more galaxies with rather prominent central bulges also have extended LSB discs? This issue is very important for understanding the angular momentum distribution of galaxies and where this angular momentum comes from - for its stellar mass Malin 1 has about a factor ten higher angular momentum than typical values. The limiting SB of the LSST combined with the large FOV make this instrument unique to probe the existence of large LSBs, similar to Malin 1. There is also an existing problem relating galaxies formed in numerical simulations to those observed. Models with gas, cooling and star formation lose gas and angular momentum making disc galaxies too small. This has already been termed the angular momentum catastrophe and galaxies with giant discs like Malin 1 only make this problem worse. This is particularly important as there is increasing evidence that angular momentum plays a large part in determining the morphology of galaxies, a problem that has plagued galaxy formation studies since its inception.  In addition we will be exploring the very outer regions of galaxies and so will be able to explore the connection between the decreasing surface density of baryons and the increasing significance of the dark matter component of galaxies.
+\\
+One reason why this subject has made little progress over the last few years is because of the limited amount of deep large area data available. Most previous deep (CCD) surveys have been specifically designed to investigate the distant Universe and so, like the Hubble Deep Field, have concentrated on long exposures over small areas of sky. The extensive sky survey that LSST will carry out will become the state-of-the-art for years to come and offers a new and enormous LSB discovery potential. As a pointer to these exciting discoveries there have recently been relatively small-scale observations that indicate that a hidden LSB galaxy population does exit. An example is the population of LSB galaxies recently detected in the Coma and Fornax clusters, galaxies not only with astonishing LSB (>27 B mag arcsec-2), but also with some of them exhibiting effective radii similar to that of the Milky Way. This is despite both Coma and Fornax being two of the previously most studies regions of the nearby Universe.
+\\
+To quantify the astronomical problem we can give some approximate numbers. The typical sky background at a good dark astronomical site is $\approx22.5\mathrm{mag}~\mathrm{arcsec}^2$ and that from a space telescope typically an order of magnitude fainter $\approx25.0\mathrm{mag}~\mathrm{arcsec}^2$. The mean surface brightness (averaged over the half-light radius) of a galaxy like the Milky Way is $\approx23.0\mathrm{mag}~\mathrm{arcsec}^2$, of order the brightness of the darkest sky background seen from the ground. The mean surface brightness of the giant LSB galaxy Malin 1 is about $\approx28\mathrm{mag}~\mathrm{arcsec}^2$, some 100 times fainter than that of the Milky Way and that of the sky background. Extreme dwarf galaxies in the Local Group have mean surface brightnesses as faint as $\approx32\mathrm{mag}~\mathrm{arcsec}^2$, $10^4$ times fainter than the background, but these have only been found because they are resolvable into high surface brightness stars - something that is not currently possible to do from the ground for distances beyond about 5 Mpc. Note that $26\mathrm{mag}~\mathrm{arcsec}^2$ corresponds to approximately a surface density of about one solar luminosity per sq parsec. Our intention is to explore the Universe using LSST to at least a surface brightness level of $30\mathrm{mag}~\mathrm{arcsec}^2$.
+}
+\activities{
+\begin{enumerate}
+\item Production of simulated data that can be passed through the LSST data reduction pipeline.
+\item Analysis of simulated images to ensure that LSB features can be accurately preserved and measured.
+\item The development of new object detection software specifically designed for the detection of LSB features, in particular:
+\begin{itemize}
+\item Objects with large size.
+\item Objects near or melted with large size, bright galaxies.
+\item Objects with patterns similar to galaxy streams.
+\item Highly irregular and distorted objects.
+\end{itemize}
+\item Identification of precursor data sets that can be used to test our methods.  We can use data generated using numerical simulations to look at the types of galaxies produced that have sufficient angular momentum to become LSB discs. These discs can be quantified and placed within simulated data to test the ability of the pipeline to preserve LSB features. We will develop new methods of detecting LSB objects. These will include pixel clustering methods and the labeling of pixels with certain properties i.e. surface brightness level, SED shape, proximity to other similar pixels etc. We will trial our methods on other currently available data sets (KIDS, CFHT etc).
+\item Simulate realistic LSST images of nearby dwarf galaxies.
+\item Identify nearby semi-resolved dwarf galaxies in precursor data sets to use to develop the LSST tools.
+\item Develop and test the database search queries for finding candidates of several shapes and sizes.
+\item Develop and test a measurement of semi-resolved ``texture'' as a candidate level 2 measurement.
+\end{enumerate}
+The use of ``texture'' as a means of identifying candidate nearby dwarf galaxies is something that needs near-term attention if it is to make it into level 2 processing early in the survey. This can be developed and tested on the semi- resolved-galaxy simulations, but it is also essential to test it on precursor data sets from DES, CFHTLS or HSC.
+\\
+As a natural consequence of the effort that the members of this team are going to invest on the discovery and catalogue, we can foresee a long-term group effort for continuing the research once deliverables are available. A natural strategy, will be to perform several follow ups with large aperture telescopes available in Chile, with powerful instruments capable of obtaining optical, near-IR spectra, sub-mm, mm and IFU data for LSB objects.
+}
+\deliverables{Deliverables over the next several years from the activities described above include the following:
+\begin{enumerate}
+\item Realistic mock LSST images.
+\item An assessment of the influence of the PSF, scattered light and other instrument signals that may affect our ability to detect LSB features
+\item An assessment of the effect of proposed pipeline on the detection and measurement of LSB features.
+\item A baseline concept for the construction of a database of LSB features detected using LSST data.
+\begin{itemize}
+\item Realistic inputs of dwarf galaxies for the LSST image simulations.
+\item Realistic postage-stamp simulations of semi-resolved dwarf galaxies.
+\item Training set of nearby dwarfs from LSST precursor data.
+\item Figures of Merit for detection and selection algorithms
+\item Run LSST pipeline on both simulations and precursor data and assess performance.
+\end{itemize}
+\item Optimized algorithms measuring surface brightness fluctuation distances.
+\item A new LSB object detection package, friendly adapted for the user.
+\end{enumerate}
+}
+\end{task}
+
+
+
+\tasktitle{Probing the Faint Outskirts of Galaxies with LSST}
+\begin{task}
+\label{task:lsb:faint_outskirts}
+\motivation{
+The outskirts of nearby galaxies, loosely defined as the regions below $25-26\mathrm{mag}~\mathrm{arcsec}^2$ in surface brightness, have long been studied mainly in HI, and later in the UV thanks to the exquisite imaging by GALEX. Deep optical imaging of these regions has been performed on individual objects or on small samples by using extremely long exposures on small (including amateur and dedicated) telescopes, using the SDSS Stripe82 area, and using deep exposures with large telescopes (e.g., CFHT, Subaru, GTC).
+\\
+The main science driver here is understanding the assembly, formation, and evolution of galaxies. This can be studied through imaging and subsequent parametrization of structural components such as outer exponential disks, thick disks, tidal streams, and stellar haloes. From numerical modelling we know that the parameters of these components can give detailed information on the early history of the galaxies. For instance, halo properties, and structure within the stellar halo, are tightly related to the accretion and merging history. This is illustrated by the imaging of the stars in the outskirts of M31 and other local group galaxies, which show detailed structure.
+\\
+Ultra-deep imaging over large areas of the sky, as will be provided by LSST, can in principle be used to extend the study so far mostly limited to local group galaxies to 1000's of nearby galaxies, and even, at lower physical scales, to galaxies at higher redshifts. It is imperative, however, to understand and correct for a number of systematic effects, including but not limited to internal reflections and scattered light inside the telescope/instrument, overall PSF, including light scattered by the brighter parts of the galaxy under consideration, flat fielding, masking, residual background subtraction, and then foreground material (in particular Galactic cirrus). Many of these effects, and in particular the atmosphere part of the PSF vary with position and/or time on timescales as short as minutes, which needs to be understood before stacking. They will affect some items more than others, e.g. linear features such as tidal streams may be less affected by overall PSF, but more by foreground cirrus.
+}
+\activities{
+Most of the activities to be performed in relation to this task will be in common with other LSB tasks, in particular those related to understanding the systematics and how they vary with time and position on the sky. Good and very deep PSF models will have to be built, likely from a combination of theoretical modelling and empirical measurements, and the PSF scattering of light from the brighter parts of the galaxies will need to be de-contaminated and subtracted before we can analyse the outskirts. Dithering and rotation of individual imaging will need to be modelled before stacking multiple imaging.
+\\
+Commissioning data will need to be used to study the temporal and positional variations of the PSF, and how accurate theoretical predictions for the PSF are (in other words, how much a variable atmospheric PSF component complicates matters).
+}
+\deliverables{Deliverables over the next several years from the activities described above include the following:
+\begin{enumerate}
+\item AAA
+\item BBB
+\end{enumerate}
+}
+\end{task}
+
+
+
+\tasktitle{Low-Surface Brightness Intracluster Light}
+\begin{task}
+\label{task:lsb:icl}
+\motivation{
+The Intra-cluster Light (ICL) is a low surface brightness stellar component that permeates galaxy clusters. It is predicted to be formed mainly of stars stripped from cluster galaxies via interactions with other members, which then become bound to the total cluster potential. The ICL is also likely to contain stars that formed in the gaseous knots torn from in-falling galaxies as they are ram-pressure stripped by the hot intra-cluster medium. Therefore, it is important to study the ICL as it has kept a record of the assembly history of the cluster. Assuming LSST and its data products are sensitive to large LSB structures (see Activities and Deliverables) then it will be possible to perform the first comprehensive survey of ICL in galaxy clusters and groups within a uniform dataset. 
+\\
+Some outstanding scientific questions, which LSST could solve:
+\begin{itemize}
+\item When does the ICL (to a given SB limit) first emerge i.e. at what redshift and/or halo mass?
+\item Does it contain significant substructure?
+\item What is its surface brightness profile and does it have a colour dependence, which would indicate age/metallicity gradients?
+\item Where does the ICL begin and the large diffuse cD halo of the Brightest Cluster Galaxy (BCG) end and do they have the same origin?
+\end{itemize}
+}
+\activities{
+The preparation work for the ICL component of the LSB case involves investigating LSST specific issues for large LSB features and the known properties of the ICL itself. 
+\\
+The LSST specific issues fall into three categories: telescope; observation strategy; and pipeline. The faint, large radii wings of the PSF and any low-level scattered light or reflections from the telescope optics or structure will produce low surface brightness signals, which could easily mimic the ICL. The dither pattern of the observations, if smaller than the typical extent of a cluster, could mean that the ICL is treated as a variation in the background during the reduction and/or image combination process, rather than as a real object. This leads onto the pipeline itself which, regardless of the dither pattern, could remove the ICL if an aggressive background subtraction is used on either single frames or when combining images. It is therefore crucial for the LSB team to liaise with LSST strategy, telescope, instrument and data reduction teams.
+\\
+The ICL specific issues are mainly the feasibility of observing the ICL given its known properties, which can be simulated from existing data. Using deep observations of the ICL in low redshift clusters we can model whether we expect to see ICL at higher redshifts (up to z=1) given dimming, stellar population evolution and the surface brightness limits of LSST. This is crucial if we want to look for an evolution in ICL properties. If we want study low mass groups or high redshift systems, we may need/want to stack populations to obtain a detection of the ICL. It is important to assess whether a genuine stacked ICL detection could be achieved by a comprehensive masking of galaxy cluster members or would faint galaxies just below the detection threshold end up combining to give a false or boosted ICL signal.
+}
+\deliverables{Deliverables over the next several years from the activities described above include the following:
+\begin{enumerate}
+\item Investigate any telescope specific issues that affect the measurement of large LSB features: PSF wings; scattered light.
+\item Investigate observation specific issues that affect the measurement of large LSB features: dither pattern strategy.
+\item Investigate image pipeline specific issues that affect the measurement of large LSB features: background removal; image combining.
+\item Feasibility: given the depth/surface brightness limit of the LSST imaging, to what limits can we hope to recover ICL in clusters and to what redshifts? Can this be simulated or extrapolated from deep imaging of low-z clusters?
+\item Investigate stacking clusters to obtain faint ICL - this is difficult as will require very strong masking of even the faintest observable cluster members.
+\end{enumerate}
+}
+\end{task}
+\end{tasklist}

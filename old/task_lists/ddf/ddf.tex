@@ -1,0 +1,76 @@
+\section{Deep Drilling Fields}\label{sec:tasks:ddf}  
+
+The LSST Drilling-Fields (DDF) are areas that have a higher cadence and deeper observations than the Deep-Wide survey. Many of the details of the observing strategy have yet to be finalized. Four Deep-Drilling fields have been selected. Whether to include any others will be part of a complex trade involving other special projects that depart from the Deep-Wide survey strategy. The details of the observing cadence, final depth in each band, and dithering strategy are all still under study, and the Project needs input from the science collaborations to inform these decisions. The tasks outlined in this section are intended to help optimize the LSST observing strategy, gather supporting data, and ensure that the data processing and measurements  meet the needs for galaxy-evolution science.
+
+\begin{tasklist}{DDF}
+
+\subsection{Coordinating Ancillary Observations}
+\tasktitle{Coordinating Ancillary Observations}
+\begin{task}
+\label{task:ddf:ancillary_obs}
+\motivation{
+It is crucial that the LSST deep-drilling fields be supported by observations from other facilities. While the LSST data by themselves will be unique in having deep and accurate photometry, good image quality, and time-series sampling, the amount of information in six bands of relatively broad optical imaging is quite limited. Estimates of photometric redshifts and stellar-population parameters (e.g. mass and star-formation rate) are greatly improved with long-wavelength data. Combining these quantities with information on dust and gas from far-IR, mm and radio observations allows one to build and test models that track the flow of gas in and out of galaxies. Deep and dense spectroscopy is essential both providing precise redshifts, calibrating photometric redshifts, and measuring physical properties of galaxies. Properly supported by this additional data, the LSST DDFs will become the most valuable areas of the sky for galaxy-evolution science. The central regions of the four fields already selected are already in this category; the main challenge is filling out the much larger area subtended by the LSST field of view.
+}
+\activities{
+The major challenge in supporting the Deep Drilling Fields is the huge investment of telescope time. There is a need for coordination across facilities and collaborations to make the most efficient use of this time. Coordination is certainly happening somewhat haphazardly, but there has not to date been a dedicated effort to get all the potential stakeholders involved in developing a coherent plan. The LSST science collaborations can and should be taking the lead here. The SERVS program to observe the already-designated DDFs with Spitzer is a good example of where this has happened (Manduit et al. 2012), but there is much more to be done. Activities include: 
+\begin{itemize}
+\item Workshops to discuss LSST DDF coordination
+\item Proposals for major surveys or even new instrumentation to provide supporting data
+\item Executing those supporting programs
+\item Working to integrate the data from those programs with the LSST data
+\item Working to enable DDF support through policies and strategic planning at major observatories
+\end{itemize}
+}
+\deliverables{Deliverables over the next several years from the activities described above include the following:
+\begin{enumerate}
+\item Workshops on LSST DDF supporting observations
+\item Annually updated roadmap of supporting observations (conceived, planned or executed)
+\item Public Release of data from supporting observations
+\item Level 3 software to enable use of LSST data with supporting data
+\end{enumerate}
+}
+\end{task}
+
+\subsection{Observing Strategy “Cadence”}
+\tasktitle{Observing Strategy “Cadence”}
+\begin{task}
+\label{task:ddf:cadence}
+\motivation{
+The LSST DDF observing strategy will need to serve diverse needs. For galaxy-evolution science, the time series aspect of the observation is less important than the depth, image quality, and mix of filters. Optimizing the observing strategy (including timing) is influenced by non-LSST factors like the availability of supporting data from other facilities, or the timing of the availability of such data. For example, for many science goals, completing the observations of one DDF to the final 10-year depth in the first year could be very beneficial. But there is work to be done to justify that, select the field, and find synergies with other science areas (e.g. DESC, AGN, transients).
+}
+\activities{
+The LSST observing strategy is optimized using the Operations Simulator (OpsSim). The Project works with the community to develop both strawman observing strategies and figures of merit for comparing different strategies. The figures of merit are implemented programmatically via the Metrics Analysis Framework (MAF) so that they can be easily applied to any candidate LSST cadence. The LSST project has called on the Science Collaborations to develop these metrics to codify their science priorities. The major activity here is involvement in the optimization of the DDF strategy through participation in Cadence workshops, training on the MAF and OpsSim, developing metrics and coding them in MAF, and proposing and helping to evaluate DDF cadences.}
+\deliverables{Deliverables over the next several years from the activities described above include the following:
+\begin{enumerate}
+\item Figures of Merit via MAF for use by OpSim
+\item Proposed observing strategies for DDFs with rationale
+\item Proposing and/or helping to assess selection of additional DDFs
+\end{enumerate}
+}
+\end{task}
+
+\subsection{Data Processing}
+\tasktitle{Data Processing}
+\begin{task}
+\label{task:ddf:data_processing}
+\motivation{
+Getting the most out of the DDFs may require data processing beyond that required for the Deep-Wide Survey. There are a variety of issues that ought to be considered in trying to optimize the science output. These include different strategies for making co-adds, determining sky levels, treating scattered light, detecting and characterizing faint or low-surface brightness features , deblending overlapping objects, or estimating photometric redshifts. The fields are small enough that it is conceivable to process or reprocess them making use of data from supporting observations. It will clearly be advantageous to have one “official” LSST-released catalog, but defining such a catalog to support a very broad range of science is challenging. This does not preclude having additional special-purpose catalogs, but it is clearly beneficial to the advancement of extragalactic research to have a high-quality official catalog that has “buy in” from the LSST Science Collaborations. This requires time and effort both in the Project and in the Collaborations. 
+}
+\activities{
+A major activity here is to identify the most important DDF-specific science drivers and identify any processing requirements that are distinct from the Deep-Wide survey. This ought to be coordinated with the Project and the other Science Collaborations to provide a coherent set of specifications and priorities. 
+\\
+Another major activity is to develop the machinery to test and validate the data-processing on the DDFs (via pure simulations and artificial-source injection) This may stress the inputs to the image simulator, requiring more realistic inputs for low-mass galaxies, galaxy morphologies, and low-surface brightness features. Use of the supporting data sets in level 2 or level 3 processing requires careful thought. For example, source identification and photometry can be improved using pixel-level information for either Euclid or WFIRST. However, this will not be available for all the DDFs and is not in the baseline plan for any of the projects, and the timing of the various projects and associated data rights create their own set of challenges. The collaborations need to work with the various projects to identify a clear path forward.}
+\deliverables{Deliverables over the next several years from the activities described above include the following:
+\begin{enumerate}
+\item Science drivers and input to the development of level 2 processing of the DDFs.
+\item Specifications for galaxy-evolution oriented level-3 DDF processing
+\item Specifications for data-processing using supporting data from other facilities
+\item Simulations tailored to the DDFs
+\item Level 3 processing code 
+\end{enumerate}
+}
+\end{task}
+
+\end{tasklist}
+
+  

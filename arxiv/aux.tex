@@ -1,0 +1,143 @@
+\section{Auxiliary Data}\label{sec:tasks:aux}  
+{\justify
+While LSST will produce outstanding quality optical imaging with temporal spacing, a significant amount of additional science will be enabled through the combination of these data with existing, future, and proposed external datasets; both spectroscopic ($i.e.$, redshift and/or spectral line measurements) and panchromatic ($i.e.$, X-ray, UV, IR, radio photometry). However, bringing together these external datasets into a useable, coherent, and quality controlled format is non-trivial and requires significant effort. In particular, the number, size and complexity of both {\it spectroscopic} and {\it panchromatic} datasets is likely to dramatically increase with the advent of a number of new ground and space based facilities. Both in preparation for and during LSST operations it is therefore prudent to ensure appropriate access, usability, and quality control of external datasets are in place via the establishment of an auxiliary LSST database.
+
+
+
+\begin{tasklist}{AUX}
+\subsection{Extragalactic Optical/NIR Spectroscopy within the LSST Footprint}
+\tasktitle{Extragalactic Optical/NIR Spectroscopy within the LSST Footprint}
+\begin{task}
+\label{task:aux:spectroscopy}
+\motivation{
+Although great strides have been made in projects using photometric redshifts alone, some science is only possible with either spectroscopic redshifts and/or spectroscopic line measurements. In particular, spectroscopic redshifts are essential when distance accuracies of less than 1000 km/s are required; for example in identifying galaxy pairs and groups. Robust measurement of gas and stellar phase metallicities also require spectra with relatively high signal-to-noise and resolution. 
+Finally, photometric redshifts still require spectroscopic redshifts for both calibration and accuracy assessment. As such, it is essential that we ensure the LSST community has access to the available high precision redshifts, spectroscopically-derived properties and calibrated spectra for all available galaxies and quasars within the LSST footprint. This necessarily entails bringing together data from disparate surveys (such as 2dFGRS, SDSS, 6dF, MGC, GAMA, VIPERS, VVDS), the homogenization of data products and quality control, as well as the ongoing ingestion of upcoming spectroscopic campaigns such as TAIPAN, DEVILS, MOONS, 4MOST, DESI, PFS, Euclid etc. This will require significant pre-LSST effort.
+}
+~\\
+\activities{
+Several activities are necessary to compile this spectroscopic database:
+\begin{enumerate}
+\item Establishment of a database structure capable of accommodating and serving both spectra and derived data products including fast SQL database queries.
+\item Ingestion of existing key public datasets including, for example: 2dFGRS, SDSS, 2QZ, 2SLAQ, 6dF, MGC, GAMA, ESP, VVDS, VIPERS.
+\item A process for establishing quality control and homogenization of datasets including assignment of revised quality flags.
+\item A pathway for ingesting future datasets as they become available and potentially in advance via MOU arrangements, e.g., TAIPAN, DEVILS, MOONS, 4MOST, DESI, PFS, Euclid, etc.
+\end{enumerate}
+~\\
+Approximately 6 million spectroscopic redshifts are known, with the majority of these already in the public domain, along with associated flux and wavelength calibrated spectra. In addition, derived parameters also exist for many of these spectra including, but not limited too, redshifts, equivalent widths, velocity dispersions, line asymmetries etc. Many of these measurements have been made using bespoke software specific to each originating survey (e.g., SDSS v 2dFGRS), creating an inhomogeneous network of data, measurements and quality control flags within the LSST footprint.
+In addition, in the next decade a number of new surveys will expand these measurements from millions to tens of millions of spectra through facilities and programs such as LAMOST, 4MOST, DESI as well as coarse spectroscopic information via GRISM data from Euclid and eventually WFIRST, leading to a wealth of spectroscopic data which will be invaluable to LSST.
+The community has two specific problems, i) collating this data and ii) ensuring quality control and standardization. Due to differing observing and analysis techniques not all spectroscopic measurements will be equal, and will depend on the resolution, signal-to-noise and precise software applied.
+Within reason some effort should be made to both collate and standardize the data with some provision of a uniform quality control process. At the bare minimum this should result in a database which contains the flux and wavelength calibrated spectra, links or copies of original derived products, and crucially, measurements using a uniform set of software analysis tools (e.g., to produce consistent redshift and equivalent width measurements) with some coherent cross-survey quality control flags.
+While this task sounds intimidating, this is exactly what has been achieved within the 200 square degrees of the Galaxy And Mass Assembly survey \citep{driver2011a,driver2016a,liske2015a} and an expansion of this process to the full LSST footprint is not unreasonable or impossible. However, this process needs to commence imminently if the database is to be in place for both LSST and the next generation of spectroscopic surveys.
+}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item A useable and searchable database of spectra with associated derived products.
+\item Derived products using standardized analysis codes to measure redshifts and equivalent widths, etc.
+\item A strategy for ingesting additional datasets as they become available.
+\end{enumerate}
+}
+\end{task}
+
+
+
+\subsection{Panchromatic Imaging within the LSST Footprint}
+\tasktitle{Panchromatic Imaging within the LSST Footprint}
+\begin{task}
+\label{task:aux:panchromatic}
+\motivation{
+LSST will only cover a small portion of the electromagnetic spectrum emanating from stars and accretion disks around supermassive black holes. In understanding the galaxy life cycle we inevitably require observations of the full gas-stars-dust cycle along with additional processes from AGN and dust attenuation. As such, many LSST science goals will require access to the best available X-ray, UV, IR, and radio data.
+While archives of these data exist independently, there is a dire need to establish a Universe database which federates these data in a coherent manner. One of the major concerns of such a database is the accurate multi-wavelength source identification and de-convolution in disparate data with wildly differing resolutions. For example, two closely separated sources in the LSST data may appear as a single source in lower resolution data. As such, significant errors will be made when simply table matching these photometric catalogues.
+The unavoidable solution to this problem is to bring the data into a single repository and allow sophisticated codes ($e.g.$, TFIT/TPHOT; LAMBDAR etc.) to determine appropriate flux measurements with associated errors based on apertures defined in high-resolution (LSST or other) bands. This will be particularly important as we extend to X-ray and radio wavelengths where the radiation fundamentally arises from spatial locations which are aligned with, but not identically co-incident to, the optical radiation ($e.g.$, diffuse HI envelopes, diffuse X-ray halos, discrete X-ray sources and extended radio lobes).
+}
+~\\
+\activities{
+Several activities are required:
+\begin{enumerate}
+\item Database to host imaging data from diverse sources, including astrometric alignment.
+\item Software to define aperture in a specified (LSST) band.
+\item Software to measure flux across panchromatic data taking into account original aperture definition, facility resolution, signal-to-noise limitations, and any physical priors.
+\item Tools to serve imaging and photometric data either for individual or sets of objects.
+\end{enumerate}
+~\\~\\
+As galaxies emit radiation across the entire electromagnetic spectrum it is important to be able to trace this breadth of emission deriving from different astrophysical processes. This is particularly important in the LSST optical wavebands where anywhere from 0-90 per cent of the radiation might be attenuated by dust and re-radiated in the far-IR. 
+The robustness of photometric redshifts also relies on folding in non-optical (i.e, UV, near-IR and mid-IR) priors to minimize ambiguities between, for example, the Lyman and 4000\AA~breaks. Moreover robust photometric redshifts also require consistent and accurate error estimates which cannot be guaranteed when using table matched data produced by different groups using different methodologies.
+Finally, X-ray and radio facilities that have traditionally focused on the AGN population. However, other processes are now becoming increasingly relevant as they extend to deeper observations (such as those with SKA-precursors and eROSITA) and become sensitive to both extended emission and/or emission related to star formation. Unification across the wavelength range requires federation of these very disparate datasets, and may be worth centralizing prior to LSST operations.
+Note a similar task has recently been achieved by the Galaxy And Mass Assembly team for a 200 square degree region \citep[see][and http://www/gama-survey.org/]{driver2016a} and can be extended to the full LSST footprint using similar techniques.
+}
+~\\
+\deliverables{%Deliverables over the next few years from the activities described above include:
+~
+\begin{enumerate}
+\item A database capable of serving image cutouts at any location over the LSST footprint and any wavelength (see http://cutout.icrar.org/psi.php for a similar database over the GAMA regions). This database should include
+\begin{itemize}
+\item X-ray maps from eROSITA
+\item UV from GALEX
+\item Optical from SkyMapper, DES, and Euclid.
+\item Near-IR from VISTA and Euclid.
+\item Mid-IR from WISE.
+\item Far-IR from IRAS, Herschel, and potential missions like Spica.
+\item Radio continuum and HI from ASKAP (EMU,WALLABY,DINGO), MeerKAT (LADUMA, MIGHTEE, MeerKLASS), and eventually the SKA.
+\end{itemize}
+\item Derived panchromatic photometry (on the fly or pre-processed).
+\end{enumerate}
+}
+\end{task}
+
+\subsection{Tully-Fisher Measurements Combining LSST and SKA Pathfinders}
+\tasktitle{Tully-Fisher Measurements Combining LSST and SKA Pathfinders} 
+\begin{task}
+\label{task:HI}
+\motivation{
+%
+How do galaxies evolve kinematically? The relation between stellar luminosity and rotation for disk galaxies is well known in the local Universe \citep[i.e., the Tully-Fisher or T-F relation, see][]{tully1977a,verheijen2001a} and 
+suspected to evolve as gas and stars form a disk within the dark matter gravitational potential. H\,{\sc{i}} extends throughout the stellar disk and well beyond, its kinematics tracing the galaxy's dark matter potential.
+The potential evolution of the T-F relation, including possible evolution in the normalization, slope, or both, is an area of active research
+\cite[][]{weiner2006a,tiley2016a}. 
+~\\~\\
+A few major drawbacks for these studies into the evolution of the T-F are 
+(a) the kinematic information comes from H$\alpha$ optical data (sometimes redshifted into the infra-red, 
+which does not trace the full rotation curve),
+(b) adaptive optics for these observations filter out the lower surface brightness features such as the rotating 
+disk \citep[see for a review ][]{glazebrook2013a}, and 
+(c) these measurements are made for intrinsically bright samples of galaxies.
+However, some progress can be made by stacking low signal-to-noise H\,{\sc{i}} spectra using an optical prior \citep{meyer2016a}.\\
+~\\
+The $z=0$ calibration however is very solid with large samples \citep[e.g.][]{ponomareva2016a,tiley2016b} and
+detailed kinematics \citep{trachternach2008a} extending down to low mass galaxies
+\citep{mcgaugh2000a,oh2015a}.
+The first deep, higher redshift observations have been made but are still limited in scope and samples sizes \citep{verheijen2010a,fernandez2013a,fernandez2016a}.\\
+~\\
+For a Tully-Fisher measurement, one needs a kinematic measurement (preferably through H\,{\sc{i}} measurement), 
+an accurate photometry measurement, and a disk inclination. The last two critical measurements  will be provided by LSST imaging.
+There are two main MeerKAT surveys that offer the opportunity for synergy with the LSST galaxy photometry: the MeerKAT International GigaHertz Tiered Extragalactic Exploration \citep[MIGHTEE,][]{jarvis2012a} project and the Looking At the Distant Universe with the MeerKAT Array \citep[LADUMA,][Blyth+ {\em in prep.}]{holwerda2010a,holwerda2011a}. Both target H\,{\sc{i}} observations in the LSST Deep Drilling Fields and thus offer the opportunity to explore the Tully-Fisher relation out to redshift $z\sim1$ through direct detection and possibly stacking. MIGHTEE and LADUMA represent the deepest two tiers of the H\,{\sc{i}} survey strategy for the combined pathfinder instruments.\\
+~\\
+Two other surveys represent the progressively wider/shallower H\,{\sc{i}} survey tiers with the ASKAP telescope \citep{johnston2007a}: DINGO, a survey of the GAMA fields \citep[][Meyer+ {\em in prep}]{driver2009a,duffy2012a,meyer2015a} and WALLABY, the Southern Sky H\,{\sc{i}} survey \citep[][Koribalski+ {\em in prep}]{duffy2012a}.
+ A benefit of the MeerKAT and ASKAP radio surveys is that radio continuum and 21cm line (H\,{\sc{i}}) emission are observed at the same time. 
+The survey strategy from wide and shallow to single deep field (WALLABY-DINGO-MIGHTEE-LADUMA) is designed to beat down cosmic variance effectively \citep[see e.g.,][]{maddox2016a}.
+}
+~\\
+\activities{
+Several activities are necessary to compile kinematic evolution using a combination of  H\,{\sc{i}} kinematics and LSST imaging:
+\begin{enumerate}
+\item Accurate photometry of extended objects in all LSST Deep Drilling Fields.
+\item accurate morphology of all galaxies with HI detections (to infer inclination).
+\item Spectroscopic redshifts of all galaxies {\em not} detected in H\,{\sc{i}} for stacking purposes.
+\end{enumerate}
+}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item Robust and accurate inclination estimates from morphological fits/models.
+\item Accurate galaxy photometry from LSST Deep Drilling Field stacks.
+\item Stacking code for H\,{\sc{i}} spectra.
+\end{enumerate}
+}
+\end{task}
+
+
+
+\end{tasklist}
+}

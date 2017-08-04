@@ -1,0 +1,140 @@
+\section{Theory and Mock Catalogs}\label{sec:tasks:tmc}  
+{\justify
+A critical challenge for interpreting the vast LSST dataset
+in the context of a cosmological model for galaxy formation
+involves the development of theory, both in the practical applications
+of realistic simulations and the engineering of new physical
+models for the important processes that govern the observable
+properties of galaxies. The following preparatory science tasks 
+for LSST-related theoretical efforts range from understanding the
+detailed properties of galaxies that LSST will uncover to predicting
+the large-scale properties of galaxy populations that LSST will probe
+on unprecedented scales.
+
+
+\begin{tasklist}{TMC}
+\subsection{Image Simulations of Galaxies with Complex Morphologies}
+\tasktitle{Image Simulations of Galaxies with Complex Morphologies}
+\begin{task}
+\label{task:tmc:complex_morphology}
+\motivation{
+LSST images will contain significant information about the dynamical state of galaxies. In principle, we can exploit
+this morphological information to learn about the formation and evolutionary histories
+of both individual and populations of galaxies. 
+Examples of important morphological features include spiral arms, tidal tails, double nuclei, clumps, warps, and streams. 
+A wide variety of analysis and modeling techniques can help determine the past, present, or future states of observed galaxies with complex morphologies,
+and thereby improve our understanding of galaxy assembly. 
+}
+~\\
+\activities{
+Activities include creating synthetic LSST observations containing a wide variety of galaxies with complex morphologies, for the purpose of testing analysis algorithms such as de-blending, photometry, and morphological characterization. Supporting activities include creating databases of galaxy images from models (such as cosmological simulations) or existing optical data, analyzing them using LSST software or prototype algorithms, and distributing the findings of these studies. These analyses may involve small subsets of the sky and do not necessarily require very-large-area image simulations or need to match known constraints on source density.
+Results will include predicting the incidence of measured morphological features, optimizing Level 3 measurements on galaxy images, and determining the adequacy of LSST data management processes for these science goals.}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item Creating synthetic LSST images of galaxies with complex morphology from simulations.
+\item Creating synthetic LSST images based on prior observations in similar filters.
+\item Making LSST-specific complex galaxy data products widely available.
+\item Publicizing results from algorithm tests based on these LSST simulations.
+\item Assessing Level 3 measurements to propose and/or apply in maximizing the return of LSST catalogs for complex galaxy morphology science. 
+\end{enumerate}
+}
+\end{task}
+
+
+\subsection{New Theoretical Models for the Galaxy Distribution}
+\tasktitle{New Theoretical Models for the Galaxy Distribution}
+\begin{task}
+\label{task:tmc:galaxy_distribution}
+\motivation{
+Meeting the challenge of building synthetic, computer-generated mock surveys for use in the preparation
+of extragalactic science with LSST will require the assembly of experts in key theoretical areas.
+LSST will collect more data than contained in the current largest survey, the SDSS,
+every night for ten years. The analysis of such data demands a complete overhaul of traditional techniques and will require the incorporation of ideas from different disciplines.
+Mock catalogs
+offer the best means to test and constrain theoretical models using observational data, and
+play a well-established role in modern galaxy surveys.
+For the first time, systematic uncertainties will limit 
+the scientific potential of the new surveys, rather than sampling errors driven by the volume mapped. 
+A variety of viable, competing cosmological models already provide only subtly discernible
+signals in survey data.
+Distinguishing between the models requires the best possible theoretical predictions to understand the measurements and their subsequent analysis, and to
+understand the uncertainties on the measurements.
+}
+~\\
+\activities{
+Develop a new state-of-the-art in physical models of the galaxy distribution by
+combining models of the physics of galaxy formation with high resolution N-body simulations that track the hierarchical growth of structure in the matter distribution.
+The key task involves performing moderate volume cosmological N-body simulations, generating
+predictions from an associated model of galaxy formation, and then embedding
+this information into very large volume simulations that can represent LSST datasets.
+The large volume simulations will extend beyond the volume of the target survey,
+allowing a robust assessment of the systematic uncertainties on large-scale structure measurements.}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item Physically motivated mock galaxy catalogues on volumes larger than those sampled by LSST, with a consistently evolving population of galaxies.
+\item Base catalogues of dark matter haloes and their merger trees suitable for use by theoretical models for populating these with galaxies (halo and subhalo occupation/abundance matching techniques).
+\item Small volume simulations for further tests of baryonic physics and detailed observational comparisons.
+\end{enumerate}
+}
+\end{task}
+
+\subsection{Design of New Empirical Models for the Galaxy Distribution}
+\tasktitle{Design of New Empirical Models for the Galaxy Distribution}
+\begin{task}
+\label{task:section:title}
+\motivation{
+The galaxy-halo connection represents the end state of the combined physics of baryonic galaxy formation and dark matter structure formation processes.
+A full exploitation of the LSST dataset for understanding galaxy formation will
+necessarily involve the exploration of the galaxy-halo connection,
+using the simulations of the galaxy formation process to build better empirical models.
+Empirical models can adjust to reproduce observational results as closely as possible, whereas computationally expensive physical models often prove too expensive to 
+tune in the same manner.
+Empirical models also have the advantage of being extremely fast, allowing large parameter spaces to be explored.
+}
+~\\
+\activities{
+Developing models of the galaxy-halo connection for LSST require two main stages. The
+first step tests current empirical models to judge the fidelity with which they
+reproduce the predictions of physical models based on simulations. The second step
+uses physical models to devise new parametrizations for empirical models to
+describe galaxy populations for which little or no data yet exists, providing enhanced
+empirical models relevant for upcoming surveys that will probe regimes that remain
+largely unmapped.}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item Predictions for the evolution of clustering from physical models.
+\item Enhanced paramertizations for empirical models with reduced freedom, greater
+applicability, and more rapid population of catalogs to describe the observer's past
+lightcone.
+\end{enumerate}
+}
+\end{task}
+
+
+\subsection{Estimating Uncertainties for Large-Scale Structure Statistics}
+\tasktitle{Estimating Uncertainties for Large-Scale Structure Statistics}
+\begin{task}
+\label{task:tmc:uncertainties}
+\motivation{
+The ability to interpret the relation between galaxies and the matter density field will depend critically on how well we understand the uncertainties of large-scale structure measurements. The accurate estimation of the covariance on a large-scale structure measurement such as the correlation function would require tens of thousands of simulations.
+}
+~\\
+\activities{
+Devise and calibrate analytic methods for estimating the covariance matrix on large-scale structure statistics using N-body simulations and more rapid but more approximate schemes, such as those based on perturbation theory.  
+Coordinate with Dark Energy Science Collaboration Working Groups, as these covariance matrices can also inform cosmological parameter constraints.}
+~\\
+\deliverables{%Deliverables over the next several years from the activities described above include the following:
+~
+\begin{enumerate}
+\item Physically motivated estimates of covariance matrices for galaxy occupation (and other) parameter searches.
+\end{enumerate}
+}
+\end{task}
+\end{tasklist}
+}
